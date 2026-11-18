@@ -1,9 +1,56 @@
 /* ChapterGrid: home page grid of chapter cards */
 @layer components {
+  .wrap { padding-block: var(--space-section-sm); }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-block-end: var(--space-4);
+    margin-block-end: var(--space-6);
+    border-block-end: var(--border-width) solid var(--color-border);
+  }
+
+  .count { font-size: var(--text-base); color: var(--color-text-subtle); }
+
+  .switch {
+    display: flex;
+    padding: var(--space-1);
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
+
+  .switchBtn {
+    display: grid;
+    place-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    color: var(--color-text-subtle);
+    border-radius: var(--radius-xs);
+    transition: var(--transition-colors);
+
+    & svg { width: 1.6rem; height: 1.6rem; fill: currentcolor; }
+
+    &[aria-pressed="true"] { color: var(--color-text); background: var(--color-surface-subtle); }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { color: var(--color-text); }
+    }
+  }
+
+  .num {
+    display: none;
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+  }
+
   .grid {
     display: grid;
     gap: var(--space-5);
-    padding-block: var(--space-section-sm);
 
     @media (width >= 40rem) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -105,4 +152,41 @@
   .title { font-size: var(--text-xl); }
 
   .desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  /* List view (like service rows on apadore.cz) */
+  .grid[data-view="list"] {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .grid[data-view="list"] .card {
+    grid-template-columns: 16rem 4rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-5);
+    padding-block: var(--space-5);
+    background: transparent;
+    border: none;
+    border-block-end: var(--border-width) solid var(--color-border);
+    border-radius: 0;
+
+    @media (width >= 48rem) { grid-template-columns: 28rem 6rem minmax(0, 1fr); }
+  }
+
+  .grid[data-view="list"] .cover {
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+  }
+
+  .grid[data-view="list"] .num { display: block; padding-block-start: var(--space-1); }
+
+  .grid[data-view="list"] .meta { padding: 0; }
+
+  .grid[data-view="list"] .title { font-size: var(--text-3xl); }
+
+  .grid[data-view="list"] .desc { max-width: var(--measure-narrow); font-size: var(--text-base); }
+
+  .grid[data-view="list"] .coverLogo,
+  .grid[data-view="list"] .coverType,
+  .grid[data-view="list"] .coverGlass,
+  .grid[data-view="list"] .coverQuote { transform: scale(0.6); }
 }
