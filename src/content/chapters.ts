@@ -304,37 +304,49 @@ export const chapters: Chapter[] = [
     slug: "obrazovy-styl",
     cover: "images",
     title: { cs: "Obrazový styl", en: "Imagery" },
-    description: { cs: "Case studies: wow první fotka, detaily rozhraní a imageovky.", en: "Case studies: a striking first image, UI details and mood images." },
-    summary: { cs: "Jak skládat obrázky do case studies: první fotka s wow efektem, detaily rozhraní na ploše v barvě klienta a imageové fotky. Formáty médií pro web." },
+    description: { cs: "Styl case studies, imageové fotky a styl mockupů.", en: "Case study style, brand imagery and mockups." },
+    summary: { cs: "Jak skládat obrázky do case studies: silná první fotka s výřezem webu na pozadí, imageové fotky prostředí klienta a styl mockupů. Formáty médií a zásady." },
     blocks: [
       {
+        type: "rules",
+        title: { cs: "Tři druhy obrázků", en: "Three kinds of images" },
+        body: { cs: "Hlavní slovo mají naše práce. Každá case study skládá tři druhy obrázků a střídá je tak, aby se web vždy střídal s fotkou. Barvy obrázků patří klientovi, Apadore drží jen neutrální rámec." },
+        items: [
+          { title: { cs: "Styl case studies" }, body: { cs: "Silná první fotka a výřez webu na pozadí, které nese mood projektu." } },
+          { title: { cs: "Imageové fotky" }, body: { cs: "Prostředí a lidé klienta: provoz, interiér, render developmentu." } },
+          { title: { cs: "Styl mockupů" }, body: { cs: "Web v zařízení na skutečném materiálu, neobvyklý úhel, denní světlo." } },
+        ],
+      },
+      {
         type: "images",
-        title: { cs: "První fotka: wow efekt", en: "First image: wow effect" },
-        body: { cs: "Úvodní obrázek case study rozhoduje, jestli čtenář pokračuje. Neobvyklá perspektiva, skutečné prostředí, přirozené světlo a materiál (dřevo, kámen, textil).", en: "The first image decides whether the reader continues." },
+        title: { cs: "Styl case studies", en: "Case study style" },
+        body: { cs: "Case study musí zaujmout hned první fotkou: neobvyklá perspektiva, skutečné prostředí, přirozené světlo (interně „wow efekt“). K ní patří výřez webu na pozadí, které nese mood celého projektu: u ESENS Letná kamenný obklad fasády, u nábytku detail materiálu, u developmentu textura stavby." },
+        items: [
+          { label: { cs: "ESENS Letná: výřez webu na kamenném obkladu" }, src: "/images/obrazovy-styl/esens-web-obklad.webp", ratio: "4 / 3" },
+          { label: { cs: "ESENS Letná: web přes fasádu domu" }, src: "/images/obrazovy-styl/esens-web-fasada.webp", ratio: "4 / 3" },
+        ],
+      },
+      {
+        type: "images",
+        title: { cs: "Imageové fotky", en: "Brand imagery" },
+        body: { cs: "Fotky značky klienta: prostředí firmy, lidé při práci, provoz, render developmentu. Ukazují, čím klient žije, ne jeho web. V každé case study aspoň dvě až tři." },
+        items: [
+          { label: { cs: "Robotwin: stříkání v lakovně" }, src: "/images/obrazovy-styl/robotwin-strikani.webp", ratio: "4 / 3" },
+          { label: { cs: "Robotwin: obsluha robota" }, src: "/images/obrazovy-styl/robotwin-robot.webp", ratio: "4 / 3" },
+          { label: { cs: "Linstram: kancelářská chodba" }, src: "/images/obrazovy-styl/linstram-chodba.webp", ratio: "4 / 3" },
+        ],
+      },
+      {
+        type: "images",
+        title: { cs: "Styl mockupů", en: "Mockup style" },
+        body: { cs: "Web v zařízení na skutečném materiálu: dřevo, kámen, papír, textil. Denní světlo, ostré stíny z okna, jeden motiv a hodně prostoru. Zařízení fotíme z neobvyklého úhlu, ne zepředu na bílém pozadí." },
         items: [
           { label: { cs: "Sky Towers: monitor na kulatém stole zespodu" }, src: "/images/obrazovy-styl/sky-towers-monitor.webp", ratio: "4 / 3" },
-          { label: { cs: "Robotwin: notebook u okna v dílně" }, src: "/images/obrazovy-styl/robotwin-notebook.webp", ratio: "4 / 3" },
-        ],
-      },
-      {
-        type: "rules",
-        title: { cs: "Skladba case study", en: "Case study composition" },
-        body: { cs: "Case study je kombinace tří druhů obrázků. Skládají se do mřížky 2 × 2 nebo vedle sebe tak, aby se detail rozhraní vždy střídal s fotkou.", en: "A case study combines three kinds of images." },
-        items: [
-          { title: { cs: "Obálka a první fotka" }, body: { cs: "Web v zařízení v reálném prostředí, neobvyklý úhel." } },
-          { title: { cs: "Detaily rozhraní" }, body: { cs: "Výřez komponenty (čísla, karta, akordeon, sekce) na klidné ploše v barvě klienta." } },
-          { title: { cs: "Imageové fotky" }, body: { cs: "Atmosféra značky klienta: lidé, prostředí, materiál, tiskoviny. V každé case study aspoň dvě až tři." } },
-        ],
-      },
-      {
-        type: "images",
-        title: { cs: "Imageové fotky", en: "Mood images" },
-        body: { cs: "Doplňkové fotky ukazují značku klienta v životě: tiskoviny, prostředí, detail, zařízení na skutečném materiálu. V každé case study aspoň dvě až tři.", en: "Supporting images show the client brand in real life." },
-        items: [
           { label: { cs: "Sky Towers: notebook na dřevěné židli" }, src: "/images/obrazovy-styl/sky-towers-notebook-zidle.webp", ratio: "4 / 3" },
           { label: { cs: "Sky Towers: tiskoviny na poličce" }, src: "/images/obrazovy-styl/sky-towers-tiskoviny.webp", ratio: "4 / 3" },
           { label: { cs: "Sky Towers: web před dřevěnými lamelami" }, src: "/images/obrazovy-styl/sky-towers-notebook-lamely.webp", ratio: "4 / 3" },
           { label: { cs: "Linstram: tablet v rukou" }, src: "/images/obrazovy-styl/linstram-tablet.webp", ratio: "4 / 3" },
+          { label: { cs: "Robotwin: notebook u okna v dílně" }, src: "/images/obrazovy-styl/robotwin-notebook.webp", ratio: "4 / 3" },
         ],
       },
       {
@@ -348,6 +360,17 @@ export const chapters: Chapter[] = [
           { label: { cs: "Long" }, w: 1360, h: 1600 },
           { label: { cs: "Half" }, w: 672, h: 840 },
           { label: { cs: "Third" }, w: 443, h: 590 },
+        ],
+      },
+      {
+        type: "rules",
+        title: { cs: "Zásady a reference", en: "Rules and references" },
+        body: { cs: "Krátký kontrolní seznam před exportem obrázků. Podrobný moodboard je ve Figmě v souboru Apadore 2026 (Case Studies)." },
+        items: [
+          { title: { cs: "Skutečný výsledek" }, body: { cs: "Hotový web, stavba nebo produkt klienta. Aktuální, ostrý obsah obrazovek." } },
+          { title: { cs: "Jeden motiv" }, body: { cs: "Jeden hlavní bod zájmu, hodně volného místa, přirozené světlo a materiál." } },
+          { title: { cs: "Barvy klienta" }, body: { cs: "Pozadí mockupů a ploch ladí s klientem, ne s Apadore." } },
+          { title: { cs: "Čemu se vyhnout" }, body: { cs: "Přehnané AI fotky, nudné mockupy zepředu na bílém pozadí, fotobanky s úsměvy do kamery, přeplácané koláže a rozmazané screenshoty." } },
         ],
       },
     ],
@@ -416,11 +439,14 @@ export const chapters: Chapter[] = [
         body: { cs: "Doprovodná grafika se používá primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
       },
       {
-        type: "previews",
-        title: { cs: "Náhledy obálek", en: "Cover previews" },
+        type: "images",
+        title: { cs: "Příklady obálek", en: "Cover examples" },
+        body: { cs: "Skutečné obálky článků z blogu Apadore ve světlé i tmavé verzi." },
         items: [
-          { kind: "blogCover", variant: "dark", label: { cs: "Obálka · tmavá" }, text: "hypotéza", accent: "zadání" },
-          { kind: "blogCover", variant: "light", label: { cs: "Obálka · světlá" }, text: "hypotéza", accent: "zadání" },
+          { label: { cs: "Zadání a hypotéza · tmavá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-tmava.webp", ratio: "3 / 2" },
+          { label: { cs: "Zadání a hypotéza · světlá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-svetla.webp", ratio: "3 / 2" },
+          { label: { cs: "Vícejazyčné weby · tmavá" }, src: "/images/doprovodna-grafika/vicejazycne-weby-tmava.webp", ratio: "3 / 2" },
+          { label: { cs: "E-E-A-T · světlá" }, src: "/images/doprovodna-grafika/eeat-svetla.webp", ratio: "3 / 2" },
         ],
       },
       {
