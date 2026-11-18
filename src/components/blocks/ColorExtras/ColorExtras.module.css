@@ -1,0 +1,62 @@
+/* ColorExtras: ratio bar and contrast pairs (inline colour values come from content data) */
+@layer components {
+  .ratio { display: grid; gap: var(--space-4); }
+
+  .bar {
+    display: flex;
+    height: 16rem;
+    overflow: hidden;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .legend { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-sm);
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
+
+  .pairs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+
+    @media (width >= 48rem) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .pairItem { display: grid; gap: var(--space-2); }
+
+  .pair {
+    display: grid;
+    align-content: space-between;
+    aspect-ratio: 4 / 3;
+    padding: var(--space-4);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .aa {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.04em;
+  }
+
+  .contrast { font-family: var(--font-mono); font-size: var(--text-3xs); }
+
+  .label { font-size: var(--text-sm); color: var(--color-text-muted); }
+}

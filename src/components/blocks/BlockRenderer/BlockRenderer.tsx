@@ -1,0 +1,87 @@
+import { Section } from "@/components/layout/Section";
+import { ColorPairs, ColorRatio } from "@/components/blocks/ColorExtras";
+import { ColorSwatches } from "@/components/blocks/ColorSwatches";
+import { DownloadList, FormatList, ImagePlaceholders, RuleList } from "@/components/blocks/ContentLists";
+import { FontSpecimen } from "@/components/blocks/FontSpecimen";
+import { GlassDemo, GradientBlock } from "@/components/blocks/GradientBlock";
+import { ClearSpace, LogoTiles } from "@/components/blocks/LogoShowcase";
+import { LogoPanel } from "@/components/blocks/LogoPanel";
+import { TypeScale } from "@/components/blocks/TypeScale";
+import { site, t } from "@/content/site";
+import type { Block, Lang } from "@/content/types";
+
+export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; id: string }) {
+  const title = "title" in block ? t(block.title, lang) : undefined;
+  const body = "body" in block ? t(block.body, lang) : undefined;
+  const callout =
+    "callout" in block && block.callout
+      ? { variant: block.callout.variant, heading: t(block.callout.title, lang) || undefined, body: t(block.callout.body, lang) }
+      : undefined;
+  const common = { id, title, body, callout };
+
+  switch (block.type) {
+    case "text":
+      return <Section {...common} layout="full" />;
+    case "logoPanel":
+      return <Section {...common}><LogoPanel lang={lang} /></Section>;
+    case "clearSpace":
+      return <Section {...common}><ClearSpace ratio={t(block.ratio, lang)} /></Section>;
+    case "logoVersions":
+      return <Section {...common}><LogoTiles items={block.items.map((i) => ({ label: t(i.label, lang), bg: i.bg, logo: i.logo }))} /></Section>;
+    case "doDont":
+      return (
+        <Section {...common}>
+          <LogoTiles items={block.items.map((i) => ({ label: t(i.label, lang), bg: "light" as const, logo: "pozitivni" as const, effect: i.effect }))} />
+        </Section>
+      );
+    case "favicons":
+      return (
+        <Section {...common}>
+          <LogoTiles
+            items={[
+              { label: "Web Apadore", bg: "dark", logo: "negativni", mark: true },
+              { label: "Apadore Brand Studio", bg: "light", logo: "pozitivni", mark: true },
+            ]}
+          />
+        </Section>
+      );
+    case "colors":
+      return <Section {...common}><ColorSwatches colors={block.colors} size={block.size} lang={lang} /></Section>;
+    case "colorRatio":
+      return <Section {...common}><ColorRatio parts={block.parts} /></Section>;
+    case "colorPairs":
+      return <Section {...common}><ColorPairs pairs={block.pairs.map((p) => ({ ...p, label: t(p.label, lang) }))} /></Section>;
+    case "font":
+      return (
+        <Section {...common}>
+          <FontSpecimen lang={lang} family={block.family} name={block.specimenName} info={block.info} download={block.download} styles={block.styles} />
+        </Section>
+      );
+    case "typeScale":
+      return <Section {...common}><TypeScale rows={block.rows} /></Section>;
+    case "gradient":
+      return (
+        <Section {...common}>
+          <GradientBlock variant={block.variant} direction={t(block.direction, lang)} stops={block.stops.map((s) => ({ ...s, label: t(s.label, lang) }))} />
+        </Section>
+      );
+    case "glass":
+      return <Section {...common}><GlassDemo specs={block.specs.map((s) => ({ label: t(s.label, lang), value: t(s.value, lang) }))} /></Section>;
+    case "rules":
+      return <Section {...common}><RuleList items={block.items.map((r) => ({ title: t(r.title, lang), body: t(r.body, lang) }))} /></Section>;
+    case "images":
+      return (
+        <Section {...common}>
+          <ImagePlaceholders note={t(site.ui.placeholder, lang)} items={block.items.map((i) => ({ ...i, label: t(i.label, lang) }))} />
+        </Section>
+      );
+    case "formats":
+      return <Section {...common}><FormatList items={block.items.map((i) => ({ ...i, label: t(i.label, lang) }))} /></Section>;
+    case "downloads":
+      return (
+        <Section {...common}>
+          <DownloadList cta={t(site.ui.download, lang)} items={block.items.map((d) => ({ title: t(d.title, lang), meta: t(d.meta, lang), href: d.href }))} />
+        </Section>
+      );
+  }
+}

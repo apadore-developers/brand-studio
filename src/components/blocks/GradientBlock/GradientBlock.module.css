@@ -1,0 +1,80 @@
+/* GradientBlock and GlassDemo. Attributes: data-variant="dark" | "light" */
+@layer components {
+  .wrap { display: grid; gap: var(--space-4); }
+
+  .preview {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    background: var(--bg-brand-dark);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+
+    &[data-variant="light"] { background: var(--bg-brand-light); }
+  }
+
+  .arrow {
+    position: absolute;
+    inset: 8% 25% 20% 6%;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), oklch(100% 0 0deg / 90%) 50%, transparent calc(50% + 1px));
+    mask: repeating-linear-gradient(135deg, black 0 10px, transparent 10px 20px);
+
+    &[data-variant="light"] { inset: 8% 6% 20% 25%; background: linear-gradient(to top left, transparent calc(50% - 1px), var(--navy-900) 50%, transparent calc(50% + 1px)); }
+  }
+
+  .direction { font-size: var(--text-sm); }
+
+  .stops { display: grid; gap: var(--space-3); }
+
+  .stop { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+
+  .dot { width: 3.2rem; height: 3.2rem; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-full); }
+
+  .meta { display: block; font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+
+  .glassGrid {
+    display: grid;
+    gap: var(--space-4);
+
+    @media (width >= 48rem) { grid-template-columns: 1fr 1fr; }
+  }
+
+  .glassStage {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 3 / 2;
+    background: var(--bg-brand-dark);
+    border-radius: var(--radius-xl);
+
+    &[data-variant="light"] { background: var(--bg-brand-light); }
+  }
+
+  .glass {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-base);
+    color: var(--grey-0);
+    background: linear-gradient(180deg, oklch(100% 0 0deg / 14%), oklch(100% 0 0deg / 6%));
+    border: 0.5px solid oklch(100% 0 0deg / 35%);
+    border-radius: var(--radius-full);
+    box-shadow: 0 14px 36px oklch(0% 0 0deg / 50%);
+    backdrop-filter: blur(24px);
+
+    &[data-variant="light"] {
+      color: var(--navy-900);
+      background: linear-gradient(180deg, oklch(100% 0 0deg / 50%), oklch(100% 0 0deg / 25%));
+      border-color: oklch(100% 0 0deg / 90%);
+      box-shadow: 0 10px 30px oklch(30% 0.08 265deg / 12%);
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  .specs {
+    display: grid;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+
+    @media (width >= 48rem) { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+
+    & dt { font-weight: var(--weight-semibold); }
+    & dd { color: var(--color-text-muted); }
+  }
+}

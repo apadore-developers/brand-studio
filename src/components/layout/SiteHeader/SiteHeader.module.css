@@ -1,0 +1,68 @@
+/* SiteHeader: dark gradient hero with logo, product name and language switch */
+@layer components {
+  .header {
+    padding-block: var(--space-6) var(--space-10);
+    color: var(--color-text);
+    background: var(--bg-brand-dark);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+  }
+
+  .logo { width: 12rem; }
+
+  .product {
+    padding-inline-start: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-3xs);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    border-inline-start: var(--border-width) solid var(--color-border-strong);
+  }
+
+  .langs { display: flex; gap: var(--space-1); }
+
+  .lang {
+    padding: var(--space-1) var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-3xs);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text-subtle);
+    border-radius: var(--radius-full);
+
+    &[aria-current="true"] { color: var(--color-text); background: var(--color-surface-muted); }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { color: var(--color-text); }
+    }
+  }
+
+  .hero { margin-block-start: var(--space-12); }
+
+  .eyebrow {
+    margin-block-end: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .title {
+    max-width: 16ch;
+    font-size: var(--text-6xl);
+    line-height: 1;
+  }
+}

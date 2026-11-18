@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+*.module.css.d.ts
+.figma-cache/
+screenshots/
+feedback/

@@ -1,0 +1,15 @@
+/*
+ * Logo
+ * Attributes: data-variant="pozitivni" | "negativni"
+ */
+@layer components {
+  .logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: currentcolor;
+
+    &[data-variant="pozitivni"] { fill: var(--navy-900); }
+    &[data-variant="negativni"] { fill: var(--grey-0); }
+  }
+}

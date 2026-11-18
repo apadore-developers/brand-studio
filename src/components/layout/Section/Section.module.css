@@ -1,0 +1,29 @@
+/*
+ * Section
+ * Attributes: data-layout="full"
+ */
+@layer components {
+  .section {
+    display: grid;
+    gap: var(--space-6);
+    padding-block: var(--space-section-sm);
+    border-block-start: var(--border-width) solid var(--color-border);
+
+    @media (width >= 64rem) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: var(--space-10);
+    }
+
+    &[data-layout="full"] { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  .text { display: grid; align-content: start; gap: var(--space-4); }
+
+  .title { font-size: var(--text-3xl); }
+
+  .body { max-width: var(--measure-narrow); color: var(--color-text-muted); }
+
+  .callout { margin-block-start: var(--space-2); }
+
+  .content { min-width: 0; }
+}

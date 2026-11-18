@@ -1,0 +1,72 @@
+/*
+ * FontSpecimen
+ * Attributes: data-family="heading" | "body" | "mono"
+ */
+@layer components {
+  .card {
+    --specimen-font: var(--font-body);
+
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    &[data-family="heading"] { --specimen-font: var(--font-heading); }
+    &[data-family="mono"] { --specimen-font: var(--font-mono); }
+  }
+
+  .hero { display: grid; gap: var(--space-3); padding: var(--space-6); font-family: var(--specimen-font); }
+
+  .aa { font-size: 16rem; line-height: 1; letter-spacing: -0.04em; font-weight: var(--weight-semibold); }
+
+  .name { font-size: var(--text-2xl); }
+
+  .alphabet { white-space: pre-line; font-size: var(--text-base); color: var(--color-text-muted); }
+
+  .acc { border-block-start: var(--border-width) solid var(--color-border); }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    text-align: start;
+    background: var(--color-surface-subtle);
+    border-block-start: var(--border-width) solid var(--color-border);
+  }
+
+  .acc > .row { border-block-start: none; }
+
+  .toggle { font-family: var(--font-mono); font-size: var(--text-3xs); text-transform: uppercase; color: var(--color-text-muted); }
+
+  .panel { padding: var(--space-5) var(--space-6); }
+
+  .styles { display: grid; gap: var(--space-3); }
+
+  .style { display: flex; justify-content: space-between; gap: var(--space-4); }
+
+  .styleSample { font-family: var(--specimen-font); font-size: var(--text-2xl); }
+
+  .styleUse, .infoRow dt { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+  .info { display: grid; gap: var(--space-2); }
+
+  .infoRow { display: grid; grid-template-columns: 12rem 1fr; gap: var(--space-4); }
+
+  .tester { display: grid; gap: var(--space-3); }
+
+  .testerControls { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); }
+
+  .testerInput {
+    width: 100%;
+    font-family: var(--specimen-font);
+    line-height: 1.1;
+    resize: vertical;
+    background: transparent;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+  }
+}

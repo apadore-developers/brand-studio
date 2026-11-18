@@ -1,0 +1,76 @@
+/* ContentLists: rules, image placeholders, formats, downloads */
+@layer components {
+  .rules { display: grid; }
+
+  .rule {
+    display: grid;
+    gap: var(--space-2);
+    padding-block: var(--space-5);
+    border-block-start: var(--border-width) solid var(--color-border);
+
+    @media (width >= 48rem) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); }
+  }
+
+  .ruleTitle { font-size: var(--text-xl); }
+
+  .ruleBody { color: var(--color-text-muted); }
+
+  .images {
+    display: grid;
+    gap: var(--space-4);
+
+    @media (width >= 48rem) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .imageItem { display: grid; gap: var(--space-2); }
+
+  .placeholder {
+    display: grid;
+    place-content: center;
+    gap: var(--space-1);
+    padding: var(--space-5);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    background: var(--color-surface-subtle);
+    border: var(--border-width) dashed var(--color-border-strong);
+    border-radius: var(--radius-lg);
+  }
+
+  .source { font-family: var(--font-mono); font-size: var(--text-3xs); }
+
+  .caption { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  .formats { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-6); }
+
+  .format { display: grid; gap: var(--space-1); }
+
+  .formatBox {
+    display: block;
+    margin-block-end: var(--space-2);
+    background: var(--color-surface-subtle);
+    border: var(--border-width) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+  }
+
+  .formatLabel { font-size: var(--text-sm); }
+
+  .formatSize { font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+
+  .downloads { display: grid; gap: var(--space-3); }
+
+  .download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .downloadTitle { display: block; font-size: var(--text-lg); }
+
+  .downloadMeta { font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+}

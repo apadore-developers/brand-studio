@@ -1,0 +1,27 @@
+/* TypeScale. Attributes: data-family on sample */
+@layer components {
+  .scale { display: grid; }
+
+  .head, .label, .value { font-family: var(--font-mono); font-size: var(--text-3xs); text-transform: uppercase; color: var(--color-text-subtle); }
+
+  .head { justify-self: end; padding-block-end: var(--space-3); }
+
+  .row {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding-block: var(--space-3);
+    border-block-start: var(--border-width) solid var(--color-border);
+  }
+
+  .sample {
+    overflow: hidden;
+    line-height: 1.1;
+    white-space: nowrap;
+    font-family: var(--font-body);
+
+    &[data-family="heading"] { font-family: var(--font-heading); font-weight: var(--weight-semibold); }
+    &[data-family="mono"] { font-family: var(--font-mono); text-transform: uppercase; }
+  }
+}

@@ -1,0 +1,63 @@
+/* LogoPanel. Attributes: data-bg="dark" | "light" on tab and preview */
+@layer components {
+  .panel {
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .tab {
+    padding: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-3xs);
+    text-transform: uppercase;
+    color: var(--grey-0);
+    background: var(--navy-900);
+
+    &[data-bg="light"] { color: var(--navy-900); background: var(--grey-50); }
+    &[aria-selected="false"] { opacity: 0.55; }
+  }
+
+  .preview {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 8;
+    background: var(--bg-brand-dark);
+
+    &[data-bg="light"] { background: var(--grey-0); }
+  }
+
+  .logo { width: 55%; }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    border-block-start: var(--border-width) solid var(--color-border);
+  }
+
+  .rowTitle, .controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+
+  .field {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+
+    & input[type="range"] { accent-color: var(--navy-900); }
+  }
+
+  .input {
+    width: 8rem;
+    padding: var(--space-1) var(--space-2);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+}

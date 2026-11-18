@@ -1,0 +1,17 @@
+/* Chip: small mono label */
+@layer components {
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 0.3rem var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-3xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: var(--color-surface-subtle);
+    border-radius: var(--radius-full);
+  }
+}

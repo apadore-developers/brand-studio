@@ -1,0 +1,90 @@
+/*
+ * LogoShowcase
+ * Attributes: data-bg on tile, data-effect for misuse examples
+ */
+@layer components {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+
+    &[data-count="many"] {
+      @media (width >= 48rem) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  }
+
+  .item { display: grid; gap: var(--space-2); }
+
+  .tile {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--grey-50);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    &[data-bg="dark"] { background: var(--navy-900); }
+    &[data-bg="gradientDark"] { background: var(--bg-brand-dark); }
+    &[data-bg="gradientLight"] { background: var(--bg-brand-light); }
+    &[data-bg="white"] { background: var(--grey-0); }
+  }
+
+  .logo { width: 60%; }
+  .mark { width: 30%; }
+
+  .tile[data-effect="stretch"] .logo { transform: scale(1.25, 0.7); }
+  .tile[data-effect="rotate"] .logo { transform: rotate(-18deg); }
+  .tile[data-effect="recolor"] .logo { fill: var(--gradient-blue); }
+
+  .tile[data-effect="outline"] .logo {
+    fill: none;
+    stroke: var(--navy-900);
+    stroke-width: 4;
+  }
+
+  .tile[data-effect="shadow"] .logo { filter: drop-shadow(6px 8px 6px oklch(0% 0 0deg / 45%)); }
+  .tile[data-effect="lowContrast"] { background: var(--navy-400); }
+  .tile[data-effect="lowContrast"] .logo { fill: var(--navy-600); }
+
+  .cross {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), var(--navy-600) 50%, transparent calc(50% + 1px));
+    pointer-events: none;
+  }
+
+  .label { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  .clear {
+    display: grid;
+    place-items: center;
+    padding: var(--space-9) var(--space-5);
+    background: repeating-linear-gradient(45deg, var(--grey-50) 0 6px, var(--grey-0) 6px 12px);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  .zone {
+    position: relative;
+    width: min(100%, 48rem);
+    padding: 3.2rem;
+    background: var(--grey-0);
+    outline: var(--border-width) dashed var(--navy-400);
+  }
+
+  .zoneLabel {
+    position: absolute;
+    inset: 0 auto auto 0;
+    translate: 0 -100%;
+    padding: 0.2rem var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-3xs);
+    text-transform: uppercase;
+    color: var(--grey-0);
+    background: var(--navy-600);
+  }
+
+  .zoneLogo { width: 100%; }
+}

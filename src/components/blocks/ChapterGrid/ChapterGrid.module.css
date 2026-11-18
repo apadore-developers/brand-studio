@@ -1,0 +1,93 @@
+/* ChapterGrid: home page grid of chapter cards */
+@layer components {
+  .grid {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-section-sm);
+
+    @media (width >= 40rem) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    @media (width >= 64rem) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .card {
+    display: grid;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-colors);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { border-color: var(--color-border-strong); }
+    }
+  }
+
+  .cover {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    color: var(--color-text);
+    background: var(--color-surface-subtle);
+
+    &[data-theme="dark"] { background: var(--bg-brand-dark); }
+  }
+
+  .coverLogo { width: 55%; }
+  .coverMark { width: 18%; }
+
+  .coverType {
+    font-family: var(--font-heading);
+    font-size: 9.6rem;
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.04em;
+  }
+
+  .coverColors {
+    display: flex;
+    width: 70%;
+    height: 45%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: var(--border-width) solid var(--color-border);
+
+    & span { flex: 1; }
+    & [data-c="navy"] { flex: 2; background: var(--navy-900); }
+    & [data-c="white"] { flex: 2; background: var(--grey-0); }
+    & [data-c="grey"] { background: var(--grey-100); }
+  }
+
+  .coverGlass {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-lg);
+    background: linear-gradient(180deg, oklch(100% 0 0deg / 14%), oklch(100% 0 0deg / 6%));
+    border: var(--border-width) solid oklch(100% 0 0deg / 20%);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(24px);
+  }
+
+  .coverImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+    width: 60%;
+    height: 70%;
+
+    & span { background: var(--grey-100); border-radius: var(--radius-sm); }
+  }
+
+  .coverQuote {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-semibold);
+  }
+
+  .meta { display: grid; gap: var(--space-2); padding: var(--space-5); }
+
+  .title { font-size: var(--text-xl); }
+
+  .desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+}

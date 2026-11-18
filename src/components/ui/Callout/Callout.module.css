@@ -1,0 +1,22 @@
+/*
+ * Callout
+ * Attributes: data-variant="warning"
+ */
+@layer components {
+  .callout {
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    background: var(--color-surface-subtle);
+    border-radius: var(--radius-lg);
+
+    &[data-variant="warning"] { background: var(--color-surface-muted); }
+  }
+
+  .heading {
+    margin-block-end: var(--space-1);
+    font-weight: var(--weight-semibold);
+  }
+
+  .body { color: var(--color-text-muted); }
+}
