@@ -38,6 +38,8 @@ export type Chapter = {
   slug: string;
   title: L;
   description: L;
+  /** Longer text for the list view on the home page. */
+  summary?: L;
   cover: "logo" | "colors" | "type" | "gradient" | "images" | "social" | "blog" | "resources" | "intro";
   blocks: Block[];
 };

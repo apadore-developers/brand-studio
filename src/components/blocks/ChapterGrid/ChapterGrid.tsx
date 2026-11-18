@@ -65,7 +65,7 @@ export function ChapterGrid({ chapters, lang }: { chapters: Chapter[]; lang: Lan
     <div className={s.wrap}>
       <div className={s.toolbar}>
         <span className={s.count}>
-          {lang === "en" ? "All chapters" : "Všechny kapitoly"} ({chapters.length})
+          {lang === "en" ? "All chapters of the brand guidelines" : "Všechny kapitoly brand manuálu"} ({chapters.length})
         </span>
         <div className={s.switch} role="group" aria-label={lang === "en" ? "View" : "Zobrazení"}>
           <button type="button" className={s.switchBtn} aria-pressed={view === "grid"} onClick={() => choose("grid")} aria-label={lang === "en" ? "Grid" : "Mřížka"}>
@@ -87,6 +87,7 @@ export function ChapterGrid({ chapters, lang }: { chapters: Chapter[]; lang: Lan
             <div className={s.meta}>
               <h2 className={s.title}>{t(c.title, lang)}</h2>
               <p className={s.desc}>{t(c.description, lang)}</p>
+              {c.summary && <p className={s.summary}>{t(c.summary, lang)}</p>}
             </div>
           </Link>
         </li>

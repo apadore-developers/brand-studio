@@ -12,7 +12,9 @@
     border-block-end: var(--border-width) solid var(--color-border);
   }
 
-  .count { font-size: var(--text-base); color: var(--color-text-subtle); }
+  .count { font-size: 1.6rem; color: var(--color-text-subtle); }
+
+  .summary { display: none; }
 
   .switch {
     display: flex;
@@ -172,6 +174,8 @@
     @media (width >= 48rem) { grid-template-columns: 28rem 6rem minmax(0, 1fr); }
   }
 
+  .grid[data-view="list"] > :last-child > * { border-block-end: none; }
+
   .grid[data-view="list"] .cover {
     border-radius: var(--radius-xs);
     overflow: hidden;
@@ -183,7 +187,15 @@
 
   .grid[data-view="list"] .title { font-size: var(--text-3xl); }
 
-  .grid[data-view="list"] .desc { max-width: var(--measure-narrow); font-size: var(--text-base); }
+  .grid[data-view="list"] .desc { display: none; }
+
+  .grid[data-view="list"] .summary {
+    display: block;
+    max-width: var(--measure);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
 
   .grid[data-view="list"] .coverLogo,
   .grid[data-view="list"] .coverType,

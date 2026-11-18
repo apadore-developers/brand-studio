@@ -10,6 +10,7 @@ export const chapters: Chapter[] = [
     cover: "intro",
     title: { cs: "Úvod", en: "Introduction" },
     description: { cs: "Co je značka Apadore a jak s manuálem pracovat.", en: "What the Apadore brand is and how to use these guidelines." },
+    summary: { cs: "Kdo je Apadore, na čem značka stojí a jak s manuálem pracovat. Tmavá navy a bílá, tři písma, jemné přechody a tón komunikace, který dává přednost klientovi." },
     blocks: [
       {
         type: "text",
@@ -27,6 +28,7 @@ export const chapters: Chapter[] = [
     cover: "logo",
     title: { cs: "Logo", en: "Logo" },
     description: { cs: "Stáhněte si správnou verzi loga a dodržte ochrannou zónu.", en: "Download the right logo version and keep the clear space." },
+    summary: { cs: "Hlavní slovní značka, ochranná zóna, minimální velikost, barevné verze a nepovolené použití. Logo si tu stáhnete jako SVG nebo PNG v libovolné šířce a najdete i favicon." },
     blocks: [
       {
         type: "logoPanel",
@@ -85,6 +87,7 @@ export const chapters: Chapter[] = [
     cover: "colors",
     title: { cs: "Barvy", en: "Colours" },
     description: { cs: "Navy a bílá jako hlavní dvojice, šedé jen doplňují.", en: "Navy and white as the core pair, greys support." },
+    summary: { cs: "Hlavní dvojice navy a bílá, navy odstíny, neutrální šedé a barvy přechodů. Hodnoty HEX a RGB zkopírujete kliknutím, k tomu poměr barev a kontrastní kombinace." },
     blocks: [
       {
         type: "colors",
@@ -180,6 +183,7 @@ export const chapters: Chapter[] = [
     cover: "type",
     title: { cs: "Typografie", en: "Typography" },
     description: { cs: "Booton pro nadpisy, Geist pro text, IBM Plex Mono pro štítky.", en: "Booton for headings, Geist for text, IBM Plex Mono for labels." },
+    summary: { cs: "Booton pro nadpisy, Geist pro text a IBM Plex Mono pro štítky. Výrobci, licence a odkazy ke stažení, škála velikostí s řádkováním a prostrkáním a zkouška vlastního textu." },
     blocks: [
       {
         type: "font",
@@ -248,6 +252,7 @@ export const chapters: Chapter[] = [
     cover: "gradient",
     title: { cs: "Přechody", en: "Gradients" },
     description: { cs: "Primární tmavý přechod, doplňkový světlý a skleněné prvky.", en: "Primary dark gradient, supplementary light one and glass elements." },
+    summary: { cs: "Primární tmavý přechod, doplňkový světlý, jejich směr a přesné body. Pravidla tvorby a skleněné prvky, které na přechodech nesou jedno až tři slova." },
     blocks: [
       {
         type: "gradient",
@@ -300,6 +305,7 @@ export const chapters: Chapter[] = [
     cover: "images",
     title: { cs: "Obrazový styl", en: "Imagery" },
     description: { cs: "Case studies: wow první fotka, detaily rozhraní a imageovky.", en: "Case studies: a striking first image, UI details and mood images." },
+    summary: { cs: "Jak skládat obrázky do case studies: první fotka s wow efektem, detaily rozhraní na ploše v barvě klienta a imageové fotky. Formáty médií pro web." },
     blocks: [
       {
         type: "images",
@@ -350,6 +356,7 @@ export const chapters: Chapter[] = [
     cover: "social",
     title: { cs: "Sociální sítě", en: "Social media" },
     description: { cs: "Šablony příspěvků na LinkedIn: Myšlenka a Fotka s citátem.", en: "LinkedIn post templates: Thought and Photo with quote." },
+    summary: { cs: "Šablony příspěvků na LinkedIn: Myšlenka s citátem a Fotka s citátem, banner, profilová fotka a Clutch. Pravidla, české uvozovky a skill pro Clauda ke stažení." },
     blocks: [
       {
         type: "previews",
@@ -399,6 +406,7 @@ export const chapters: Chapter[] = [
     cover: "blog",
     title: { cs: "Obálky blogu", en: "Blog covers" },
     description: { cs: "Obálky článků 1200 × 800 ve světlé i tmavé verzi.", en: "Article covers 1200 × 800 in light and dark." },
+    summary: { cs: "Obálky článků 1200 × 800 ve světlé i tmavé verzi: princip, varianty skleněných prvků a pravidla. Jediné místo, kde se objevuje červená tečka." },
     blocks: [
       {
         type: "text",
@@ -431,6 +439,7 @@ export const chapters: Chapter[] = [
     cover: "resources",
     title: { cs: "Zdroje", en: "Resources" },
     description: { cs: "Soubory ke stažení: logo, favicon, písma, šablony.", en: "Downloads: logo, favicon, fonts, templates." },
+    summary: { cs: "Všechny soubory ke stažení na jednom místě: logo v obou barvách, favicony, odkazy na písma a šablony ve Figmě." },
     blocks: [
       {
         type: "downloads",
