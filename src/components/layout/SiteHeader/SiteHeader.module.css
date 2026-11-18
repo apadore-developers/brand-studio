@@ -20,6 +20,8 @@
     text-decoration: none;
   }
 
+  .logoLink { display: block; }
+
   .logo { width: 12rem; }
 
   .divider {
@@ -29,6 +31,7 @@
   }
 
   .product {
+    text-decoration: none;
     font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     font-size: var(--text-label-s);
@@ -64,6 +67,7 @@
   }
 
   .eyebrow {
+    text-decoration: none;
     margin-block-end: var(--space-3);
     font-family: var(--font-mono);
     font-weight: var(--weight-medium);
@@ -77,5 +81,9 @@
     max-width: 18ch;
     font-size: var(--text-6xl);
     line-height: 1;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a.eyebrow:hover, a.product:hover { color: var(--color-text); }
   }
 }

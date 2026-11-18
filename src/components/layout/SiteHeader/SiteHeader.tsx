@@ -5,18 +5,22 @@ import type { Lang } from "@/content/types";
 import { urls } from "@/lib/urls";
 import s from "./SiteHeader.module.css";
 
-type Props = { lang: Lang; title: string; eyebrow?: string; path?: string };
+type Props = { lang: Lang; title: string; eyebrow?: string; eyebrowHref?: string; path?: string };
 
-export function SiteHeader({ lang, title, eyebrow, path = "" }: Props) {
+export function SiteHeader({ lang, title, eyebrow, eyebrowHref, path = "" }: Props) {
   return (
     <header className={s.header} data-theme="dark">
       <div className="container">
         <div className={s.bar}>
-          <Link href={urls.home(lang)} className={s.brand} aria-label={site.name}>
-            <Logo className={s.logo} />
+          <div className={s.brand}>
+            <a href={site.brandUrl} className={s.logoLink} aria-label="Apadore (web)">
+              <Logo className={s.logo} />
+            </a>
             <span className={s.divider} aria-hidden="true" />
-            <span className={s.product}>Brand Studio</span>
-          </Link>
+            <Link href={urls.home(lang)} className={s.product}>
+              Brand Studio
+            </Link>
+          </div>
           <nav className={s.langs} aria-label="Jazyk / Language">
             {site.languages.map((l) => (
               <Link key={l} href={`/${l}${path}`} className={s.lang} aria-current={l === lang ? "true" : undefined}>
@@ -26,7 +30,14 @@ export function SiteHeader({ lang, title, eyebrow, path = "" }: Props) {
           </nav>
         </div>
         <div className={s.hero}>
-          {eyebrow && <p className={s.eyebrow}>{eyebrow}</p>}
+          {eyebrow &&
+            (eyebrowHref ? (
+              <Link href={eyebrowHref} className={s.eyebrow}>
+                ← {eyebrow}
+              </Link>
+            ) : (
+              <p className={s.eyebrow}>{eyebrow}</p>
+            ))}
           <h1 className={s.title}>{title}</h1>
         </div>
       </div>

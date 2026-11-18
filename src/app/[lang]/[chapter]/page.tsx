@@ -29,7 +29,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
   if (!c) notFound();
   return (
     <>
-      <SiteHeader lang={lang} eyebrow={t(site.ui.manual, lang)} title={t(c.title, lang)} path={`/${c.slug}`} />
+      <SiteHeader lang={lang} eyebrow={t(site.ui.manual, lang)} eyebrowHref={urls.home(lang)} title={t(c.title, lang)} path={`/${c.slug}`} />
       <main className="container">
         <Breadcrumb items={[{ label: t(site.ui.home, lang), href: urls.home(lang) }, { label: t(c.title, lang) }]} />
         {lang === "en" && <Callout>{t(site.ui.enPending, lang)}</Callout>}

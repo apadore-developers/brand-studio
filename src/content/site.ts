@@ -3,6 +3,7 @@ import type { L, Lang } from "./types";
 export const site = {
   name: "Apadore Brand Studio",
   brand: "Apadore",
+  brandUrl: "https://www.apadore.cz",
   description: {
     cs: "Online brand manuál značky Apadore: logo, barvy, písmo, přechody, obrazový styl a šablony.",
     en: "Apadore online brand guidelines: logo, colours, typography, gradients, imagery and templates.",
