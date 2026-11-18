@@ -2,7 +2,7 @@ import { Logo } from "@/components/ui/Logo";
 import s from "./OutputPreviews.module.css";
 
 export type Preview = {
-  kind: "thought" | "blogCover" | "photoQuote";
+  kind: "thought" | "blogCover" | "photoQuote" | "image";
   variant: "dark" | "light";
   label: string;
   text: string;
@@ -20,7 +20,10 @@ export function OutputPreviews({ items }: { items: Preview[] }) {
       {items.map((p) => (
         <li key={p.label} className={s.item}>
           <div className={s.frame} data-kind={p.kind} data-variant={p.variant}>
-            {p.kind === "thought" ? (
+            {p.kind === "image" ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={p.photo} alt={p.label} className={s.photo} />
+            ) : p.kind === "thought" ? (
               <>
                 <div className={s.top}>
                   <span className={s.author}>

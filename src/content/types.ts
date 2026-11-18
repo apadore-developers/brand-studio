@@ -22,7 +22,7 @@ export type Block =
   | { type: "favicons"; title: L; body: L }
   | { type: "colors"; title: L; body: L; size: "lg" | "md" | "sm"; colors: Color[] }
   | { type: "gradientPalette"; title: L; body: L; items: { name: L; variant: "dark" | "light"; role: L; stops: { name: string; hex: string; alpha: number; position: number }[] }[] }
-  | { type: "previews"; title: L; body?: L; items: { kind: "thought" | "blogCover" | "photoQuote"; variant: "dark" | "light"; label: L; text: string; author?: string; link?: string; accent?: string; avatar?: string; photo?: string }[] }
+  | { type: "previews"; title: L; body?: L; items: { kind: "thought" | "blogCover" | "photoQuote" | "image"; variant: "dark" | "light"; label: L; text: string; author?: string; link?: string; accent?: string; avatar?: string; photo?: string }[] }
   | { type: "colorRatio"; title: L; body: L; parts: { name: string; hex: string; percent: number }[] }
   | { type: "colorPairs"; title: L; body: L; pairs: { label: L; bg: string; fg: string }[] }
   | { type: "font"; title: L; body: L; family: "heading" | "body" | "mono"; specimenName: string; info: { label: L; value: string }[]; download?: { label: L; href: string }; styles: { name: string; weight: number; use: L }[] }

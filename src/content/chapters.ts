@@ -366,7 +366,7 @@ export const chapters: Chapter[] = [
         items: [
           { kind: "thought", variant: "dark", label: { cs: "Myšlenka · tmavá (primární)" }, text: "„Web není jednorázový projekt.“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
           { kind: "thought", variant: "light", label: { cs: "Myšlenka · světlá (doplňková)" }, text: "„Přerostli jste svůj web?“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
-          { kind: "photoQuote", variant: "dark", label: { cs: "Fotka s citátem" }, text: "„Nemuseli jsme dělat projektového manažera.“", photo: "/images/autori/mikolas-voborsky-foto.webp" },
+          { kind: "image", variant: "dark", label: { cs: "Fotka s citátem" }, text: "", photo: "/images/autori/fotka-s-citatem.webp" },
         ],
       },
       {
