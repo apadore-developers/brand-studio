@@ -2,7 +2,9 @@
 @layer components {
   .scale { display: grid; }
 
-  .head, .label, .value { font-family: var(--font-mono); font-size: var(--text-3xs); text-transform: uppercase; color: var(--color-text-subtle); }
+  .head, .label, .value { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); text-transform: uppercase; color: var(--color-text-subtle); }
 
   .head { justify-self: end; padding-block-end: var(--space-3); }
 
@@ -22,6 +24,9 @@
     font-family: var(--font-body);
 
     &[data-family="heading"] { font-family: var(--font-heading); font-weight: var(--weight-semibold); }
-    &[data-family="mono"] { font-family: var(--font-mono); text-transform: uppercase; }
+
+    &[data-family="mono"] { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); text-transform: uppercase; }
   }
 }

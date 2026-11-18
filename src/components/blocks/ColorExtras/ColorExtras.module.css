@@ -56,7 +56,9 @@
     letter-spacing: -0.04em;
   }
 
-  .contrast { font-family: var(--font-mono); font-size: var(--text-3xs); }
+  .contrast { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); }
 
   .label { font-size: var(--text-sm); color: var(--color-text-muted); }
 
@@ -66,7 +68,9 @@
 
   .paletteHead { display: flex; align-items: baseline; gap: var(--space-3); font-size: var(--text-lg); }
 
-  .role { font-family: var(--font-mono); font-size: var(--text-3xs); text-transform: uppercase; color: var(--color-text-subtle); }
+  .role { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); text-transform: uppercase; color: var(--color-text-subtle); }
 
   .preview {
     height: 12rem;
@@ -97,5 +101,7 @@
 
   .stopName { font-size: var(--text-sm); font-weight: var(--weight-semibold); }
 
-  .stopValue { font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+  .stopValue { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
 }

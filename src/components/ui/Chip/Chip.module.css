@@ -6,7 +6,7 @@
     gap: var(--space-1);
     padding: 0.3rem var(--space-2);
     font-family: var(--font-mono);
-    font-size: var(--text-3xs);
+    font-size: var(--text-label-s);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;

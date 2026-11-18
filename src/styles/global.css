@@ -181,7 +181,9 @@
     --tracking-normal:  0;
     --tracking-wide:    0.02em;
     --tracking-widest:  0.08em;
-    --tracking-label:   0.01em;
+    --tracking-label:   0.01em; /* Figma: Text/Label, Label S = 1 % */
+    --text-label:   1.4rem; /* Figma: Text/Label 14 / 16 */
+    --text-label-s: 1.2rem; /* Figma: Text/Label S 12 / 14 */
     --weight-regular:  400;
     --weight-medium:   500;
     --weight-semibold: 600;

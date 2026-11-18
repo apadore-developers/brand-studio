@@ -39,7 +39,9 @@
 
   .acc > .row { border-block-start: none; }
 
-  .toggle { font-family: var(--font-mono); font-size: var(--text-3xs); text-transform: uppercase; color: var(--color-text-muted); }
+  .toggle { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); text-transform: uppercase; color: var(--color-text-muted); }
 
   .panel { padding: var(--space-5) var(--space-6); }
 

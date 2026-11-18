@@ -37,7 +37,9 @@
     border-radius: var(--radius-xs);
   }
 
-  .source { font-family: var(--font-mono); font-size: var(--text-3xs); }
+  .source { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); }
 
   .caption { font-size: var(--text-sm); color: var(--color-text-muted); }
 
@@ -55,7 +57,9 @@
 
   .formatLabel { font-size: var(--text-sm); }
 
-  .formatSize { font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+  .formatSize { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
 
   .downloads { display: grid; gap: var(--space-3); }
 
@@ -72,5 +76,7 @@
 
   .downloadTitle { display: block; font-size: var(--text-lg); }
 
-  .downloadMeta { font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+  .downloadMeta { font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
 }

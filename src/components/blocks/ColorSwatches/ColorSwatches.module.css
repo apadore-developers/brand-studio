@@ -52,5 +52,7 @@
 
   .use { font-size: var(--text-xs); opacity: 0.75; }
 
-  .value { margin-block-start: auto; font-family: var(--font-mono); font-size: var(--text-3xs); }
+  .value { margin-block-start: auto; font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); }
 }

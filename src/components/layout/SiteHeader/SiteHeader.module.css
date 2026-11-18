@@ -30,7 +30,8 @@
 
   .product {
     font-family: var(--font-mono);
-    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-label-s);
     line-height: 1;
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
@@ -65,7 +66,9 @@
   .eyebrow {
     margin-block-end: var(--space-3);
     font-family: var(--font-mono);
-    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    font-size: var(--text-label-s);
     text-transform: uppercase;
     color: var(--color-text-muted);
   }

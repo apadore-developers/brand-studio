@@ -29,7 +29,9 @@
 
   .dot { width: 3.2rem; height: 3.2rem; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-full); }
 
-  .meta { display: block; font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-text-subtle); }
+  .meta { display: block; font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
 
   .glassGrid {
     display: grid;
