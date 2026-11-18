@@ -362,10 +362,11 @@ export const chapters: Chapter[] = [
       {
         type: "previews",
         title: { cs: "Náhledy příspěvků", en: "Post previews" },
-        body: { cs: "Šablona Myšlenka v tmavé (primární) a světlé (doplňkové) verzi. Šablona Fotka s citátem je ve Figmě.", en: "Thought template, dark and light." },
+        body: { cs: "Šablona Myšlenka v tmavé (primární) a světlé (doplňkové) verzi a Fotka s citátem. Autor příspěvků je Mikoláš Voborský.", en: "Thought template, dark and light." },
         items: [
-          { kind: "thought", variant: "dark", label: { cs: "Myšlenka · tmavá (primární)" }, text: "„Web není jednorázový projekt.“", author: "Mikoláš Voborský", link: "Přečtěte si v příspěvku" },
-          { kind: "thought", variant: "light", label: { cs: "Myšlenka · světlá (doplňková)" }, text: "„Přerostli jste svůj web?“", author: "Mikoláš Voborský", link: "Přečtěte si v příspěvku" },
+          { kind: "thought", variant: "dark", label: { cs: "Myšlenka · tmavá (primární)" }, text: "„Web není jednorázový projekt.“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
+          { kind: "thought", variant: "light", label: { cs: "Myšlenka · světlá (doplňková)" }, text: "„Přerostli jste svůj web?“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
+          { kind: "photoQuote", variant: "dark", label: { cs: "Fotka s citátem" }, text: "„Nemuseli jsme dělat projektového manažera.“", photo: "/images/autori/mikolas-voborsky-foto.webp" },
         ],
       },
       {
@@ -403,16 +404,16 @@ export const chapters: Chapter[] = [
     ],
   },
   {
-    slug: "obalky-blogu",
+    slug: "doprovodna-grafika",
     cover: "blog",
-    title: { cs: "Obálky blogu", en: "Blog covers" },
-    description: { cs: "Obálky článků 1200 × 800 ve světlé i tmavé verzi.", en: "Article covers 1200 × 800 in light and dark." },
-    summary: { cs: "Obálky článků 1200 × 800 ve světlé i tmavé verzi: princip, varianty skleněných prvků a pravidla. Jediné místo, kde se objevuje červená tečka." },
+    title: { cs: "Doprovodná grafika", en: "Supporting graphics" },
+    description: { cs: "Grafika se skleněnými prvky, primárně pro obálky článků na blogu.", en: "Glass element graphics, primarily for blog article covers." },
+    summary: { cs: "Doprovodná grafika se skleněnými prvky na přechodu. Používá se primárně jako obálky článků na blogu (1200 × 800, světlá i tmavá verze). Princip, varianty skleněných prvků a pravidla." },
     blocks: [
       {
         type: "text",
-        title: { cs: "Princip obálky", en: "Cover principle" },
-        body: { cs: "Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
+        title: { cs: "Princip", en: "Principle" },
+        body: { cs: "Doprovodná grafika se používá primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
       },
       {
         type: "previews",
@@ -424,12 +425,12 @@ export const chapters: Chapter[] = [
       },
       {
         type: "rules",
-        title: { cs: "Pravidla obálek", en: "Cover rules" },
+        title: { cs: "Pravidla", en: "Rules" },
         items: [
           { title: { cs: "Vždy obě verze" }, body: { cs: "Ke každému článku tmavá i světlá obálka. Na webu se střídají." } },
           { title: { cs: "Jeden motiv" }, body: { cs: "Jeden skleněný prvek uprostřed. Žádné fotky ani nadpis článku." } },
           { title: { cs: "Slovo, ne věta" }, body: { cs: "Text ve skle má jedno až tři slova." } },
-          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent obálek. Mimo obálky blogu se nepoužívá." } },
+          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent doprovodné grafiky (obálek blogu). Jinde se v brandu nepoužívá." } },
           { title: { cs: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové obálky jsou ve Figmě na stránce Blog [Covers]." } },
         ],
       },

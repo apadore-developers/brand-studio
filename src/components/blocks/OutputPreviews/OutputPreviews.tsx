@@ -2,13 +2,15 @@ import { Logo } from "@/components/ui/Logo";
 import s from "./OutputPreviews.module.css";
 
 export type Preview = {
-  kind: "thought" | "blogCover";
+  kind: "thought" | "blogCover" | "photoQuote";
   variant: "dark" | "light";
   label: string;
   text: string;
   author?: string;
   link?: string;
   accent?: string;
+  avatar?: string;
+  photo?: string;
 };
 
 /** Live previews of brand outputs (post templates, blog covers) rendered from brand tokens. */
@@ -22,13 +24,21 @@ export function OutputPreviews({ items }: { items: Preview[] }) {
               <>
                 <div className={s.top}>
                   <span className={s.author}>
-                    <span className={s.avatar} aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    {p.avatar ? <img src={p.avatar} alt="" className={s.avatar} /> : <span className={s.avatar} aria-hidden="true" />}
                     {p.author}
                   </span>
                   <span>{p.link} ↗</span>
                 </div>
                 <p className={s.quote}>{p.text}</p>
                 <Logo variant={p.variant === "dark" ? "negativni" : "pozitivni"} className={s.logo} />
+              </>
+            ) : p.kind === "photoQuote" ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.photo} alt="" className={s.photo} />
+                <p className={s.box}>{p.text}</p>
+                <Logo variant="negativni" className={s.logoPhoto} />
               </>
             ) : (
               <span className={s.glass} data-variant={p.variant}>
