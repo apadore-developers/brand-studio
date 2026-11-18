@@ -74,7 +74,7 @@ export const chapters: Chapter[] = [
         type: "favicons",
         title: { cs: "Favicon", en: "Favicon" },
         body: {
-          cs: "Pro ikonu webu a malé čtvercové formáty používáme jen písmeno A z loga. Web Apadore: bílé A na navy. Apadore Brand Studio: inverzně, navy A na světlém pozadí.",
+          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech (16 až 64 px). Web Apadore: bílé A na tmavém přechodu. Apadore Brand Studio: inverzně, navy A na světlém přechodu. Oba přechody mají stejný směr. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore.",
           en: "For the website icon and small square formats we use only the letter A from the logo. Apadore website: white A on navy. Apadore Brand Studio: inverted, navy A on light.",
         },
       },
@@ -391,8 +391,8 @@ export const chapters: Chapter[] = [
         items: [
           { title: { cs: "Logo, pozitivní (navy)" }, meta: { cs: "apadore-logo-pozitivni.svg" }, href: "/brand/apadore-logo-pozitivni.svg" },
           { title: { cs: "Logo, negativní (bílé)" }, meta: { cs: "apadore-logo-negativni.svg" }, href: "/brand/apadore-logo-negativni.svg" },
-          { title: { cs: "Favicon webu (bílé A na navy)" }, meta: { cs: "apadore-favicon-web.svg" }, href: "/brand/apadore-favicon-web.svg" },
-          { title: { cs: "Favicon Brand Studia (navy A na světlém)" }, meta: { cs: "apadore-favicon-brand-studio.svg" }, href: "/brand/apadore-favicon-brand-studio.svg" },
+          { title: { cs: "Favicon webu (bílé A na tmavém přechodu)" }, meta: { cs: "apadore-favicon-web.svg" }, href: "/brand/apadore-favicon-web.svg" },
+          { title: { cs: "Favicon Brand Studia (navy A na světlém přechodu)" }, meta: { cs: "apadore-favicon-brand-studio.svg" }, href: "/brand/apadore-favicon-brand-studio.svg" },
           { title: { cs: "Písmo Booton" }, meta: { cs: "Licencované písmo, [DOPLNIT odkaz na Drive]" } },
           { title: { cs: "Geist a IBM Plex Mono" }, meta: { cs: "Zdarma: vercel.com/font, github.com/IBM/plex" } },
         ],

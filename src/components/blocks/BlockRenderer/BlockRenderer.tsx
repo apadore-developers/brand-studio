@@ -39,8 +39,8 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
         <Section {...common}>
           <LogoTiles
             items={[
-              { label: "Web Apadore", bg: "dark", logo: "negativni", mark: true },
-              { label: "Apadore Brand Studio", bg: "light", logo: "pozitivni", mark: true },
+              { label: "Web Apadore", bg: "gradientDark", logo: "negativni", mark: true },
+              { label: "Apadore Brand Studio", bg: "gradientLight", logo: "pozitivni", mark: true },
             ]}
           />
         </Section>
