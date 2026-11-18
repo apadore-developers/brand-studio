@@ -352,6 +352,15 @@ export const chapters: Chapter[] = [
     description: { cs: "Šablony příspěvků na LinkedIn: Myšlenka a Fotka s citátem.", en: "LinkedIn post templates: Thought and Photo with quote." },
     blocks: [
       {
+        type: "previews",
+        title: { cs: "Náhledy příspěvků", en: "Post previews" },
+        body: { cs: "Šablona Myšlenka v tmavé (primární) a světlé (doplňkové) verzi. Šablona Fotka s citátem je ve Figmě.", en: "Thought template, dark and light." },
+        items: [
+          { kind: "thought", variant: "dark", label: { cs: "Myšlenka · tmavá (primární)" }, text: "„Web není jednorázový projekt.“", author: "Mikoláš Voborský", link: "Přečtěte si v příspěvku" },
+          { kind: "thought", variant: "light", label: { cs: "Myšlenka · světlá (doplňková)" }, text: "„Přerostli jste svůj web?“", author: "Mikoláš Voborský", link: "Přečtěte si v příspěvku" },
+        ],
+      },
+      {
         type: "formats",
         title: { cs: "Formáty", en: "Formats" },
         body: { cs: "Pro každý formát existuje tmavá šablona (primární) a světlá (doplňková). Autor příspěvků je Mikoláš Voborský.", en: "Each format has a dark (primary) and light (supplementary) template." },
@@ -395,6 +404,14 @@ export const chapters: Chapter[] = [
         type: "text",
         title: { cs: "Princip obálky", en: "Cover principle" },
         body: { cs: "Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
+      },
+      {
+        type: "previews",
+        title: { cs: "Náhledy obálek", en: "Cover previews" },
+        items: [
+          { kind: "blogCover", variant: "dark", label: { cs: "Obálka · tmavá" }, text: "hypotéza", accent: "zadání" },
+          { kind: "blogCover", variant: "light", label: { cs: "Obálka · světlá" }, text: "hypotéza", accent: "zadání" },
+        ],
       },
       {
         type: "rules",

@@ -8,6 +8,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
 
+    &[data-compact] { grid-template-columns: repeat(2, 16rem); }
+
     &[data-count="many"] {
       @media (width >= 48rem) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
@@ -32,7 +34,9 @@
   }
 
   .logo { width: 60%; }
-  .mark { width: 30%; }
+  .mark { width: 34%; }
+
+  .grid[data-compact] .tile { aspect-ratio: 1; }
 
   .tile[data-effect="stretch"] .logo { transform: scale(1.25, 0.7); }
   .tile[data-effect="rotate"] .logo { transform: rotate(-18deg); }

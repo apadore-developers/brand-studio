@@ -1,0 +1,103 @@
+/*
+ * OutputPreviews
+ * Attributes: data-kind="thought" | "blogCover", data-variant="dark" | "light"
+ */
+@layer components {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .item {
+    container-type: inline-size;
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+  }
+
+  .frame {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    aspect-ratio: 1080 / 1350;
+    padding: 6cqi;
+    overflow: hidden;
+    color: var(--grey-0);
+    background: var(--bg-brand-dark);
+    border-radius: var(--radius-xs);
+
+    &[data-variant="light"] {
+      color: var(--navy-900);
+      background: var(--bg-brand-light);
+      border: var(--border-width) solid var(--color-border);
+    }
+
+    &[data-kind="blogCover"] {
+      place-items: center;
+      grid-template-rows: 1fr;
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.2cqi;
+    opacity: 0.85;
+  }
+
+  .author { display: flex; align-items: center; gap: 1.2cqi; }
+
+  .avatar {
+    width: 4cqi;
+    height: 4cqi;
+    background: var(--navy-400);
+    border-radius: var(--radius-full);
+  }
+
+  .quote {
+    align-self: center;
+    font-family: var(--font-heading);
+    font-size: 7.5cqi;
+    font-weight: var(--weight-semibold);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .logo { justify-self: center; width: 13cqi; }
+
+  .glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 2cqi;
+    padding: 2.4cqi 4.4cqi;
+    font-size: 3.4cqi;
+    color: var(--grey-0);
+    background: linear-gradient(180deg, oklch(100% 0 0deg / 14%), oklch(100% 0 0deg / 6%));
+    border: 0.5px solid oklch(100% 0 0deg / 35%);
+    border-radius: var(--radius-full);
+    box-shadow: 0 14px 36px oklch(0% 0 0deg / 50%);
+    backdrop-filter: blur(24px);
+
+    &[data-variant="light"] {
+      color: var(--navy-900);
+      background: linear-gradient(180deg, oklch(100% 0 0deg / 50%), oklch(100% 0 0deg / 25%));
+      border-color: oklch(100% 0 0deg / 90%);
+      box-shadow: 0 10px 30px oklch(30% 0.08 265deg / 12%);
+    }
+  }
+
+  .muted { opacity: 0.55; }
+
+  .dot {
+    width: 1.2cqi;
+    height: 1.2cqi;
+    background: var(--red-500); /* red dot: blog covers only (brand manual) */
+    border-radius: var(--radius-full);
+  }
+
+  .label { font-size: var(--text-sm); color: var(--color-text-muted); }
+}

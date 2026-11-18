@@ -7,6 +7,7 @@ import { GlassDemo, GradientBlock } from "@/components/blocks/GradientBlock";
 import { ClearSpace, LogoTiles } from "@/components/blocks/LogoShowcase";
 import { LogoPanel } from "@/components/blocks/LogoPanel";
 import { TypeScale } from "@/components/blocks/TypeScale";
+import { OutputPreviews } from "@/components/blocks/OutputPreviews";
 import { site, t } from "@/content/site";
 import type { Block, Lang } from "@/content/types";
 
@@ -38,6 +39,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
       return (
         <Section {...common}>
           <LogoTiles
+            compact
             items={[
               { label: "Web Apadore", bg: "gradientDark", logo: "negativni", mark: true },
               { label: "Apadore Brand Studio", bg: "gradientLight", logo: "pozitivni", mark: true },
@@ -53,6 +55,8 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
           <GradientPalette items={block.items.map((i) => ({ ...i, name: t(i.name, lang), role: t(i.role, lang) }))} />
         </Section>
       );
+    case "previews":
+      return <Section {...common}><OutputPreviews items={block.items.map((i) => ({ ...i, label: t(i.label, lang) }))} /></Section>;
     case "colorRatio":
       return <Section {...common}><ColorRatio parts={block.parts} /></Section>;
     case "colorPairs":

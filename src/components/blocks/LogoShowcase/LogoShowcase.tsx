@@ -4,9 +4,9 @@ import s from "./LogoShowcase.module.css";
 type Bg = "light" | "dark" | "gradientDark" | "gradientLight" | "white";
 
 /** Grid of logo tiles: colour versions, clear space, misuse examples and favicons. */
-export function LogoTiles({ items }: { items: { label: string; bg: Bg; logo: "pozitivni" | "negativni"; effect?: string; mark?: boolean }[] }) {
+export function LogoTiles({ items, compact }: { compact?: boolean; items: { label: string; bg: Bg; logo: "pozitivni" | "negativni"; effect?: string; mark?: boolean }[] }) {
   return (
-    <ul role="list" className={s.grid} data-count={items.length > 4 ? "many" : undefined}>
+    <ul role="list" className={s.grid} data-count={items.length > 4 ? "many" : undefined} data-compact={compact || undefined}>
       {items.map((it, i) => (
         <li key={i} className={s.item}>
           <div className={s.tile} data-bg={it.bg} data-effect={it.effect}>
