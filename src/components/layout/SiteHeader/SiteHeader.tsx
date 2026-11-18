@@ -33,7 +33,7 @@ export function SiteHeader({ lang, title, eyebrow, eyebrowHref, path = "" }: Pro
           {eyebrow &&
             (eyebrowHref ? (
               <Link href={eyebrowHref} className={s.eyebrow}>
-                ← {eyebrow}
+                {eyebrow}
               </Link>
             ) : (
               <p className={s.eyebrow}>{eyebrow}</p>

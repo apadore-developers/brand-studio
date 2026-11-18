@@ -68,7 +68,7 @@
 
   .eyebrow {
     text-decoration: none;
-    margin-block-end: var(--space-3);
+    margin-block-end: var(--space-6);
     font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label);
