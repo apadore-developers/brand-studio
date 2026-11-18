@@ -41,7 +41,7 @@
     text-align: start;
     color: var(--navy-900);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
 
     &[data-tone="dark"] { color: var(--grey-0); border-color: transparent; }
   }

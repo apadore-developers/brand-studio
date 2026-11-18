@@ -7,7 +7,7 @@
     height: 16rem;
     overflow: hidden;
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
   }
 
   .legend { display: flex; flex-wrap: wrap; gap: var(--space-2); }
@@ -20,7 +20,7 @@
     font-size: var(--text-sm);
     background: var(--color-surface-raised);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-xs);
   }
 
   .dot {
@@ -46,7 +46,7 @@
     aspect-ratio: 4 / 3;
     padding: var(--space-4);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
   }
 
   .aa {
@@ -71,7 +71,7 @@
   .preview {
     height: 12rem;
     background: var(--bg-brand-dark);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
 
     &[data-variant="light"] { background: var(--bg-brand-light); border: var(--border-width) solid var(--color-border); }
   }
@@ -90,10 +90,10 @@
     padding: var(--space-3);
     background: var(--color-surface-raised);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xs);
   }
 
-  .chip { height: 4.8rem; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-sm); }
+  .chip { height: 4.8rem; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-xs); }
 
   .stopName { font-size: var(--text-sm); font-weight: var(--weight-semibold); }
 

@@ -6,7 +6,7 @@
     position: relative;
     aspect-ratio: 3 / 2;
     background: var(--bg-brand-dark);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-xs);
     overflow: hidden;
 
     &[data-variant="light"] { background: var(--bg-brand-light); }
@@ -43,7 +43,7 @@
     place-items: center;
     aspect-ratio: 3 / 2;
     background: var(--bg-brand-dark);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-xs);
 
     &[data-variant="light"] { background: var(--bg-brand-light); }
   }

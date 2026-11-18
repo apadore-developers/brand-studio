@@ -23,7 +23,7 @@
     overflow: hidden;
     background: var(--grey-50);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
 
     &[data-bg="dark"] { background: var(--navy-900); }
     &[data-bg="gradientDark"] { background: var(--bg-brand-dark); }
@@ -63,7 +63,7 @@
     padding: var(--space-9) var(--space-5);
     background: repeating-linear-gradient(45deg, var(--grey-50) 0 6px, var(--grey-0) 6px 12px);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-xs);
   }
 
   .zone {

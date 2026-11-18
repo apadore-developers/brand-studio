@@ -49,7 +49,7 @@
     display: flex;
     width: 70%;
     height: 45%;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xs);
     overflow: hidden;
     border: var(--border-width) solid var(--color-border);
 
@@ -91,7 +91,7 @@
     width: 60%;
     height: 70%;
 
-    & span { background: var(--grey-100); border-radius: var(--radius-sm); }
+    & span { background: var(--grey-100); border-radius: var(--radius-xs); }
   }
 
   .coverQuote {

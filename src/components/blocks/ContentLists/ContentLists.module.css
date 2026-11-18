@@ -34,7 +34,7 @@
     color: var(--color-text-subtle);
     background: var(--color-surface-subtle);
     border: var(--border-width) dashed var(--color-border-strong);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
   }
 
   .source { font-family: var(--font-mono); font-size: var(--text-3xs); }
@@ -50,7 +50,7 @@
     margin-block-end: var(--space-2);
     background: var(--color-surface-subtle);
     border: var(--border-width) solid var(--color-border-strong);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-xs);
   }
 
   .formatLabel { font-size: var(--text-sm); }
@@ -67,7 +67,7 @@
     padding: var(--space-5);
     background: var(--color-surface-raised);
     border: var(--border-width) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xs);
   }
 
   .downloadTitle { display: block; font-size: var(--text-lg); }
