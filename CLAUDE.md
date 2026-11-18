@@ -3,6 +3,13 @@
 Online brand manuál Apadore (inspirace: Visualbook). Next.js App Router, CSS moduly podle konvencí Apadore
 (skill `apadore-nextjs-konvence`). Obsah je česky, angličtina se doplňuje postupně (pole `en`).
 
+## Repozitář a nasazení
+
+- **GitHub:** `apadore-developers/brand-studio`, větev `ulozit/20261118-brand-studio-kostra` (výchozí, z ní nasazuje Vercel).
+  Starší kopie v organizaci `Apadore/Apadore-Brand-Studio` se už nepoužívá.
+- **Vercel:** tým Apadore (Pro), projekt importovaný z `apadore-developers/brand-studio`. Každé odeslání změn se nasadí samo.
+- **Identita pro ukládání:** `apadore-developers` / `developers@apadore.cz` (jen v tomto projektu), jinak Vercel změny nenasadí.
+
 ## Zdroj pravdy
 
 - **Figma:** soubor Apadore 2026 (NEW Web), file key `g6aje2QLWx5USCXogBP68K`, stránka `↪ Brand manuál` (id `2024:5678`).
