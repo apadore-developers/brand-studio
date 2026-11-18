@@ -18,5 +18,7 @@
     & a { color: var(--color-text); }
   }
 
+  .logoLink { display: block; }
+
   .logo { width: 14rem; fill: var(--color-text); }
 }

@@ -12,15 +12,11 @@ export function SiteHeader({ lang, title, eyebrow, eyebrowHref, path = "" }: Pro
     <header className={s.header} data-theme="dark">
       <div className="container">
         <div className={s.bar}>
-          <div className={s.brand}>
-            <a href={site.brandUrl} className={s.logoLink} aria-label="Apadore (web)">
-              <Logo className={s.logo} />
-            </a>
+          <Link href={urls.home(lang)} className={s.brand} aria-label={site.name}>
+            <Logo className={s.logo} />
             <span className={s.divider} aria-hidden="true" />
-            <Link href={urls.home(lang)} className={s.product}>
-              Brand Studio
-            </Link>
-          </div>
+            <span className={s.product}>Brand Studio</span>
+          </Link>
           <nav className={s.langs} aria-label="Jazyk / Language">
             {site.languages.map((l) => (
               <Link key={l} href={`/${l}${path}`} className={s.lang} aria-current={l === lang ? "true" : undefined}>

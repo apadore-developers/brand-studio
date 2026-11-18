@@ -16,7 +16,9 @@ export function SiteFooter({ lang }: { lang: Lang }) {
               {t(site.ui.madeWith, lang)} | <a href="#">{t(site.ui.login, lang)}</a>
             </p>
           </div>
-          <Logo className={s.logo} />
+          <a href={site.brandUrl} aria-label="Apadore (web)" className={s.logoLink}>
+            <Logo className={s.logo} />
+          </a>
         </div>
       </div>
     </footer>
