@@ -1,1 +1,1 @@
-{"version":3,"sources":["./SiteFooter.module.css"],"names":["footer","inner","meta","mark"],"mappings":"AAAA;AAAA,E,aAEEA,Q,WAFF;AAAA,E,aAIEC,O,WAJF;AAAA,E,aAaEC,M,WAbF;AAAA,E,aAoBEC,M,WApBF;AAAA;AAAA","file":"SiteFooter.module.css.d.ts","sourceRoot":""}
+{"version":3,"sources":["./SiteFooter.module.css"],"names":["footer","inner","meta","logo"],"mappings":"AAAA;AAAA,E,aAEEA,Q,WAFF;AAAA,E,aAIEC,O,WAJF;AAAA,E,aAaEC,M,WAbF;AAAA,E,aAoBEC,M,WApBF;AAAA;AAAA","file":"SiteFooter.module.css.d.ts","sourceRoot":""}

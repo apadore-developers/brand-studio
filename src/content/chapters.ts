@@ -121,6 +121,37 @@ export const chapters: Chapter[] = [
         ],
       },
       {
+        type: "gradientPalette",
+        title: { cs: "Barvy přechodů", en: "Gradient colours" },
+        body: {
+          cs: "Modré tóny patří jen do přechodů, samostatně se nepoužívají (text, plochy, ikony). Tmavý přechod je primární, světlý doplňkový. Body přechodu i s průhledností najdete v kapitole Přechody.",
+          en: "Blue tones are used only inside gradients, never on their own.",
+        },
+        items: [
+          {
+            name: { cs: "Tmavý přechod", en: "Dark gradient" },
+            variant: "dark",
+            role: { cs: "Primární", en: "Primary" },
+            stops: [
+              { name: "Podklad (navy 900)", hex: "#090E21", alpha: 100, position: 0 },
+              { name: "Roh, modrá", hex: "#3F8BFF", alpha: 45, position: 0 },
+              { name: "Konec, tmavá navy", hex: "#182037", alpha: 0, position: 100 },
+            ],
+          },
+          {
+            name: { cs: "Světlý přechod", en: "Light gradient" },
+            variant: "light",
+            role: { cs: "Doplňkový", en: "Supplementary" },
+            stops: [
+              { name: "Podklad, šedomodrá", hex: "#EEF0F4", alpha: 100, position: 0 },
+              { name: "Roh, modrá", hex: "#7FA3DA", alpha: 75, position: 0 },
+              { name: "Střed, světle modrá", hex: "#B9CBE6", alpha: 35, position: 55 },
+              { name: "Konec, světlá", hex: "#E6E8EE", alpha: 0, position: 100 },
+            ],
+          },
+        ],
+      },
+      {
         type: "colorRatio",
         title: { cs: "Poměr barev", en: "Colour ratio" },
         body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "Indicative ratio. Navy and white carry the brand." },

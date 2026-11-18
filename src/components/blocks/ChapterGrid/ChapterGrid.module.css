@@ -37,7 +37,6 @@
   }
 
   .coverLogo { width: 55%; }
-  .coverMark { width: 18%; }
 
   .coverType {
     font-family: var(--font-heading);
@@ -67,6 +66,22 @@
     border: var(--border-width) solid oklch(100% 0 0deg / 20%);
     border-radius: var(--radius-full);
     backdrop-filter: blur(24px);
+  }
+
+  .struck {
+    color: var(--navy-400);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-inline: var(--space-3);
+    vertical-align: middle;
+    background: var(--navy-200);
+    border-radius: var(--radius-full);
   }
 
   .coverImages {

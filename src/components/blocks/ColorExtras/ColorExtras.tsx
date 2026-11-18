@@ -1,4 +1,4 @@
-import { contrast, formatRatio, isDark } from "@/lib/color";
+import { contrast, formatRatio, hexToRgb, isDark } from "@/lib/color";
 import s from "./ColorExtras.module.css";
 
 export function ColorRatio({ parts }: { parts: { name: string; hex: string; percent: number }[] }) {
@@ -34,5 +34,35 @@ export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: 
         </li>
       ))}
     </ul>
+  );
+}
+
+type Stop = { name: string; hex: string; alpha: number; position: number };
+
+export function GradientPalette({ items }: { items: { name: string; role: string; variant: "dark" | "light"; stops: Stop[] }[] }) {
+  return (
+    <div className={s.palettes}>
+      {items.map((g) => (
+        <div key={g.name} className={s.palette}>
+          <div className={s.paletteHead}>
+            <strong>{g.name}</strong>
+            <span className={s.role}>{g.role}</span>
+          </div>
+          <div className={s.preview} data-variant={g.variant} />
+          <ul role="list" className={s.stops}>
+            {g.stops.map((st) => (
+              <li key={st.name} className={s.stop}>
+                <span className={s.chip} style={{ background: st.hex }} />
+                <span className={s.stopName}>{st.name}</span>
+                <span className={s.stopValue}>
+                  {st.hex} · {st.alpha} %
+                </span>
+                <span className={s.stopValue}>RGB {hexToRgb(st.hex).join(", ")}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 }

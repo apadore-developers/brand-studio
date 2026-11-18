@@ -10,7 +10,13 @@ function Cover({ kind }: { kind: Chapter["cover"] }) {
     case "logo":
       return <Logo className={s.coverLogo} />;
     case "intro":
-      return <Logo mark className={s.coverMark} />;
+      return (
+        <span className={s.coverGlass}>
+          <span className={s.struck}>agentura</span>
+          <span className={s.dot} aria-hidden="true" />
+          partner
+        </span>
+      );
     case "colors":
       return (
         <div className={s.coverColors}>

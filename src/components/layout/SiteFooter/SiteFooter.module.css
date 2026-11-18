@@ -18,5 +18,5 @@
     & a { color: var(--color-text); }
   }
 
-  .mark { width: 2.4rem; fill: var(--color-text); }
+  .logo { width: 14rem; fill: var(--color-text); }
 }

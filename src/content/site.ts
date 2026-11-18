@@ -12,7 +12,7 @@ export const site = {
     home: { cs: "Brand manuál", en: "Brand guidelines" },
     manual: { cs: "Brand manuál", en: "Brand guidelines" },
     search: { cs: "Hledat", en: "Search" },
-    studio: { cs: "Studio", en: "Studio" },
+    brand: { cs: "Značka", en: "Brand" },
     madeWith: { cs: "Vytvořeno v Apadore Brand Studio", en: "Made with Apadore Brand Studio" },
     login: { cs: "Přihlásit se", en: "Log in" },
     copy: { cs: "Kopírovat", en: "Copy" },

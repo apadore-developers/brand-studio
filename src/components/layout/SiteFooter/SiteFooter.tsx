@@ -10,13 +10,13 @@ export function SiteFooter({ lang }: { lang: Lang }) {
         <div className={s.inner}>
           <div className={s.meta}>
             <p>
-              {t(site.ui.studio, lang)}: <strong>Apadore</strong>
+              {t(site.ui.brand, lang)}: <strong>Apadore</strong>
             </p>
             <p>
               {t(site.ui.madeWith, lang)} | <a href="#">{t(site.ui.login, lang)}</a>
             </p>
           </div>
-          <Logo mark className={s.mark} />
+          <Logo className={s.logo} />
         </div>
       </div>
     </footer>

@@ -16,28 +16,33 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
     text-decoration: none;
   }
 
   .logo { width: 12rem; }
 
+  .divider {
+    width: 1px;
+    height: 2.06rem; /* = cap height of the logo (12rem × 233 / 1359) */
+    background: var(--color-border-strong);
+  }
+
   .product {
-    padding-inline-start: var(--space-3);
     font-family: var(--font-mono);
-    font-size: var(--text-3xs);
+    font-size: var(--text-2xs);
+    line-height: 1;
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     color: var(--color-text-muted);
-    border-inline-start: var(--border-width) solid var(--color-border-strong);
   }
 
   .langs { display: flex; gap: var(--space-1); }
 
   .lang {
-    padding: var(--space-1) var(--space-2);
+    padding: var(--space-2) var(--space-3);
     font-family: var(--font-mono);
-    font-size: var(--text-3xs);
+    font-size: var(--text-xs);
     text-transform: uppercase;
     text-decoration: none;
     color: var(--color-text-subtle);
@@ -50,7 +55,12 @@
     }
   }
 
-  .hero { margin-block-start: var(--space-12); }
+  .hero {
+    display: grid;
+    justify-items: center;
+    margin-block-start: var(--space-12);
+    text-align: center;
+  }
 
   .eyebrow {
     margin-block-end: var(--space-3);
@@ -61,7 +71,7 @@
   }
 
   .title {
-    max-width: 16ch;
+    max-width: 18ch;
     font-size: var(--text-6xl);
     line-height: 1;
   }

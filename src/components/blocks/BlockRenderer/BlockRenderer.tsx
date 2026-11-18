@@ -1,5 +1,5 @@
 import { Section } from "@/components/layout/Section";
-import { ColorPairs, ColorRatio } from "@/components/blocks/ColorExtras";
+import { ColorPairs, ColorRatio, GradientPalette } from "@/components/blocks/ColorExtras";
 import { ColorSwatches } from "@/components/blocks/ColorSwatches";
 import { DownloadList, FormatList, ImagePlaceholders, RuleList } from "@/components/blocks/ContentLists";
 import { FontSpecimen } from "@/components/blocks/FontSpecimen";
@@ -47,6 +47,12 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
       );
     case "colors":
       return <Section {...common}><ColorSwatches colors={block.colors} size={block.size} lang={lang} /></Section>;
+    case "gradientPalette":
+      return (
+        <Section {...common}>
+          <GradientPalette items={block.items.map((i) => ({ ...i, name: t(i.name, lang), role: t(i.role, lang) }))} />
+        </Section>
+      );
     case "colorRatio":
       return <Section {...common}><ColorRatio parts={block.parts} /></Section>;
     case "colorPairs":
