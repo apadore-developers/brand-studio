@@ -37,6 +37,15 @@
     border-radius: var(--radius-xs);
   }
 
+  .photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-surface-subtle);
+    border-radius: var(--radius-xs);
+  }
+
+  .img { object-fit: cover; }
+
   .source { font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label); font-size: var(--text-label-s); }

@@ -30,7 +30,7 @@ export type Block =
   | { type: "gradient"; title: L; body: L; variant: "dark" | "light"; direction: L; stops: { label: L; hex: string; alpha: number }[] }
   | { type: "glass"; title: L; body: L; specs: { label: L; value: L }[] }
   | { type: "rules"; title: L; body?: L; items: { title: L; body: L }[] }
-  | { type: "images"; title: L; body: L; items: { label: L; source?: string; ratio: string }[] }
+  | { type: "images"; title: L; body: L; items: { label: L; source?: string; src?: string; ratio: string }[] }
   | { type: "formats"; title: L; body: L; items: { label: L; w: number; h: number }[] }
   | { type: "downloads"; title: L; body?: L; items: { title: L; meta: L; href?: string }[] };
 

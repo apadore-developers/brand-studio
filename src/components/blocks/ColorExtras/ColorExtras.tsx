@@ -21,6 +21,11 @@ export function ColorRatio({ parts }: { parts: { name: string; hex: string; perc
   );
 }
 
+function contrastLabel(c: number) {
+  const level = c >= 7 ? "AAA" : c >= 4.5 ? "AA" : c >= 3 ? "AA (jen velký text)" : "nevyhovuje";
+  return `Kontrast ${formatRatio(c)} · ${level}`;
+}
+
 export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: string }[] }) {
   return (
     <ul role="list" className={s.pairs}>
@@ -28,7 +33,7 @@ export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: 
         <li key={p.label} className={s.pairItem}>
           <div className={s.pair} style={{ background: p.bg, color: p.fg }} data-tone={isDark(p.bg) ? "dark" : "light"}>
             <span className={s.aa}>Aa</span>
-            <span className={s.contrast}>{formatRatio(contrast(p.bg, p.fg))}</span>
+            <span className={s.contrast}>{contrastLabel(contrast(p.bg, p.fg))}</span>
           </div>
           <p className={s.label}>{p.label}</p>
         </li>

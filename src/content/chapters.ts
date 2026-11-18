@@ -167,7 +167,7 @@ export const chapters: Chapter[] = [
       {
         type: "colorPairs",
         title: { cs: "Kombinace", en: "Combinations" },
-        body: { cs: "Doporučené dvojice textu a pozadí. Kontrast podle WCAG: běžný text potřebuje aspoň 4,5 : 1, velké nadpisy 3 : 1.", en: "Recommended text and background pairs." },
+        body: { cs: "Doporučené dvojice textu a pozadí. Číslo u každé dvojice je kontrast, tedy o kolik je text světlejší nebo tmavší než pozadí (1 : 1 = stejná barva, 21 : 1 = černá na bílé). Podle pravidel přístupnosti WCAG potřebuje běžný text aspoň 4,5 : 1 (úroveň AA), ideálně 7 : 1 (AAA). Velké nadpisy stačí 3 : 1.", en: "Recommended text and background pairs." },
         pairs: [
           { label: { cs: "Navy 900 na bílé" }, bg: "#FFFFFF", fg: "#090E21" },
           { label: { cs: "Bílá na navy 900" }, bg: "#090E21", fg: "#FFFFFF" },
@@ -312,8 +312,8 @@ export const chapters: Chapter[] = [
         title: { cs: "První fotka: wow efekt", en: "First image: wow effect" },
         body: { cs: "Úvodní obrázek case study rozhoduje, jestli čtenář pokračuje. Neobvyklá perspektiva, skutečné prostředí, přirozené světlo a materiál (dřevo, kámen, textil).", en: "The first image decides whether the reader continues." },
         items: [
-          { label: { cs: "Sky Towers: monitor na kulatém stole zespodu" }, source: "Case Studies › Sky Towers (147:18877)", ratio: "1360 / 900" },
-          { label: { cs: "Weinhold Legal: notebook na stole se závěsem" }, source: "Case Studies › Weinhold Legal (167:245245)", ratio: "1360 / 900" },
+          { label: { cs: "Sky Towers: monitor na kulatém stole zespodu" }, src: "/images/obrazovy-styl/sky-towers-monitor.webp", ratio: "4 / 3" },
+          { label: { cs: "Robotwin: notebook u okna v dílně" }, src: "/images/obrazovy-styl/robotwin-notebook.webp", ratio: "4 / 3" },
         ],
       },
       {
@@ -329,11 +329,12 @@ export const chapters: Chapter[] = [
       {
         type: "images",
         title: { cs: "Imageové fotky", en: "Mood images" },
-        body: { cs: "Doplňkové fotky ukazují značku klienta v životě: billboard, tiskoviny, prostředí, detail.", en: "Supporting images show the client brand in real life." },
+        body: { cs: "Doplňkové fotky ukazují značku klienta v životě: tiskoviny, prostředí, detail, zařízení na skutečném materiálu. V každé case study aspoň dvě až tři.", en: "Supporting images show the client brand in real life." },
         items: [
-          { label: { cs: "Sky Towers: billboard" }, ratio: "16 / 9" },
-          { label: { cs: "Sky Towers: tiskoviny na poličce" }, ratio: "4 / 3" },
-          { label: { cs: "Linstram: tablet v rukou" }, ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: notebook na dřevěné židli" }, src: "/images/obrazovy-styl/sky-towers-notebook-zidle.webp", ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: tiskoviny na poličce" }, src: "/images/obrazovy-styl/sky-towers-tiskoviny.webp", ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: web před dřevěnými lamelami" }, src: "/images/obrazovy-styl/sky-towers-notebook-lamely.webp", ratio: "4 / 3" },
+          { label: { cs: "Linstram: tablet v rukou" }, src: "/images/obrazovy-styl/linstram-tablet.webp", ratio: "4 / 3" },
         ],
       },
       {

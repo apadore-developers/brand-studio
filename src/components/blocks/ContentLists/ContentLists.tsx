@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import s from "./ContentLists.module.css";
 
@@ -14,15 +15,21 @@ export function RuleList({ items }: { items: { title: string; body: string }[] }
   );
 }
 
-export function ImagePlaceholders({ items, note }: { items: { label: string; source?: string; ratio: string }[]; note: string }) {
+export function ImagePlaceholders({ items, note }: { items: { label: string; source?: string; src?: string; ratio: string }[]; note: string }) {
   return (
     <ul role="list" className={s.images}>
       {items.map((it) => (
         <li key={it.label} className={s.imageItem}>
-          <div className={s.placeholder} style={{ aspectRatio: it.ratio }}>
-            <span>{note}</span>
-            {it.source && <span className={s.source}>{it.source}</span>}
-          </div>
+          {it.src ? (
+            <div className={s.photo} style={{ aspectRatio: it.ratio }}>
+              <Image src={it.src} alt={it.label} fill sizes="(width >= 1024px) 420px, 100vw" className={s.img} />
+            </div>
+          ) : (
+            <div className={s.placeholder} style={{ aspectRatio: it.ratio }}>
+              <span>{note}</span>
+              {it.source && <span className={s.source}>{it.source}</span>}
+            </div>
+          )}
           <p className={s.caption}>{it.label}</p>
         </li>
       ))}
