@@ -142,6 +142,10 @@
     --bg-brand-dark:
       linear-gradient(135deg, oklch(from var(--gradient-blue) l c h / 45%), oklch(26% 0.04 268deg / 0%) 70%),
       var(--navy-900);
+    --bg-hero: /* Figma: Homepage hero (Background + Ellipse 50) */
+      radial-gradient(120% 90% at 50% 115%, oklch(68% 0.11 266deg / 90%) 0%, oklch(48% 0.17 266deg / 45%) 35%, oklch(20% 0.05 270deg / 0%) 70%),
+      linear-gradient(180deg, oklch(13% 0.05 268deg) 0%, oklch(22% 0.17 268deg) 100%); /* #00031E -> #000A67 */
+
     --bg-brand-light:
       linear-gradient(225deg, oklch(from var(--gradient-blue-light) l c h / 75%), oklch(84% 0.04 258deg / 35%) 55%, oklch(93.5% 0.008 265deg / 0%)),
       oklch(95.3% 0.006 265deg); /* #EEF0F4 */

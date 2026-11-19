@@ -19,7 +19,7 @@ export function ImagePlaceholders({ items, note }: { items: { label: string; sou
   return (
     <ul role="list" className={s.images}>
       {items.map((it) => (
-        <li key={it.label} className={s.imageItem}>
+        <li key={it.label} className={s.imageItem} data-wide={(() => { const [w, h] = it.ratio.split("/").map(Number); return w / h > 1.45 || undefined; })()}>
           {it.src ? (
             <div className={s.photo} style={{ aspectRatio: it.ratio }}>
               <Image src={it.src} alt={it.label} fill sizes="(width >= 1024px) 420px, 100vw" className={s.img} />
@@ -64,9 +64,15 @@ export function DownloadList({ items, cta }: { items: { title: string; meta: str
             <span className={s.downloadMeta}>{d.meta}</span>
           </span>
           {d.href && (
-            <Button href={d.href} download icon="download">
-              {cta}
-            </Button>
+            d.href.startsWith("http") ? (
+              <Button href={d.href} target="_blank" rel="noreferrer" icon="external">
+                Figma
+              </Button>
+            ) : (
+              <Button href={d.href} download icon="download">
+                {cta}
+              </Button>
+            )
           )}
         </li>
       ))}

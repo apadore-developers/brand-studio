@@ -3,7 +3,7 @@
   .header {
     padding-block: var(--space-6) var(--space-10);
     color: var(--color-text);
-    background: var(--bg-brand-dark);
+    background: var(--bg-hero);
   }
 
   .bar {

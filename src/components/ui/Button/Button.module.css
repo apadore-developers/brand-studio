@@ -7,27 +7,26 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    min-height: 3.6rem;
-    padding: 0 1.2em;
+    min-height: 4.4rem;
+    padding: 0 var(--space-5);
     font-family: var(--font-mono);
-    font-size: var(--text-3xs);
+    font-size: var(--text-label);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--color-text);
-    border: var(--border-width) solid var(--color-border-strong);
-    border-radius: var(--radius-full);
+    color: var(--navy-900);
+    background: var(--grey-50); /* Figma: Button / Sekundární */
+    border-radius: var(--radius-sm); /* 4px */
     transition: var(--transition-colors);
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover { border-color: var(--color-action); background: var(--color-action-subtle); }
+      &:hover { color: var(--grey-0); background: var(--navy-900); }
     }
 
     &[data-variant="solid"] {
-      color: var(--color-text-on-accent);
-      background: var(--color-action);
-      border-color: var(--color-action);
+      color: var(--grey-0);
+      background: var(--navy-900);
     }
   }
 

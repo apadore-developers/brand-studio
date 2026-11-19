@@ -308,22 +308,13 @@ export const chapters: Chapter[] = [
     summary: { cs: "Jak skládat obrázky do case studies: silná první fotka s výřezem webu na pozadí, imageové fotky prostředí klienta a styl mockupů. Formáty médií a zásady." },
     blocks: [
       {
-        type: "rules",
-        title: { cs: "Tři druhy obrázků", en: "Three kinds of images" },
-        body: { cs: "Hlavní slovo mají naše práce. Každá case study skládá tři druhy obrázků a střídá je tak, aby se web vždy střídal s fotkou. Barvy obrázků patří klientovi, Apadore drží jen neutrální rámec." },
-        items: [
-          { title: { cs: "Styl case studies" }, body: { cs: "Silná první fotka a výřez webu na pozadí, které nese mood projektu." } },
-          { title: { cs: "Imageové fotky" }, body: { cs: "Prostředí a lidé klienta: provoz, interiér, render developmentu." } },
-          { title: { cs: "Styl mockupů" }, body: { cs: "Web v zařízení na skutečném materiálu, neobvyklý úhel, denní světlo." } },
-        ],
-      },
-      {
         type: "images",
         title: { cs: "Styl case studies", en: "Case study style" },
-        body: { cs: "Case study musí zaujmout hned první fotkou: neobvyklá perspektiva, skutečné prostředí, přirozené světlo (interně „wow efekt“). K ní patří výřez webu na pozadí, které nese mood celého projektu: u ESENS Letná kamenný obklad fasády, u nábytku detail materiálu, u developmentu textura stavby." },
+        body: { cs: "Case study musí zaujmout hned první fotkou: neobvyklá perspektiva, skutečné prostředí, přirozené světlo (interně „wow efekt“). K ní patří výřez webu na pozadí, které nese mood celého projektu." },
         items: [
-          { label: { cs: "ESENS Letná: výřez webu na kamenném obkladu" }, src: "/images/obrazovy-styl/esens-web-obklad.webp", ratio: "4 / 3" },
-          { label: { cs: "ESENS Letná: web přes fasádu domu" }, src: "/images/obrazovy-styl/esens-web-fasada.webp", ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: první fotka, monitor zespodu" }, src: "/images/obrazovy-styl/cs-sky-monitor.webp", ratio: "800 / 531" },
+          { label: { cs: "ESENS Letná: výřez webu" }, src: "/images/obrazovy-styl/cs-esens.webp", ratio: "306 / 414" },
+          { label: { cs: "HALO: web v detailu na tmavém pozadí" }, src: "/images/obrazovy-styl/cs-halo.webp", ratio: "306 / 414" },
         ],
       },
       {
@@ -333,6 +324,7 @@ export const chapters: Chapter[] = [
         items: [
           { label: { cs: "Robotwin: stříkání v lakovně" }, src: "/images/obrazovy-styl/robotwin-strikani.webp", ratio: "4 / 3" },
           { label: { cs: "Robotwin: obsluha robota" }, src: "/images/obrazovy-styl/robotwin-robot.webp", ratio: "4 / 3" },
+          { label: { cs: "ESENS Letná: bazén v domě" }, src: "/images/obrazovy-styl/esens-bazen.webp", ratio: "4 / 3" },
           { label: { cs: "Linstram: kancelářská chodba" }, src: "/images/obrazovy-styl/linstram-chodba.webp", ratio: "4 / 3" },
         ],
       },
@@ -341,12 +333,10 @@ export const chapters: Chapter[] = [
         title: { cs: "Styl mockupů", en: "Mockup style" },
         body: { cs: "Web v zařízení na skutečném materiálu: dřevo, kámen, papír, textil. Denní světlo, ostré stíny z okna, jeden motiv a hodně prostoru. Zařízení fotíme z neobvyklého úhlu, ne zepředu na bílém pozadí." },
         items: [
-          { label: { cs: "Sky Towers: monitor na kulatém stole zespodu" }, src: "/images/obrazovy-styl/sky-towers-monitor.webp", ratio: "4 / 3" },
-          { label: { cs: "Sky Towers: notebook na dřevěné židli" }, src: "/images/obrazovy-styl/sky-towers-notebook-zidle.webp", ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: monitor zespodu" }, src: "/images/obrazovy-styl/sky-towers-monitor.webp", ratio: "4 / 3" },
+          { label: { cs: "Sky Towers: notebook na židli" }, src: "/images/obrazovy-styl/sky-towers-notebook-zidle.webp", ratio: "4 / 3" },
           { label: { cs: "Sky Towers: tiskoviny na poličce" }, src: "/images/obrazovy-styl/sky-towers-tiskoviny.webp", ratio: "4 / 3" },
-          { label: { cs: "Sky Towers: web před dřevěnými lamelami" }, src: "/images/obrazovy-styl/sky-towers-notebook-lamely.webp", ratio: "4 / 3" },
           { label: { cs: "Linstram: tablet v rukou" }, src: "/images/obrazovy-styl/linstram-tablet.webp", ratio: "4 / 3" },
-          { label: { cs: "Robotwin: notebook u okna v dílně" }, src: "/images/obrazovy-styl/robotwin-notebook.webp", ratio: "4 / 3" },
         ],
       },
       {
@@ -383,13 +373,35 @@ export const chapters: Chapter[] = [
     summary: { cs: "Šablony příspěvků na LinkedIn: Myšlenka s citátem a Fotka s citátem, banner, profilová fotka a Clutch. Pravidla, české uvozovky a skill pro Clauda ke stažení." },
     blocks: [
       {
-        type: "previews",
-        title: { cs: "Náhledy příspěvků", en: "Post previews" },
-        body: { cs: "Šablona Myšlenka v tmavé (primární) a světlé (doplňkové) verzi a Fotka s citátem. Autor příspěvků je Mikoláš Voborský.", en: "Thought template, dark and light." },
+        type: "images",
+        title: { cs: "Základní sociální kit", en: "Basic social kit" },
+        body: { cs: "Všechny výstupy, které používáme běžně. Autor příspěvků je Mikoláš Voborský. Šablony v plné velikosti jsou ve Figmě (Brand manuál › Sociální kit · základní)." },
         items: [
-          { kind: "thought", variant: "dark", label: { cs: "Myšlenka · tmavá (primární)" }, text: "„Web není jednorázový projekt.“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
-          { kind: "thought", variant: "light", label: { cs: "Myšlenka · světlá (doplňková)" }, text: "„Přerostli jste svůj web?“", author: "Mikoláš Voborský", avatar: "/images/autori/mikolas-voborsky.webp", link: "Přečtěte si v příspěvku" },
-          { kind: "image", variant: "dark", label: { cs: "Fotka s citátem" }, text: "", photo: "/images/autori/fotka-s-citatem.webp" },
+          { label: { cs: "Myšlenka · tmavá (primární)" }, src: "/images/socialni-site/myslenka-tmava.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Myšlenka · světlá (doplňková)" }, src: "/images/socialni-site/myslenka-svetla.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Fotka s citátem · Z praxe" }, src: "/images/socialni-site/fotka-s-citatem.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Otázka od klientů · 16 : 9" }, src: "/images/socialni-site/otazka.webp", ratio: "1920 / 1080" },
+          { label: { cs: "Hledáme posilu" }, src: "/images/socialni-site/nabor.webp", ratio: "1920 / 1284" },
+          { label: { cs: "LinkedIn banner" }, src: "/images/socialni-site/banner.webp", ratio: "1584 / 396" },
+        ],
+      },
+      {
+        type: "images",
+        title: { cs: "Rozšířený sociální kit", en: "Extended social kit" },
+        body: { cs: "Ukázka z rozšířeného kitu: další varianty zarovnání, články s grafickými prvky z blogu a case study. Všechny layouty ve formátech na výšku, čtverec i reels jsou ve Figmě." },
+        items: [
+          { label: { cs: "Článek · vlevo, logo vpravo" }, src: "/images/socialni-site/rozsireny-d.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Článek s grafikou · podpis autora" }, src: "/images/socialni-site/rozsireny-e1.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Článek s grafikou · logo na střed" }, src: "/images/socialni-site/rozsireny-e2.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Case study · Linstram" }, src: "/images/socialni-site/rozsireny-f-linstram.webp", ratio: "1200 / 1504" },
+        ],
+      },
+      {
+        type: "downloads",
+        title: { cs: "Všechny layouty ve Figmě", en: "All layouts in Figma" },
+        items: [
+          { title: { cs: "Sociální kit · rozšířený" }, meta: { cs: "Figma: Apadore 2026 (NEW Web) › Brand manuál" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2110-8585" },
+          { title: { cs: "Sociální kit · základní" }, meta: { cs: "Figma: Apadore 2026 (NEW Web) › Brand manuál" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2043-5715" },
         ],
       },
       {
@@ -427,16 +439,16 @@ export const chapters: Chapter[] = [
     ],
   },
   {
-    slug: "doprovodna-grafika",
+    slug: "graficke-prvky",
     cover: "blog",
-    title: { cs: "Doprovodná grafika", en: "Supporting graphics" },
+    title: { cs: "Grafické prvky", en: "Graphic elements" },
     description: { cs: "Grafika se skleněnými prvky, primárně pro obálky článků na blogu.", en: "Glass element graphics, primarily for blog article covers." },
-    summary: { cs: "Doprovodná grafika se skleněnými prvky na přechodu. Používá se primárně jako obálky článků na blogu (1200 × 800, světlá i tmavá verze). Princip, varianty skleněných prvků a pravidla." },
+    summary: { cs: "Grafické prvky se skleněnými prvky na přechodu. Používá se primárně jako obálky článků na blogu (1200 × 800, světlá i tmavá verze). Princip, varianty skleněných prvků a pravidla." },
     blocks: [
       {
         type: "text",
         title: { cs: "Princip", en: "Principle" },
-        body: { cs: "Doprovodná grafika se používá primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
+        body: { cs: "Grafické prvky se používají primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
       },
       {
         type: "images",
@@ -456,7 +468,7 @@ export const chapters: Chapter[] = [
           { title: { cs: "Vždy obě verze" }, body: { cs: "Ke každému článku tmavá i světlá obálka. Na webu se střídají." } },
           { title: { cs: "Jeden motiv" }, body: { cs: "Jeden skleněný prvek uprostřed. Žádné fotky ani nadpis článku." } },
           { title: { cs: "Slovo, ne věta" }, body: { cs: "Text ve skle má jedno až tři slova." } },
-          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent doprovodné grafiky (obálek blogu). Jinde se v brandu nepoužívá." } },
+          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent grafických prvků (obálek blogu). Jinde se v brandu nepoužívá." } },
           { title: { cs: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové obálky jsou ve Figmě na stránce Blog [Covers]." } },
         ],
       },
