@@ -90,7 +90,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
     case "downloads":
       return (
         <Section {...common}>
-          <DownloadList cta={t(site.ui.download, lang)} items={block.items.map((d) => ({ title: t(d.title, lang), meta: t(d.meta, lang), href: d.href }))} />
+          <DownloadList cta={t(site.ui.download, lang)} items={block.items.map((d) => ({ title: t(d.title, lang), meta: t(d.meta, lang), href: d.href, alt: d.alt }))} />
         </Section>
       );
   }

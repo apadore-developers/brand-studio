@@ -94,4 +94,6 @@
   .downloadMeta { font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
+
+  .btns { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 }

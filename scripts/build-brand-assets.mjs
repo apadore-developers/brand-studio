@@ -37,3 +37,43 @@ out("apadore-favicon-web.svg", favicon("dark", WHITE));
 out("apadore-favicon-brand-studio.svg", favicon("light", NAVY));
 
 console.log("brand assets written:", paths.length, "paths");
+
+// ---------- Vector PDF (and .ai, which Illustrator opens as PDF) ----------
+const toPdfOps = (d) => {
+  const t = d.trim().split(/\s+/);
+  const out = [];
+  let i = 0;
+  const H = 233;
+  const pt = (x, y) => `${(+x).toFixed(3)} ${(H - +y).toFixed(3)}`;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === "M") { out.push(`${pt(t[i], t[i + 1])} m`); i += 2; }
+    else if (c === "L") { out.push(`${pt(t[i], t[i + 1])} l`); i += 2; }
+    else if (c === "C") { out.push(`${pt(t[i], t[i + 1])} ${pt(t[i + 2], t[i + 3])} ${pt(t[i + 4], t[i + 5])} c`); i += 6; }
+    else if (c === "Z") out.push("h");
+  }
+  return out.join("\n");
+};
+const pdf = (rgb) => {
+  const body = paths.map((p) => `${toPdfOps(p.d)}\n${p.rule === "evenodd" ? "f*" : "f"}`).join("\n");
+  const content = `${rgb.map((v) => (v / 255).toFixed(4)).join(" ")} rg\n${body}`;
+  const objs = [
+    "<< /Type /Catalog /Pages 2 0 R >>",
+    "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1359 233] /Contents 4 0 R /Resources << >> >>",
+    `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`,
+  ];
+  let s = "%PDF-1.4\n";
+  const offs = [];
+  objs.forEach((o, k) => { offs.push(Buffer.byteLength(s)); s += `${k + 1} 0 obj\n${o}\nendobj\n`; });
+  const x = Buffer.byteLength(s);
+  s += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n${offs.map((o) => `${String(o).padStart(10, "0")} 00000 n \n`).join("")}`;
+  s += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${x}\n%%EOF\n`;
+  return s;
+};
+for (const [name, rgb] of [["pozitivni", [9, 14, 33]], ["negativni", [255, 255, 255]]]) {
+  const p = pdf(rgb);
+  out(`apadore-logo-${name}.pdf`, p);
+  out(`apadore-logo-${name}.ai`, p);
+}
+console.log("pdf/ai written");

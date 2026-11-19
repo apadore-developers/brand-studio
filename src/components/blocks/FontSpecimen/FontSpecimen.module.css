@@ -11,15 +11,19 @@
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-xs);
 
-    &[data-family="heading"] { --specimen-font: var(--font-heading); }
-    &[data-family="mono"] { --specimen-font: var(--font-mono); }
+    --specimen-weight: var(--weight-regular);
+    --specimen-tracking: 0;
+    --specimen-case: none;
+
+    &[data-family="heading"] { --specimen-font: var(--font-heading); --specimen-weight: var(--weight-semibold); --specimen-tracking: -0.04em; }
+    &[data-family="mono"] { --specimen-font: var(--font-mono); --specimen-weight: var(--weight-medium); --specimen-tracking: 0.01em; --specimen-case: uppercase; }
   }
 
   .hero { display: grid; gap: var(--space-3); padding: var(--space-6); font-family: var(--specimen-font); }
 
-  .aa { font-size: 16rem; line-height: 1; letter-spacing: -0.04em; font-weight: var(--weight-semibold); }
+  .aa { font-size: 16rem; line-height: 1; letter-spacing: var(--specimen-tracking); font-weight: var(--specimen-weight); }
 
-  .name { font-size: var(--text-2xl); }
+  .name { font-size: var(--text-2xl); font-weight: var(--specimen-weight); letter-spacing: var(--specimen-tracking); }
 
   .alphabet { white-space: pre-line; font-size: var(--text-base); color: var(--color-text-muted); }
 
@@ -64,6 +68,9 @@
   .testerInput {
     width: 100%;
     font-family: var(--specimen-font);
+    font-weight: var(--specimen-weight);
+    letter-spacing: var(--specimen-tracking);
+    text-transform: var(--specimen-case);
     line-height: 1.1;
     resize: vertical;
     background: transparent;

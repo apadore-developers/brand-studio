@@ -54,7 +54,7 @@ export function FormatList({ items }: { items: { label: string; w: number; h: nu
   );
 }
 
-export function DownloadList({ items, cta }: { items: { title: string; meta: string; href?: string }[]; cta: string }) {
+export function DownloadList({ items, cta }: { items: { title: string; meta: string; href?: string; alt?: string }[]; cta: string }) {
   return (
     <ul role="list" className={s.downloads}>
       {items.map((d) => (
@@ -69,9 +69,16 @@ export function DownloadList({ items, cta }: { items: { title: string; meta: str
                 Figma
               </Button>
             ) : (
-              <Button href={d.href} download icon="download">
-                {cta}
-              </Button>
+              <span className={s.btns}>
+                <Button href={d.href} download icon="download">
+                  {d.alt ? d.href.split(".").pop() : cta}
+                </Button>
+                {d.alt && (
+                  <Button href={d.alt} download icon="download">
+                    {d.alt.split(".").pop()}
+                  </Button>
+                )}
+              </span>
             )
           )}
         </li>

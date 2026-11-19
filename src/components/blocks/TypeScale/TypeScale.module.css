@@ -2,6 +2,8 @@
 @layer components {
   .scale { display: grid; }
 
+  .value { text-align: end; }
+
   .head, .label, .value { font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label); font-size: var(--text-label-s); text-transform: uppercase; color: var(--color-text-subtle); }

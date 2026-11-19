@@ -60,4 +60,6 @@
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-xs);
   }
+
+  .buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 }

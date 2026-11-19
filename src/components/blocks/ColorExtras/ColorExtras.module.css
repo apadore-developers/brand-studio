@@ -104,4 +104,31 @@
   .stopValue { font-family: var(--font-mono);
     font-weight: var(--weight-medium);
     letter-spacing: var(--tracking-label); font-size: var(--text-label-s); color: var(--color-text-subtle); }
+
+  .subhead {
+    margin-block-start: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+  }
+
+  .visible {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2);
+  }
+
+  .visibleItem {
+    display: grid;
+    align-content: space-between;
+    gap: var(--space-4);
+    min-height: 12rem;
+    padding: var(--space-3);
+    font-size: var(--text-sm);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
 }

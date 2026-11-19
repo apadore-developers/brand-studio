@@ -44,7 +44,7 @@ export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: 
 
 type Stop = { name: string; hex: string; alpha: number; position: number };
 
-export function GradientPalette({ items }: { items: { name: string; role: string; variant: "dark" | "light"; stops: Stop[] }[] }) {
+export function GradientPalette({ items }: { items: { name: string; role: string; variant: "dark" | "light"; visible?: { name: string; hex: string }[]; stops: Stop[] }[] }) {
   return (
     <div className={s.palettes}>
       {items.map((g) => (
@@ -54,6 +54,22 @@ export function GradientPalette({ items }: { items: { name: string; role: string
             <span className={s.role}>{g.role}</span>
           </div>
           <div className={s.preview} data-variant={g.variant} />
+          {g.visible && (
+            <>
+              <p className={s.subhead}>Výsledné barvy (odhad)</p>
+              <ul role="list" className={s.visible}>
+                {g.visible.map((v) => (
+                  <li key={v.hex} className={s.visibleItem} style={{ background: v.hex, color: isDark(v.hex) ? "#FFFFFF" : "#090E21" }}>
+                    <strong>{v.name}</strong>
+                    <span className={s.stopValue} style={{ color: "inherit" }}>
+                      {v.hex} · RGB {hexToRgb(v.hex).join(", ")}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className={s.subhead}>Jak je přechod sestavený</p>
+            </>
+          )}
           <ul role="list" className={s.stops}>
             {g.stops.map((st) => (
               <li key={st.name} className={s.stop}>

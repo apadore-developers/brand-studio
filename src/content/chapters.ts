@@ -101,10 +101,11 @@ export const chapters: Chapter[] = [
       },
       {
         type: "colors",
-        size: "sm",
-        title: { cs: "Navy odstíny", en: "Navy tints" },
-        body: { cs: "Světlejší odstíny navy slouží pro sekundární text a prvky na tmavém pozadí.", en: "Lighter navy tints are used for secondary text and elements on dark backgrounds." },
+        size: "md",
+        title: { cs: "Navy (primární)", en: "Navy (primary)" },
+        body: { cs: "Primární barevná škála značky. Navy 900 nese text, logo a tmavé plochy, světlejší odstíny sekundární text a prvky na tmavém pozadí. Škála odpovídá proměnným navy ve Figmě (UI Kit).", en: "Primary colour scale of the brand." },
         colors: [
+          { name: "Navy 900", hex: "#090E21", use: { cs: "Text, logo, tmavé sekce" } },
           { name: "Navy 800", hex: "#3A3E4D", use: { cs: "Sekundární text" } },
           { name: "Navy 600", hex: "#737681", use: { cs: "Popisy, doplňkový text" } },
           { name: "Navy 400", hex: "#9D9FA6", use: { cs: "Text na tmavém pozadí" } },
@@ -113,21 +114,23 @@ export const chapters: Chapter[] = [
       },
       {
         type: "colors",
-        size: "sm",
+        size: "md",
         title: { cs: "Neutrální barvy", en: "Neutrals" },
-        body: { cs: "Světlé šedé nesou karty, tlačítka a linky, tmavší šedé sekundární text. Žádnou další barvu značka nemá.", en: "Light greys carry cards, buttons and lines. The brand has no other colours." },
+        body: { cs: "Celá šedá škála z proměnných ve Figmě (UI Kit). Světlé šedé nesou karty, tlačítka a linky, tmavší šedé sekundární text.", en: "Full grey scale from Figma variables." },
         colors: [
+          { name: "Grey 0 (bílá)", hex: "#FFFFFF", use: { cs: "Pozadí stránky" } },
           { name: "Grey 50", hex: "#F1F1F1", use: { cs: "Karty, tlačítka, plochy" } },
           { name: "Grey 100", hex: "#E4E4E4", use: { cs: "Linky a oddělovače" } },
           { name: "Grey 400", hex: "#898989", use: { cs: "Popisky sekcí" } },
           { name: "Grey 600", hex: "#656565", use: { cs: "Sekundární text" } },
+          { name: "Grey 900", hex: "#131313", use: { cs: "Nejtmavší neutrální" } },
         ],
       },
       {
         type: "gradientPalette",
         title: { cs: "Barvy přechodů", en: "Gradient colours" },
         body: {
-          cs: "Modré tóny patří jen do přechodů, samostatně se nepoužívají (text, plochy, ikony). Tmavý přechod je primární, světlý doplňkový. Body přechodu i s průhledností najdete v kapitole Přechody.",
+          cs: "Výsledné barvy, které jsou na přechodech opravdu vidět (odečtené z hotového přechodu, pracovní odhad), a pod nimi to, jak je přechod sestavený ve Figmě. Modré tóny patří jen do přechodů, samostatně se nepoužívají.",
           en: "Blue tones are used only inside gradients, never on their own.",
         },
         items: [
@@ -135,6 +138,11 @@ export const chapters: Chapter[] = [
             name: { cs: "Tmavý přechod", en: "Dark gradient" },
             variant: "dark",
             role: { cs: "Primární", en: "Primary" },
+            visible: [
+              { name: "Gradient Blue (roh)", hex: "#1E427E" },
+              { name: "Gradient Mid", hex: "#121F3F" },
+              { name: "Gradient Navy (konec)", hex: "#080D1F" },
+            ],
             stops: [
               { name: "Podklad (navy 900)", hex: "#090E21", alpha: 100, position: 0 },
               { name: "Roh, modrá", hex: "#3F8BFF", alpha: 45, position: 0 },
@@ -145,6 +153,11 @@ export const chapters: Chapter[] = [
             name: { cs: "Světlý přechod", en: "Light gradient" },
             variant: "light",
             role: { cs: "Doplňkový", en: "Supplementary" },
+            visible: [
+              { name: "Sky (roh)", hex: "#96B3DE" },
+              { name: "Sky Mist (střed)", hex: "#D9E2EE" },
+              { name: "Mist (konec)", hex: "#EEF0F4" },
+            ],
             stops: [
               { name: "Podklad, šedomodrá", hex: "#EEF0F4", alpha: 100, position: 0 },
               { name: "Roh, modrá", hex: "#7FA3DA", alpha: 75, position: 0 },
@@ -157,23 +170,15 @@ export const chapters: Chapter[] = [
       {
         type: "colorRatio",
         title: { cs: "Poměr barev", en: "Colour ratio" },
-        body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "Indicative ratio. Navy and white carry the brand." },
+        body: { cs: "Orientační poměr ploch včetně barev, které jsou vidět na přechodech. Značku nese dvojice navy a bílá, modré z přechodů ji doplňují (tmavý přechod víc než světlý).", en: "Indicative ratio. Navy and white carry the brand." },
         parts: [
-          { name: "Navy 900", hex: "#090E21", percent: 45 },
-          { name: "Bílá", hex: "#FFFFFF", percent: 40 },
-          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 15 },
-        ],
-      },
-      {
-        type: "colorPairs",
-        title: { cs: "Kombinace", en: "Combinations" },
-        body: { cs: "Doporučené dvojice textu a pozadí. Číslo u každé dvojice je kontrast, tedy o kolik je text světlejší nebo tmavší než pozadí (1 : 1 = stejná barva, 21 : 1 = černá na bílé). Podle pravidel přístupnosti WCAG potřebuje běžný text aspoň 4,5 : 1 (úroveň AA), ideálně 7 : 1 (AAA). Velké nadpisy stačí 3 : 1.", en: "Recommended text and background pairs." },
-        pairs: [
-          { label: { cs: "Navy 900 na bílé" }, bg: "#FFFFFF", fg: "#090E21" },
-          { label: { cs: "Bílá na navy 900" }, bg: "#090E21", fg: "#FFFFFF" },
-          { label: { cs: "Navy 900 na grey 50" }, bg: "#F1F1F1", fg: "#090E21" },
-          { label: { cs: "Navy 600 na bílé" }, bg: "#FFFFFF", fg: "#737681" },
-          { label: { cs: "Navy 200 na navy 900" }, bg: "#090E21", fg: "#CECFD3" },
+          { name: "Navy 900", hex: "#090E21", percent: 38 },
+          { name: "Bílá", hex: "#FFFFFF", percent: 32 },
+          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 12 },
+          { name: "Gradient Blue", hex: "#1E427E", percent: 8 },
+          { name: "Gradient Navy", hex: "#080D1F", percent: 4 },
+          { name: "Sky", hex: "#96B3DE", percent: 4 },
+          { name: "Sky Mist", hex: "#D9E2EE", percent: 2 },
         ],
       },
     ],
@@ -243,6 +248,18 @@ export const chapters: Chapter[] = [
           { name: "Body L", size: 18, lineHeight: 24, tracking: 0, family: "body" },
           { name: "Body M", size: 16, lineHeight: 22, tracking: 0, family: "body" },
           { name: "Label", size: 14, lineHeight: 16, tracking: 1, family: "mono" },
+        ],
+      },
+      {
+        type: "colorPairs",
+        title: { cs: "Text na podkladu", en: "Text on background" },
+        body: { cs: "Na jakém podkladu má text ležet a jakou barvou. Doporučené dvojice textu a pozadí. Číslo u každé dvojice je kontrast, tedy o kolik je text světlejší nebo tmavší než pozadí (1 : 1 = stejná barva, 21 : 1 = černá na bílé). Podle pravidel přístupnosti WCAG potřebuje běžný text aspoň 4,5 : 1 (úroveň AA), ideálně 7 : 1 (AAA). Velké nadpisy stačí 3 : 1.", en: "Recommended text and background pairs." },
+        pairs: [
+          { label: { cs: "Navy 900 na bílé" }, bg: "#FFFFFF", fg: "#090E21" },
+          { label: { cs: "Bílá na navy 900" }, bg: "#090E21", fg: "#FFFFFF" },
+          { label: { cs: "Navy 900 na grey 50" }, bg: "#F1F1F1", fg: "#090E21" },
+          { label: { cs: "Navy 600 na bílé" }, bg: "#FFFFFF", fg: "#737681" },
+          { label: { cs: "Navy 200 na navy 900" }, bg: "#090E21", fg: "#CECFD3" },
         ],
       },
     ],
@@ -386,13 +403,25 @@ export const chapters: Chapter[] = [
         ],
       },
       {
+        type: "downloads",
+        title: { cs: "Profilový set", en: "Profile set" },
+        body: { cs: "Hotové obrázky pro profily na sociálních sítích, v rozměrech, které platformy podporují. Stačí stáhnout a nahrát." },
+        items: [
+          { title: { cs: "Profilová fotka · tmavá (LinkedIn, Instagram) 400 × 400" }, meta: { cs: "PNG, JPG" }, href: "/downloads/profil/apadore-profilovka-tmava-400.png", alt: "/downloads/profil/apadore-profilovka-tmava-400.jpg" },
+          { title: { cs: "Profilová fotka · světlá 400 × 400" }, meta: { cs: "PNG, JPG" }, href: "/downloads/profil/apadore-profilovka-svetla-400.png", alt: "/downloads/profil/apadore-profilovka-svetla-400.jpg" },
+          { title: { cs: "LinkedIn banner · tmavý 1584 × 396" }, meta: { cs: "PNG, JPG" }, href: "/downloads/profil/apadore-linkedin-banner-tmavy-1584x396.png", alt: "/downloads/profil/apadore-linkedin-banner-tmavy-1584x396.jpg" },
+          { title: { cs: "LinkedIn banner · světlý 1584 × 396" }, meta: { cs: "PNG, JPG" }, href: "/downloads/profil/apadore-linkedin-banner-svetly-1584x396.png", alt: "/downloads/profil/apadore-linkedin-banner-svetly-1584x396.jpg" },
+          { title: { cs: "Clutch · logo profilu 400 × 400" }, meta: { cs: "PNG, JPG" }, href: "/downloads/profil/apadore-clutch-logo-400.png", alt: "/downloads/profil/apadore-clutch-logo-400.jpg" },
+        ],
+      },
+      {
         type: "images",
         title: { cs: "Rozšířený sociální kit", en: "Extended social kit" },
-        body: { cs: "Ukázka z rozšířeného kitu: další varianty zarovnání, články s grafickými prvky z blogu a case study. Všechny layouty ve formátech na výšku, čtverec i reels jsou ve Figmě." },
+        body: { cs: "Ukázka z rozšířeného kitu: další varianty zarovnání, příspěvky s grafickými prvky z blogu a case study. Všechny layouty ve formátech na výšku, čtverec i reels jsou ve Figmě." },
         items: [
-          { label: { cs: "Článek · vlevo, logo vpravo" }, src: "/images/socialni-site/rozsireny-d.webp", ratio: "1200 / 1504" },
-          { label: { cs: "Článek s grafikou · podpis autora" }, src: "/images/socialni-site/rozsireny-e1.webp", ratio: "1200 / 1504" },
-          { label: { cs: "Článek s grafikou · logo na střed" }, src: "/images/socialni-site/rozsireny-e2.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Příspěvek · vlevo, logo vpravo" }, src: "/images/socialni-site/rozsireny-d.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Příspěvek s grafikou · podpis autora" }, src: "/images/socialni-site/rozsireny-e1.webp", ratio: "1200 / 1504" },
+          { label: { cs: "Příspěvek s grafikou · logo na střed" }, src: "/images/socialni-site/rozsireny-e2.webp", ratio: "1200 / 1504" },
           { label: { cs: "Case study · Linstram" }, src: "/images/socialni-site/rozsireny-f-linstram.webp", ratio: "1200 / 1504" },
         ],
       },
@@ -432,7 +461,7 @@ export const chapters: Chapter[] = [
         type: "downloads",
         title: { cs: "Šablony a skill", en: "Templates and skill" },
         items: [
-          { title: { cs: "Šablony ve Figmě" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Šablony pro sociální sítě" } },
+          { title: { cs: "Šablony ve Figmě" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Sociální kit" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2043-5715" },
           { title: { cs: "Skill: příspěvky na LinkedIn" }, meta: { cs: "apadore-prispevky-linkedin.zip | skill pro Clauda" }, href: "/downloads/apadore-prispevky-linkedin.zip" },
         ],
       },
@@ -462,6 +491,15 @@ export const chapters: Chapter[] = [
         ],
       },
       {
+        type: "colors",
+        size: "lg",
+        title: { cs: "Akcent: červená tečka", en: "Accent: red dot" },
+        body: { cs: "Jediný barevný akcent grafických prvků. Používá se jen jako malá tečka ve skleněném prvku (oddělení dvojice slov, aktivní stav). Mimo grafické prvky a obálky blogu se v brandu zatím nepoužívá." },
+        colors: [
+          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Tečka ve skleněném prvku, průměr cca 8 px na obálce 1200 × 800" } },
+        ],
+      },
+      {
         type: "rules",
         title: { cs: "Pravidla", en: "Rules" },
         items: [
@@ -486,8 +524,8 @@ export const chapters: Chapter[] = [
         title: { cs: "Ke stažení", en: "Downloads" },
         body: { cs: "Originální soubory používejte vždy odsud nebo z firemního Google Drive, nikdy je nepřekreslujte.", en: "Always use the original files." },
         items: [
-          { title: { cs: "Logo, pozitivní (navy)" }, meta: { cs: "apadore-logo-pozitivni.svg" }, href: "/brand/apadore-logo-pozitivni.svg" },
-          { title: { cs: "Logo, negativní (bílé)" }, meta: { cs: "apadore-logo-negativni.svg" }, href: "/brand/apadore-logo-negativni.svg" },
+          { title: { cs: "Logo, pozitivní (navy)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo" }, href: "/brand/apadore-logo-pozitivni.svg", alt: "/brand/apadore-logo-pozitivni.pdf" },
+          { title: { cs: "Logo, negativní (bílé)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo" }, href: "/brand/apadore-logo-negativni.svg", alt: "/brand/apadore-logo-negativni.pdf" },
           { title: { cs: "Favicon webu (bílé A na tmavém přechodu)" }, meta: { cs: "apadore-favicon-web.svg" }, href: "/brand/apadore-favicon-web.svg" },
           { title: { cs: "Favicon Brand Studia (navy A na světlém přechodu)" }, meta: { cs: "apadore-favicon-brand-studio.svg" }, href: "/brand/apadore-favicon-brand-studio.svg" },
           { title: { cs: "Písmo Booton" }, meta: { cs: "Licencované písmo, [DOPLNIT odkaz na Drive]" } },
