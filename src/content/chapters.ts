@@ -383,6 +383,51 @@ export const chapters: Chapter[] = [
     ],
   },
   {
+    slug: "graficke-prvky",
+    cover: "blog",
+    title: { cs: "Grafické prvky", en: "Graphic elements" },
+    description: { cs: "Grafika se skleněnými prvky, primárně pro obálky článků na blogu.", en: "Glass element graphics, primarily for blog article covers." },
+    summary: { cs: "Grafické prvky se skleněnými prvky na přechodu. Používá se primárně jako obálky článků na blogu (1200 × 800, světlá i tmavá verze). Princip, varianty skleněných prvků a pravidla." },
+    blocks: [
+      {
+        type: "text",
+        title: { cs: "Princip", en: "Principle" },
+        body: { cs: "Grafické prvky se používají primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
+      },
+      {
+        type: "colors",
+        size: "lg",
+        title: { cs: "Akcent: červená tečka", en: "Accent: red dot" },
+        body: { cs: "Jediný barevný akcent grafických prvků. Používá se jen jako malá tečka ve skleněném prvku (oddělení dvojice slov, aktivní stav). Mimo grafické prvky a obálky blogu se v brandu zatím nepoužívá." },
+        colors: [
+          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Tečka ve skleněném prvku, průměr cca 8 px na obálce 1200 × 800" } },
+        ],
+      },
+      {
+        type: "images",
+        title: { cs: "Příklady obálek", en: "Cover examples" },
+        body: { cs: "Skutečné obálky článků z blogu Apadore ve světlé i tmavé verzi." },
+        items: [
+          { label: { cs: "Zadání a hypotéza · tmavá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-tmava.webp", ratio: "3 / 2" },
+          { label: { cs: "Zadání a hypotéza · světlá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-svetla.webp", ratio: "3 / 2" },
+          { label: { cs: "Vícejazyčné weby · tmavá" }, src: "/images/doprovodna-grafika/vicejazycne-weby-tmava.webp", ratio: "3 / 2" },
+          { label: { cs: "E-E-A-T · světlá" }, src: "/images/doprovodna-grafika/eeat-svetla.webp", ratio: "3 / 2" },
+        ],
+      },
+      {
+        type: "rules",
+        title: { cs: "Pravidla", en: "Rules" },
+        items: [
+          { title: { cs: "Vždy obě verze" }, body: { cs: "Ke každému článku tmavá i světlá obálka. Na webu se střídají." } },
+          { title: { cs: "Jeden motiv" }, body: { cs: "Jeden skleněný prvek uprostřed. Žádné fotky ani nadpis článku." } },
+          { title: { cs: "Slovo, ne věta" }, body: { cs: "Text ve skle má jedno až tři slova." } },
+          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent grafických prvků (obálek blogu). Jinde se v brandu nepoužívá." } },
+          { title: { cs: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové obálky jsou ve Figmě na stránce Blog [Covers]." } },
+        ],
+      },
+    ],
+  },
+  {
     slug: "socialni-site",
     cover: "social",
     title: { cs: "Sociální sítě", en: "Social media" },
@@ -463,51 +508,6 @@ export const chapters: Chapter[] = [
         items: [
           { title: { cs: "Šablony ve Figmě" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Sociální kit" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2043-5715" },
           { title: { cs: "Skill: příspěvky na LinkedIn" }, meta: { cs: "apadore-prispevky-linkedin.zip | skill pro Clauda" }, href: "/downloads/apadore-prispevky-linkedin.zip" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "graficke-prvky",
-    cover: "blog",
-    title: { cs: "Grafické prvky", en: "Graphic elements" },
-    description: { cs: "Grafika se skleněnými prvky, primárně pro obálky článků na blogu.", en: "Glass element graphics, primarily for blog article covers." },
-    summary: { cs: "Grafické prvky se skleněnými prvky na přechodu. Používá se primárně jako obálky článků na blogu (1200 × 800, světlá i tmavá verze). Princip, varianty skleněných prvků a pravidla." },
-    blocks: [
-      {
-        type: "text",
-        title: { cs: "Princip", en: "Principle" },
-        body: { cs: "Grafické prvky se používají primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Article cover 1200 × 800, always in dark and light." },
-      },
-      {
-        type: "images",
-        title: { cs: "Příklady obálek", en: "Cover examples" },
-        body: { cs: "Skutečné obálky článků z blogu Apadore ve světlé i tmavé verzi." },
-        items: [
-          { label: { cs: "Zadání a hypotéza · tmavá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-tmava.webp", ratio: "3 / 2" },
-          { label: { cs: "Zadání a hypotéza · světlá" }, src: "/images/doprovodna-grafika/zadani-hypoteza-svetla.webp", ratio: "3 / 2" },
-          { label: { cs: "Vícejazyčné weby · tmavá" }, src: "/images/doprovodna-grafika/vicejazycne-weby-tmava.webp", ratio: "3 / 2" },
-          { label: { cs: "E-E-A-T · světlá" }, src: "/images/doprovodna-grafika/eeat-svetla.webp", ratio: "3 / 2" },
-        ],
-      },
-      {
-        type: "colors",
-        size: "lg",
-        title: { cs: "Akcent: červená tečka", en: "Accent: red dot" },
-        body: { cs: "Jediný barevný akcent grafických prvků. Používá se jen jako malá tečka ve skleněném prvku (oddělení dvojice slov, aktivní stav). Mimo grafické prvky a obálky blogu se v brandu zatím nepoužívá." },
-        colors: [
-          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Tečka ve skleněném prvku, průměr cca 8 px na obálce 1200 × 800" } },
-        ],
-      },
-      {
-        type: "rules",
-        title: { cs: "Pravidla", en: "Rules" },
-        items: [
-          { title: { cs: "Vždy obě verze" }, body: { cs: "Ke každému článku tmavá i světlá obálka. Na webu se střídají." } },
-          { title: { cs: "Jeden motiv" }, body: { cs: "Jeden skleněný prvek uprostřed. Žádné fotky ani nadpis článku." } },
-          { title: { cs: "Slovo, ne věta" }, body: { cs: "Text ve skle má jedno až tři slova." } },
-          { title: { cs: "Červená tečka" }, body: { cs: "Jediný barevný akcent grafických prvků (obálek blogu). Jinde se v brandu nepoužívá." } },
-          { title: { cs: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové obálky jsou ve Figmě na stránce Blog [Covers]." } },
         ],
       },
     ],
