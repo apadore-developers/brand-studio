@@ -324,8 +324,8 @@ export const chapters: Chapter[] = [
         items: [
           { label: { cs: "Robotwin: stříkání v lakovně" }, src: "/images/obrazovy-styl/robotwin-strikani.webp", ratio: "4 / 3" },
           { label: { cs: "Robotwin: obsluha robota" }, src: "/images/obrazovy-styl/robotwin-robot.webp", ratio: "4 / 3" },
-          { label: { cs: "ESENS Letná: bazén v domě" }, src: "/images/obrazovy-styl/esens-bazen.webp", ratio: "4 / 3" },
           { label: { cs: "Linstram: kancelářská chodba" }, src: "/images/obrazovy-styl/linstram-chodba.webp", ratio: "4 / 3" },
+          { label: { cs: "ESENS Letná: bazén v domě" }, src: "/images/obrazovy-styl/esens-bazen.webp", ratio: "4 / 3" },
         ],
       },
       {

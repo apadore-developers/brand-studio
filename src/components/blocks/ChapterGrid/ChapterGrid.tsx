@@ -31,7 +31,8 @@ function Cover({ kind }: { kind: Chapter["cover"] }) {
     case "gradient":
       return <span className={s.coverGlass}>přechod</span>;
     case "images":
-      return <div className={s.coverImages}><span /><span /><span /><span /></div>;
+      // eslint-disable-next-line @next/next/no-img-element
+      return <img src="/images/obrazovy-styl/sky-towers-monitor.webp" alt="" className={s.coverPhoto} />;
     case "social":
       return <span className={s.coverQuote}>„Citát“</span>;
     case "blog":

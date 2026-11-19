@@ -133,6 +133,12 @@
     border-radius: var(--radius-full);
   }
 
+  .coverPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .coverImages {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
