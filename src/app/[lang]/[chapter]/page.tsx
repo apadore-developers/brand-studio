@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { ChapterNav } from "@/components/layout/ChapterNav";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Callout } from "@/components/ui/Callout";
@@ -36,6 +37,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
         {c.blocks.map((b, i) => (
           <BlockRenderer key={i} block={b} lang={lang} id={`${c.slug}-${i + 1}`} />
         ))}
+        <ChapterNav lang={lang} prev={chapters[chapters.indexOf(c) - 1]} next={chapters[chapters.indexOf(c) + 1]} />
       </main>
       <SiteFooter lang={lang} />
     </>
