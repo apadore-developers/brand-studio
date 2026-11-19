@@ -22,7 +22,7 @@ export function ImagePlaceholders({ items, note }: { items: { label: string; sou
         <li key={it.label} className={s.imageItem} data-wide={(() => { const [w, h] = it.ratio.split("/").map(Number); return w / h > 1.45 || undefined; })()}>
           {it.src ? (
             <div className={s.photo} style={{ aspectRatio: it.ratio }}>
-              <Image src={it.src} alt={it.label} fill sizes="(width >= 1024px) 420px, 100vw" className={s.img} />
+              <Image src={it.src} alt={it.label} fill unoptimized className={s.img} />
             </div>
           ) : (
             <div className={s.placeholder} style={{ aspectRatio: it.ratio }}>
