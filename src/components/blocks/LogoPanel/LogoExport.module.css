@@ -1,4 +1,4 @@
-/* LogoExport. Attributes: data-bg on stage and swatch, aria-pressed on option */
+/* LogoExport. Attributes: data-bg on stage and swatch, aria-pressed on option, aria-expanded on disclosure, data-grow on field */
 @layer components {
   .tool {
     display: grid;
@@ -19,9 +19,11 @@
     border-radius: var(--radius-xs);
 
     &[data-bg="transparent"] {
-      background:
-        repeating-conic-gradient(var(--grey-100) 0% 25%, var(--grey-0) 0% 50%)
-        0 0 / 1.6rem 1.6rem;
+      background: repeating-conic-gradient(var(--grey-100) 0% 25%, var(--grey-0) 0% 50%) 0 0 / 1.6rem 1.6rem;
+    }
+
+    &[data-bg="dark"] {
+      background: repeating-conic-gradient(var(--navy-800) 0% 25%, var(--navy-900) 0% 50%) 0 0 / 1.6rem 1.6rem;
     }
   }
 
@@ -42,11 +44,15 @@
     color: var(--color-text-subtle);
   }
 
+  .stage[data-bg="dark"] .size { color: var(--navy-200); }
+
+  .heading { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
+
   .legend { margin-block-end: var(--space-2); text-transform: uppercase; }
 
   .controls { display: grid; gap: var(--space-5); }
 
-  .group { display: grid; gap: var(--space-2); min-width: 0; margin: 0; padding: 0; border: 0; }
+  .group { display: grid; gap: var(--space-3); min-width: 0; margin: 0; padding: 0; border: 0; }
 
   .options { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
@@ -75,9 +81,6 @@
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-xs);
 
-    &[data-bg="transparent"] {
-      background: repeating-conic-gradient(var(--grey-100) 0% 25%, var(--grey-0) 0% 50%) 0 0 / 0.7rem 0.7rem;
-    }
     &[data-bg="white"] { background: var(--grey-0); }
     &[data-bg="grey"] { background: var(--grey-50); }
     &[data-bg="navy"] { background: var(--navy-900); }
@@ -85,14 +88,36 @@
     &[data-bg="gradientLight"] { background: var(--bg-brand-light); }
   }
 
+  .row { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-3); }
+
+  .times { padding-block-end: var(--space-2); color: var(--color-text-subtle); }
+
   .field {
     display: grid;
     gap: var(--space-1);
     font-size: var(--text-xs);
     color: var(--color-text-muted);
 
+    &[data-grow] { flex: 1 1 16rem; }
     & strong { color: var(--color-text); }
     & input[type="range"] { width: 100%; accent-color: var(--navy-900); }
+  }
+
+  .zoom { display: flex; align-items: center; gap: var(--space-2); }
+
+  .zoomBtn {
+    flex: none;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background: var(--grey-50);
+    border-radius: var(--radius-xs);
+    transition: var(--transition-colors);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { color: var(--grey-0); background: var(--navy-900); }
+    }
   }
 
   .reset {
@@ -112,5 +137,26 @@
     border-radius: var(--radius-xs);
   }
 
-  .buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-start: var(--space-2); }
+  .disclosure {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+  }
+
+  .chevron {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-inline-end: 1.5px solid currentcolor;
+    border-block-end: 1.5px solid currentcolor;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+
+    .disclosure[aria-expanded="true"] & { transform: rotate(45deg); }
+  }
+
+  .buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 }
