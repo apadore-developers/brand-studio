@@ -5,7 +5,6 @@ import { DownloadList, FormatList, ImagePlaceholders, RuleList } from "@/compone
 import { FontSpecimen } from "@/components/blocks/FontSpecimen";
 import { GlassDemo, GradientBlock } from "@/components/blocks/GradientBlock";
 import { ClearSpace, LogoTiles } from "@/components/blocks/LogoShowcase";
-import { BrandMockups } from "@/components/blocks/BrandMockups";
 import { LogoExport, LogoPanel } from "@/components/blocks/LogoPanel";
 import { TypeScale } from "@/components/blocks/TypeScale";
 import { OutputPreviews } from "@/components/blocks/OutputPreviews";
@@ -33,8 +32,6 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
       return <Section {...common} layout="full" />;
     case "logoPanel":
       return <Section {...common}><LogoPanel lang={lang} /></Section>;
-    case "mockups":
-      return <Section {...common} layout="full"><BrandMockups items={block.items.map((i) => ({ kind: i.kind, label: t(i.label, lang) }))} /></Section>;
     case "logoGenerator":
       return <Section {...common} layout="full"><LogoExport lang={lang} /></Section>;
     case "clearSpace":
