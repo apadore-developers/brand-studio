@@ -90,7 +90,7 @@ const clampSize = (v: number) => Math.min(8000, Math.max(16, Math.round(v) || 16
  */
 export function LogoExport({ lang }: { lang: Lang }) {
   const en = lang === "en";
-  const [mode, setMode] = useState<"auto" | "fixed">("auto");
+  const [mode, setMode] = useState<"auto" | "fixed">("fixed");
   const [autoW, setAutoW] = useState(4000);
   const [pad, setPad] = useState(0);
   const [fw, setFw] = useState(1080);

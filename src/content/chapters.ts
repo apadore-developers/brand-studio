@@ -40,19 +40,6 @@ export const chapters: Chapter[] = [
         callout: { variant: "note", title: { cs: "Minimální šířka loga", en: "Minimum logo width" }, body: { cs: "140 px na obrazovkách. Tisk: [DOPLNIT].", en: "140 px on screens. Print: [TBD]." } },
       },
       {
-        type: "downloads",
-        title: { cs: "Základní logo kit", en: "Basic logo kit" },
-        body: { cs: "Všechny základní soubory loga v jednom balíčku. Pozitivní (navy) i negativní (bílé) logo jako SVG, PDF a AI, PNG 2000 px na šířku s průhledným pozadím, JPG 2000 px s ochrannou zónou (pozitivní na bílé, negativní na navy) a čtvercové logo pro profily 1080 × 1080 v navy i na bílé.", en: "All basic logo files in one package. Positive (navy) and negative (white) logo as SVG, PDF and AI, a 2000 px wide PNG with a transparent background, a 2000 px JPG with clear space (positive on white, negative on navy) and a square 1080 × 1080 profile logo on navy and on white." },
-        items: [
-          { title: { cs: "Apadore logo kit", en: "Apadore logo kit" }, meta: { cs: "ZIP · SVG, PDF, AI, PNG, JPG", en: "ZIP · SVG, PDF, AI, PNG, JPG" }, href: "/downloads/apadore-logo-kit.zip" },
-        ],
-      },
-      {
-        type: "logoGenerator",
-        title: { cs: "Logo generátor", en: "Logo generator" },
-        body: { cs: "Export loga na míru. Samotné logo bez pozadí v libovolné velikosti, nebo logo v přesném rozměru (např. 1080 × 1080) s doporučenou velikostí, kterou lze přiblížit nebo oddálit. Pozadí si můžete přidat v sekci Logo s pozadím.", en: "Custom logo export. The clean logo without a background at any size, or the logo in an exact size (e.g. 1080 × 1080) at a recommended size you can zoom in or out. Add a background under Logo with background." },
-      },
-      {
         type: "clearSpace",
         title: { cs: "Ochranná zóna", en: "Clear space" },
         ratio: { cs: "1× výška loga", en: "1× logo height" },
@@ -89,19 +76,29 @@ export const chapters: Chapter[] = [
         type: "favicons",
         title: { cs: "Favicon", en: "Favicon" },
         body: {
-          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech (16 až 64 px). Web Apadore: bílé A na tmavém přechodu. Apadore Brand Studio: inverzně, navy A na světlém přechodu. Oba přechody mají stejný směr. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore.",
-          en: "The favicon is the letter A from the logo and is used only at small sizes (16 to 64 px). Apadore website: white A on the dark gradient. Apadore Brand Studio: inverted, navy A on the light gradient. Both gradients run in the same direction. Larger formats (profile picture, app icon) use the full Apadore logo.",
+          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech. Zatím ve dvou verzích: bílé A na navy a navy A na bílé. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore.",
+          en: "The favicon is the letter A from the logo and is used only at small sizes. For now in two versions: white A on navy and navy A on white. Larger formats (profile picture, app icon) use the full Apadore logo.",
         },
       },
       {
         type: "downloads",
-        title: { cs: "Varianty faviconu", en: "Favicon variants" },
-        body: { cs: "Favicon ke stažení jako SVG a PNG 512 × 512. Plné varianty v navy a na bílém pozadí se hodí tam, kde přechod nejde použít (ikony aplikací, systémy třetích stran). PNG 180 a 32 px jsou ve stejné složce.", en: "Favicon downloads as SVG and PNG 512 × 512. The solid navy and white variants are for places where the gradient cannot be used (app icons, third-party systems). 180 and 32 px PNGs are in the same folder." },
+        title: { cs: "Favicon ke stažení", en: "Favicon downloads" },
         items: [
-          { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "Bílé A na navy 900 · SVG, PNG", en: "White A on navy 900 · SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
-          { title: { cs: "Favicon · bílé pozadí", en: "Favicon · white background" }, meta: { cs: "Navy A na bílé · SVG, PNG", en: "Navy A on white · SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
-          { title: { cs: "Favicon webu · tmavý přechod", en: "Website favicon · dark gradient" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/brand/apadore-favicon-web.svg", alt: "/downloads/favicon/apadore-favicon-web-512.png" },
-          { title: { cs: "Favicon Brand Studia · světlý přechod", en: "Brand Studio favicon · light gradient" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/brand/apadore-favicon-brand-studio.svg", alt: "/downloads/favicon/apadore-favicon-brand-studio-512.png" },
+          { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "Bílé A na navy 900 · SVG, PNG 512 (180 a 32 px v logo kitu)", en: "White A on navy 900 · SVG, PNG 512 (180 and 32 px in the logo kit)" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
+          { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "Navy A na bílé · SVG, PNG 512 (180 a 32 px v logo kitu)", en: "Navy A on white · SVG, PNG 512 (180 and 32 px in the logo kit)" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
+        ],
+      },
+      {
+        type: "logoGenerator",
+        title: { cs: "Logo generátor", en: "Logo generator" },
+        body: { cs: "Export loga na míru. Samotné logo bez pozadí v libovolné velikosti, nebo logo v přesném rozměru (např. 1080 × 1080) s doporučenou velikostí, kterou lze přiblížit nebo oddálit. Pozadí si můžete přidat v sekci Logo s pozadím.", en: "Custom logo export. The clean logo without a background at any size, or the logo in an exact size (e.g. 1080 × 1080) at a recommended size you can zoom in or out. Add a background under Logo with background." },
+      },
+      {
+        type: "downloads",
+        title: { cs: "Základní logo kit", en: "Basic logo kit" },
+        body: { cs: "Všechny základní soubory loga v jednom balíčku. Pozitivní (navy) i negativní (bílé) logo jako SVG, PDF a AI, PNG 2000 px na šířku s průhledným pozadím, JPG 2000 px s ochrannou zónou (pozitivní na bílé, negativní na navy) čtvercové logo pro profily 1080 × 1080 v navy i na bílé a favicon v navy i na bílé (SVG, PNG 512, 180 a 32 px).", en: "All basic logo files in one package. Positive (navy) and negative (white) logo as SVG, PDF and AI, a 2000 px wide PNG with a transparent background, a 2000 px JPG with clear space (positive on white, negative on navy) a square 1080 × 1080 profile logo on navy and on white, and the favicon on navy and on white (SVG, PNG 512, 180 and 32 px)." },
+        items: [
+          { title: { cs: "Apadore logo kit", en: "Apadore logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
         ],
       },
     ],
@@ -117,10 +114,9 @@ export const chapters: Chapter[] = [
         type: "colors",
         size: "lg",
         title: { cs: "Primární barvy", en: "Primary colours" },
-        body: { cs: "Značku nese tmavá navy a bílá, doplňuje je světlejší navy 800 a světle šedá. Většina formátů stojí jen na těchto barvách. Hodnoty CMYK a Pantone pro tisk: [DOPLNIT].", en: "Dark navy and white carry the brand, complemented by the lighter navy 800 and light grey. Most formats rely on these colours only. CMYK and Pantone values for print: [TBD]." },
+        body: { cs: "Značku nese tmavá navy a bílá, doplňuje je světle šedá. Většina formátů stojí jen na těchto barvách. Hodnoty CMYK a Pantone pro tisk: [DOPLNIT].", en: "Dark navy and white carry the brand, complemented by light grey. Most formats rely on these colours only. CMYK and Pantone values for print: [TBD]." },
         colors: [
           { name: "Navy 900", hex: "#090E21", use: { cs: "Midnight Navy · text, logo, tmavé sekce", en: "Midnight Navy · text, logo, dark sections" } },
-          { name: "Navy 800", hex: "#3A3E4D", use: { cs: "Dusk Navy · sekundární text, tmavé plochy", en: "Dusk Navy · secondary text, dark surfaces" } },
           { name: "Bílá", hex: "#FFFFFF", use: { cs: "Pure White · pozadí, text na tmavém, negativní logo", en: "Pure White · background, text on dark, negative logo" } },
           { name: "Grey 50", hex: "#F1F1F1", use: { cs: "Soft Grey · karty, tlačítka, plochy", en: "Soft Grey · cards, buttons, surfaces" } },
         ],
@@ -551,8 +547,9 @@ export const chapters: Chapter[] = [
         items: [
           { title: { cs: "Logo, pozitivní (navy)", en: "Logo, positive (navy)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-pozitivni.svg", alt: "/brand/apadore-logo-pozitivni.pdf" },
           { title: { cs: "Logo, negativní (bílé)", en: "Logo, negative (white)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-negativni.svg", alt: "/brand/apadore-logo-negativni.pdf" },
-          { title: { cs: "Favicon webu (bílé A na tmavém přechodu)", en: "Website favicon (white A on the dark gradient)" }, meta: { cs: "apadore-favicon-web.svg", en: "apadore-favicon-web.svg" }, href: "/brand/apadore-favicon-web.svg" },
-          { title: { cs: "Favicon Brand Studia (navy A na světlém přechodu)", en: "Brand Studio favicon (navy A on the light gradient)" }, meta: { cs: "apadore-favicon-brand-studio.svg", en: "apadore-favicon-brand-studio.svg" }, href: "/brand/apadore-favicon-brand-studio.svg" },
+          { title: { cs: "Základní logo kit", en: "Basic logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
+          { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
+          { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
           { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo, [DOPLNIT odkaz na Drive]", en: "Licensed typeface, [ADD Drive link]" } },
           { title: { cs: "Geist a IBM Plex Mono", en: "Geist and IBM Plex Mono" }, meta: { cs: "Zdarma: vercel.com/font, github.com/IBM/plex", en: "Free: vercel.com/font, github.com/IBM/plex" } },
         ],

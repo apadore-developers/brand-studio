@@ -50,8 +50,8 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
           <LogoTiles
             compact
             items={[
-              { label: "Web Apadore", bg: "gradientDark", logo: "negativni", mark: true },
-              { label: "Apadore Brand Studio", bg: "gradientLight", logo: "pozitivni", mark: true },
+              { label: lang === "en" ? "Navy" : "Navy", bg: "dark", logo: "negativni", mark: true },
+              { label: lang === "en" ? "White" : "Bílá", bg: "white", logo: "pozitivni", mark: true },
             ]}
           />
         </Section>

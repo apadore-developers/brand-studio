@@ -122,7 +122,7 @@ console.log("favicon and social variants written");
   const { join } = await import("node:path");
   const stage = mkdtempSync(join(tmpdir(), "logo-kit-"));
   const root = join(stage, "apadore-logo-kit");
-  for (const d of ["vektor", "png", "jpg", "profil"]) mkdirSync(join(root, d), { recursive: true });
+  for (const d of ["vektor", "png", "jpg", "profil", "favicon"]) mkdirSync(join(root, d), { recursive: true });
   const brand = (n) => new URL(`../public/brand/${n}`, import.meta.url).pathname;
   const W = 2000;
   // JPG: logo with clear space of half the logo height on every side
@@ -138,6 +138,8 @@ console.log("favicon and social variants written");
   }
   for (const v of ["navy", "bila"]) for (const ext of ["png", "jpg"])
     copyFileSync(soc(`apadore-logo-socialni-site-${v}-1080.${ext}`), join(root, "profil", `apadore-logo-profil-${v}-1080.${ext}`));
+  for (const v of ["navy", "bila"]) for (const f of [`apadore-favicon-${v}.svg`, ...[512, 180, 32].map((px) => `apadore-favicon-${v}-${px}.png`)])
+    copyFileSync(fav(f), join(root, "favicon", f));
   const zipPath = new URL("../public/downloads/apadore-logo-kit.zip", import.meta.url).pathname;
   rmSync(zipPath, { force: true });
   execFileSync("zip", ["-qr", zipPath, "apadore-logo-kit"], { cwd: stage });
