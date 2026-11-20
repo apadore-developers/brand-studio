@@ -77,3 +77,39 @@ for (const [name, rgb] of [["pozitivni", [9, 14, 33]], ["negativni", [255, 255, 
   out(`apadore-logo-${name}.ai`, p);
 }
 console.log("pdf/ai written");
+
+// ---------- Solid favicon and social profile variants (SVG + PNG/JPG via sharp) ----------
+const solidFavicon = (bg, fg) => {
+  const size = 512, h = 300, s = h / 223.58, w = 196.41 * s;
+  const tx = (size - w) / 2, ty = (size - h) / 2 - 4.83 * s;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}"><rect width="${size}" height="${size}" fill="${bg}"/><g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${s.toFixed(5)})"><path fill="${fg}" fill-rule="${a.rule}" d="${a.d}"/></g></svg>\n`;
+};
+// Full logo centred on a square; 70 % of the width keeps it inside a circular crop.
+const socialLogo = (bg, fg, size = 1080, share = 0.7) => {
+  const w = size * share, s = w / 1359, h = 233 * s;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}"><rect width="${size}" height="${size}" fill="${bg}"/><g transform="translate(${((size - w) / 2).toFixed(2)} ${((size - h) / 2).toFixed(2)}) scale(${s.toFixed(5)})">${pathEls(paths, fg)}</g></svg>\n`;
+};
+
+const { default: sharp } = await import("sharp");
+const dl = (dir) => { mkdirSync(new URL(`../public/downloads/${dir}/`, import.meta.url), { recursive: true }); return (name) => new URL(`../public/downloads/${dir}/${name}`, import.meta.url).pathname; };
+const fav = dl("favicon");
+const soc = dl("profil");
+const variants = [
+  { key: "navy", bg: NAVY, fg: WHITE },
+  { key: "bila", bg: WHITE, fg: NAVY },
+];
+for (const v of variants) {
+  const f = solidFavicon(v.bg, v.fg);
+  writeFileSync(fav(`apadore-favicon-${v.key}.svg`), f);
+  for (const px of [512, 180, 32]) await sharp(Buffer.from(f)).resize(px, px).png().toFile(fav(`apadore-favicon-${v.key}-${px}.png`));
+  const l = socialLogo(v.bg, v.fg);
+  writeFileSync(soc(`apadore-logo-socialni-site-${v.key}.svg`), l);
+  await sharp(Buffer.from(l)).png().toFile(soc(`apadore-logo-socialni-site-${v.key}-1080.png`));
+  await sharp(Buffer.from(l)).jpeg({ quality: 95 }).toFile(soc(`apadore-logo-socialni-site-${v.key}-1080.jpg`));
+}
+// Existing gradient favicons as PNG too
+for (const n of ["apadore-favicon-web", "apadore-favicon-brand-studio"]) {
+  const svg = readFileSync(new URL(`../public/brand/${n}.svg`, import.meta.url));
+  await sharp(svg).resize(512, 512).png().toFile(fav(`${n}-512.png`));
+}
+console.log("favicon and social variants written");

@@ -80,6 +80,17 @@ export const chapters: Chapter[] = [
           en: "The favicon is the letter A from the logo and is used only at small sizes (16 to 64 px). Apadore website: white A on the dark gradient. Apadore Brand Studio: inverted, navy A on the light gradient. Both gradients run in the same direction. Larger formats (profile picture, app icon) use the full Apadore logo.",
         },
       },
+      {
+        type: "downloads",
+        title: { cs: "Varianty faviconu", en: "Favicon variants" },
+        body: { cs: "Favicon ke stažení jako SVG a PNG 512 × 512. Plné varianty v navy a na bílém pozadí se hodí tam, kde přechod nejde použít (ikony aplikací, systémy třetích stran). PNG 180 a 32 px jsou ve stejné složce.", en: "Favicon downloads as SVG and PNG 512 × 512. The solid navy and white variants are for places where the gradient cannot be used (app icons, third-party systems). 180 and 32 px PNGs are in the same folder." },
+        items: [
+          { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "Bílé A na navy 900 · SVG, PNG", en: "White A on navy 900 · SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
+          { title: { cs: "Favicon · bílé pozadí", en: "Favicon · white background" }, meta: { cs: "Navy A na bílé · SVG, PNG", en: "Navy A on white · SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
+          { title: { cs: "Favicon webu · tmavý přechod", en: "Website favicon · dark gradient" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/brand/apadore-favicon-web.svg", alt: "/downloads/favicon/apadore-favicon-web-512.png" },
+          { title: { cs: "Favicon Brand Studia · světlý přechod", en: "Brand Studio favicon · light gradient" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/brand/apadore-favicon-brand-studio.svg", alt: "/downloads/favicon/apadore-favicon-brand-studio-512.png" },
+        ],
+      },
     ],
   },
   {
@@ -454,6 +465,8 @@ export const chapters: Chapter[] = [
           { title: { cs: "LinkedIn banner · tmavý 1584 × 396", en: "LinkedIn banner · dark 1584 × 396" }, meta: { cs: "PNG, JPG", en: "PNG, JPG" }, href: "/downloads/profil/apadore-linkedin-banner-tmavy-1584x396.png", alt: "/downloads/profil/apadore-linkedin-banner-tmavy-1584x396.jpg" },
           { title: { cs: "LinkedIn banner · světlý 1584 × 396", en: "LinkedIn banner · light 1584 × 396" }, meta: { cs: "PNG, JPG", en: "PNG, JPG" }, href: "/downloads/profil/apadore-linkedin-banner-svetly-1584x396.png", alt: "/downloads/profil/apadore-linkedin-banner-svetly-1584x396.jpg" },
           { title: { cs: "Clutch · logo profilu 400 × 400", en: "Clutch · profile logo 400 × 400" }, meta: { cs: "PNG, JPG", en: "PNG, JPG" }, href: "/downloads/profil/apadore-clutch-logo-400.png", alt: "/downloads/profil/apadore-clutch-logo-400.jpg" },
+          { title: { cs: "Logo · navy 1080 × 1080", en: "Logo · navy 1080 × 1080" }, meta: { cs: "Bílé logo na navy, pro profily značky · PNG, JPG", en: "White logo on navy, for brand profiles · PNG, JPG" }, href: "/downloads/profil/apadore-logo-socialni-site-navy-1080.png", alt: "/downloads/profil/apadore-logo-socialni-site-navy-1080.jpg" },
+          { title: { cs: "Logo · bílé pozadí 1080 × 1080", en: "Logo · white background 1080 × 1080" }, meta: { cs: "Navy logo na bílé · PNG, JPG", en: "Navy logo on white · PNG, JPG" }, href: "/downloads/profil/apadore-logo-socialni-site-bila-1080.png", alt: "/downloads/profil/apadore-logo-socialni-site-bila-1080.jpg" },
         ],
       },
       {
