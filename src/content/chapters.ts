@@ -170,14 +170,12 @@ export const chapters: Chapter[] = [
       {
         type: "colorRatio",
         title: { cs: "Poměr barev", en: "Colour ratio" },
-        body: { cs: "Orientační poměr ploch včetně barev, které jsou vidět na přechodech. Značku nese dvojice navy a bílá, modré z přechodů ji doplňují (tmavý přechod víc než světlý).", en: "An indicative ratio of surfaces, including the colours visible in the gradients. The navy and white pair carries the brand, the gradient blues complement it (the dark gradient more than the light one)." },
+        body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, světlejší navy 800 a šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "An indicative ratio of surfaces. The navy and white pair carries the brand, the lighter navy 800 and greys only complement it. The dark version is primary, the light one supplementary." },
         parts: [
-          { name: "Navy 900", hex: "#090E21", percent: 42 },
-          { name: "Deep Blue", hex: "#1E427E", percent: 8 },
-          { name: "Soft Sky", hex: "#96B3DE", percent: 4 },
-          { name: "Sky Mist", hex: "#D9E2EE", percent: 2 },
-          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 12 },
-          { name: "Bílá", hex: "#FFFFFF", percent: 32 },
+          { name: "Navy 900", hex: "#090E21", percent: 40 },
+          { name: "Navy 800", hex: "#3A3E4D", percent: 5 },
+          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 15 },
+          { name: "Bílá", hex: "#FFFFFF", percent: 40 },
         ],
       },
       {
