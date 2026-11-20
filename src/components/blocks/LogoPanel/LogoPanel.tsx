@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Logo } from "@/components/ui/Logo";
@@ -20,6 +20,9 @@ export function LogoPanel({ lang }: { lang: Lang }) {
   const [padX, setPadX] = useState(0);
   const [padY, setPadY] = useState(0);
   const f = files[bg];
+  const logoShare = 1 / (1 + (2 * padX) / 100);
+  const outW = Math.round(width);
+  const outH = Math.round(width * logoShare * (233 / 1359) * (1 + (2 * padY) / 100));
 
   /** Renders the logo to a bitmap: width in px, horizontal/vertical padding in % of logo width/height. */
   async function downloadRaster(type: "png" | "jpg") {
@@ -84,6 +87,16 @@ export function LogoPanel({ lang }: { lang: Lang }) {
             {t(site.ui.width, lang)}
             <input type="number" min={100} max={8000} step={10} value={width} onChange={(e) => setWidth(Number(e.target.value))} className={s.input} />
           </label>
+        </div>
+        <div className={s.exportPreview}>
+          <div
+            className={s.canvas}
+            data-bg={bg}
+            style={{ "--ratio": outW / Math.max(outH, 1) } as CSSProperties}
+          >
+            <Logo variant={bg === "dark" ? "negativni" : "pozitivni"} className={s.canvasLogo} style={{ width: `${logoShare * 100}%` }} />
+          </div>
+          <span className={s.size}>{outW} × {outH} px</span>
         </div>
         <div className={s.buttons}>
           <Button icon="download" onClick={() => downloadRaster("png")}>PNG</Button>
