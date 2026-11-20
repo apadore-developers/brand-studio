@@ -103,11 +103,13 @@ export const chapters: Chapter[] = [
       {
         type: "colors",
         size: "lg",
-        title: { cs: "Hlavní dvojice", en: "Core pair" },
-        body: { cs: "Hlavní dvojici tvoří tmavá navy a bílá. Většina formátů stojí jen na těchto dvou barvách. Hodnoty CMYK a Pantone pro tisk: [DOPLNIT].", en: "Dark navy and white form the core pair. Most formats rely on these two colours only. CMYK and Pantone values for print: [TBD]." },
+        title: { cs: "Primární barvy", en: "Primary colours" },
+        body: { cs: "Značku nese tmavá navy a bílá, doplňuje je světlejší navy 800 a světle šedá. Většina formátů stojí jen na těchto barvách. Hodnoty CMYK a Pantone pro tisk: [DOPLNIT].", en: "Dark navy and white carry the brand, complemented by the lighter navy 800 and light grey. Most formats rely on these colours only. CMYK and Pantone values for print: [TBD]." },
         colors: [
-          { name: "Navy 900", hex: "#090E21", use: { cs: "Text, logo, tmavé sekce", en: "Text, logo, dark sections" } },
-          { name: "Bílá", hex: "#FFFFFF", use: { cs: "Pozadí, text na tmavém, negativní logo", en: "Background, text on dark, negative logo" } },
+          { name: "Navy 900", hex: "#090E21", use: { cs: "Midnight Navy · text, logo, tmavé sekce", en: "Midnight Navy · text, logo, dark sections" } },
+          { name: "Navy 800", hex: "#3A3E4D", use: { cs: "Dusk Navy · sekundární text, tmavé plochy", en: "Dusk Navy · secondary text, dark surfaces" } },
+          { name: "Bílá", hex: "#FFFFFF", use: { cs: "Pure White · pozadí, text na tmavém, negativní logo", en: "Pure White · background, text on dark, negative logo" } },
+          { name: "Grey 50", hex: "#F1F1F1", use: { cs: "Soft Grey · karty, tlačítka, plochy", en: "Soft Grey · cards, buttons, surfaces" } },
         ],
       },
       {
