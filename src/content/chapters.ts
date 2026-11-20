@@ -173,12 +173,12 @@ export const chapters: Chapter[] = [
         body: { cs: "Orientační poměr ploch včetně barev, které jsou vidět na přechodech. Značku nese dvojice navy a bílá, modré z přechodů ji doplňují (tmavý přechod víc než světlý).", en: "Indicative ratio. Navy and white carry the brand." },
         parts: [
           { name: "Navy 900", hex: "#090E21", percent: 38 },
-          { name: "Bílá", hex: "#FFFFFF", percent: 32 },
-          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 12 },
-          { name: "Gradient Blue", hex: "#1E427E", percent: 8 },
           { name: "Gradient Navy", hex: "#080D1F", percent: 4 },
+          { name: "Gradient Blue", hex: "#1E427E", percent: 8 },
           { name: "Sky", hex: "#96B3DE", percent: 4 },
           { name: "Sky Mist", hex: "#D9E2EE", percent: 2 },
+          { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 12 },
+          { name: "Bílá", hex: "#FFFFFF", percent: 32 },
         ],
       },
       {
