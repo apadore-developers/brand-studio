@@ -534,6 +534,30 @@ export const chapters: Chapter[] = [
     ],
   },
   {
+    slug: "aplikace-znacky",
+    cover: "application",
+    title: { cs: "Aplikace značky", en: "Brand applications" },
+    description: { cs: "Jak značka vypadá na webu, v prezentaci, na sítích, v tisku a na merchi.", en: "How the brand looks on the web, in presentations, on social media, in print and on merch." },
+    summary: { cs: "Ukázky značky v praxi: web, prezentace, příspěvek na LinkedIn v mobilu, vizitky, složka, tričko, taška a hrnek. Mockupy jsou zatím orientační a ukazují, jak spolu logo, barvy, písmo a přechody fungují.", en: "The brand in practice: website, presentation, a LinkedIn post on mobile, business cards, a folder, a T-shirt, a tote bag and a mug. The mockups are indicative for now and show how the logo, colours, type and gradients work together." },
+    blocks: [
+      {
+        type: "mockups",
+        title: { cs: "Aplikace značky", en: "Brand applications" },
+        body: { cs: "Orientační mockupy, které ukazují značku na běžných výstupech. Tmavý přechod a navy nesou většinu ploch, logo je vždy v jedné barvě a s dostatkem prostoru. Podklady pro výrobu (tisková data, přesné rozměry) doplníme.", en: "Indicative mockups showing the brand on everyday outputs. The dark gradient and navy carry most surfaces, the logo is always single-colour with plenty of space. Production files (print data, exact sizes) will follow." },
+        items: [
+          { kind: "web", label: { cs: "Web · úvodní sekce na tmavém přechodu", en: "Website · hero on the dark gradient" } },
+          { kind: "presentation", label: { cs: "Prezentace · titulní slide", en: "Presentation · title slide" } },
+          { kind: "linkedin", label: { cs: "Příspěvek na LinkedIn v mobilu", en: "LinkedIn post on mobile" } },
+          { kind: "cards", label: { cs: "Vizitky · přední a zadní strana", en: "Business cards · front and back" } },
+          { kind: "folder", label: { cs: "Složka A4 s dokumentem", en: "A4 folder with a document" } },
+          { kind: "tshirt", label: { cs: "Tričko · navy s bílým logem", en: "T-shirt · navy with white logo" } },
+          { kind: "tote", label: { cs: "Plátěná taška · navy logo", en: "Tote bag · navy logo" } },
+          { kind: "mug", label: { cs: "Hrnek · navy s bílým logem", en: "Mug · navy with white logo" } },
+        ],
+      },
+    ],
+  },
+  {
     slug: "zdroje",
     cover: "resources",
     title: { cs: "Zdroje", en: "Resources" },

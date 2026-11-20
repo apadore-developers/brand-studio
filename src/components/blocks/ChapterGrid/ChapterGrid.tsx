@@ -35,6 +35,12 @@ function Cover({ kind, en }: { kind: Chapter["cover"]; en: boolean }) {
       return <img src="/images/obrazovy-styl/sky-towers-monitor.webp" alt="" className={s.coverPhoto} />;
     case "social":
       return <span className={s.coverQuote}>{en ? "“Quote”" : "„Citát“"}</span>;
+    case "application":
+      return (
+        <span className={s.coverCard}>
+          <Logo variant="negativni" className={s.coverCardLogo} />
+        </span>
+      );
     case "blog":
       return <span className={s.coverGlass}>{en ? "cover" : "obálka"}</span>;
     default:
