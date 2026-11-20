@@ -181,6 +181,15 @@ export const chapters: Chapter[] = [
           { name: "Sky Mist", hex: "#D9E2EE", percent: 2 },
         ],
       },
+      {
+        type: "colors",
+        size: "lg",
+        title: { cs: "Akcent", en: "Accent" },
+        body: { cs: "Červená je jediný barevný akcent značky. Patří jen do grafických prvků: malá tečka ve skleněném prvku na obálkách blogu. Do poměru barev se nepočítá a jinde se zatím nepoužívá.", en: "Red is the only colour accent. Used only as a small dot in graphic elements." },
+        colors: [
+          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Jen tečka ve skleněném prvku (viz Grafické prvky)" } },
+        ],
+      },
     ],
   },
   {
