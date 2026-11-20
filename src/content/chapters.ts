@@ -154,9 +154,9 @@ export const chapters: Chapter[] = [
             variant: "light",
             role: { cs: "Doplňkový", en: "Supplementary" },
             visible: [
-              { name: "Sky (roh)", hex: "#96B3DE" },
+              { name: "Mist (začátek)", hex: "#EEF0F4" },
               { name: "Sky Mist (střed)", hex: "#D9E2EE" },
-              { name: "Mist (konec)", hex: "#EEF0F4" },
+              { name: "Sky (roh)", hex: "#96B3DE" },
             ],
             stops: [
               { name: "Podklad, šedomodrá", hex: "#EEF0F4", alpha: 100, position: 0 },
