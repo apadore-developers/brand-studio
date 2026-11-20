@@ -112,48 +112,33 @@ export const chapters: Chapter[] = [
     blocks: [
       {
         type: "colors",
-        size: "lg",
+        size: "md",
         title: { cs: "Primární barvy", en: "Primary colours" },
-        body: { cs: "Značku nese tmavá navy a bílá, doplňuje je světle šedá. Většina formátů stojí jen na těchto barvách. Hodnoty CMYK a Pantone pro tisk: [DOPLNIT].", en: "Dark navy and white carry the brand, complemented by light grey. Most formats rely on these colours only. CMYK and Pantone values for print: [TBD]." },
+        body: {
+          cs: "Značku nese tmavá navy a bílá, doplňuje je světle šedá. Většina formátů stojí jen na těchto barvách.\n\nMidnight Navy (Navy 900): text, logo, tmavé sekce. Pure White: pozadí, text na tmavém, negativní logo. Soft Grey (Grey 50): karty, tlačítka, plochy.\n\nHodnoty CMYK a Pantone pro tisk: [DOPLNIT].",
+          en: "Dark navy and white carry the brand, complemented by light grey. Most formats rely on these colours only.\n\nMidnight Navy (Navy 900): text, logo, dark sections. Pure White: background, text on dark, negative logo. Soft Grey (Grey 50): cards, buttons, surfaces.\n\nCMYK and Pantone values for print: [TBD].",
+        },
         colors: [
-          { name: "Navy 900", hex: "#090E21", use: { cs: "Midnight Navy · text, logo, tmavé sekce", en: "Midnight Navy · text, logo, dark sections" } },
-          { name: "Bílá", hex: "#FFFFFF", use: { cs: "Pure White · pozadí, text na tmavém, negativní logo", en: "Pure White · background, text on dark, negative logo" } },
-          { name: "Grey 50", hex: "#F1F1F1", use: { cs: "Soft Grey · karty, tlačítka, plochy", en: "Soft Grey · cards, buttons, surfaces" } },
+          { name: "Midnight Navy", hex: "#090E21" },
+          { name: "Pure White", hex: "#FFFFFF" },
+          { name: "Soft Grey", hex: "#F1F1F1" },
         ],
       },
       {
-        type: "colors",
-        size: "md",
-        title: { cs: "Navy (primární)", en: "Navy (primary)" },
-        body: { cs: "Primární barevná škála značky. Navy 900 nese text, logo a tmavé plochy, světlejší odstíny sekundární text a prvky na tmavém pozadí. Škála odpovídá proměnným navy ve Figmě (UI Kit).", en: "The primary colour scale of the brand. Navy 900 carries text, the logo and dark surfaces; lighter tints carry secondary text and elements on dark backgrounds. The scale matches the navy variables in Figma (UI Kit)." },
-        colors: [
-          { name: "Navy 900", hex: "#090E21", use: { cs: "Text, logo, tmavé sekce", en: "Text, logo, dark sections" } },
-          { name: "Navy 800", hex: "#3A3E4D", use: { cs: "Sekundární text", en: "Secondary text" } },
-          { name: "Navy 600", hex: "#737681", use: { cs: "Popisy, doplňkový text", en: "Captions, supporting text" } },
-          { name: "Navy 400", hex: "#9D9FA6", use: { cs: "Text na tmavém pozadí", en: "Text on dark backgrounds" } },
-          { name: "Navy 200", hex: "#CECFD3", use: { cs: "Linky na tmavém pozadí", en: "Lines on dark backgrounds" } },
-        ],
-      },
-      {
-        type: "colors",
-        size: "md",
-        title: { cs: "Neutrální barvy", en: "Neutrals" },
-        body: { cs: "Celá šedá škála z proměnných ve Figmě (UI Kit). Světlé šedé nesou karty, tlačítka a linky, tmavší šedé sekundární text.", en: "The full grey scale from the Figma variables (UI Kit). Light greys carry cards, buttons and lines, darker greys secondary text." },
-        colors: [
-          { name: "Grey 0 (bílá)", hex: "#FFFFFF", use: { cs: "Pozadí stránky", en: "Page background" } },
-          { name: "Grey 50", hex: "#F1F1F1", use: { cs: "Karty, tlačítka, plochy", en: "Cards, buttons, surfaces" } },
-          { name: "Grey 100", hex: "#E4E4E4", use: { cs: "Linky a oddělovače", en: "Lines and dividers" } },
-          { name: "Grey 400", hex: "#898989", use: { cs: "Popisky sekcí", en: "Section labels" } },
-          { name: "Grey 600", hex: "#656565", use: { cs: "Sekundární text", en: "Secondary text" } },
-          { name: "Grey 900", hex: "#131313", use: { cs: "Nejtmavší neutrální", en: "Darkest neutral" } },
+        type: "tints",
+        title: { cs: "Odstíny", en: "Tints" },
+        body: { cs: "Odstíny navy a neutrální šedé. Škála odpovídá proměnným ve Figmě (UI Kit).", en: "Navy and neutral grey tints. The scale matches the Figma variables (UI Kit)." },
+        groups: [
+          { name: { cs: "Tints navy", en: "Tints navy" }, steps: [{ step: "900", hex: "#090E21" }, { step: "800", hex: "#3A3E4D" }, { step: "600", hex: "#737681" }, { step: "400", hex: "#9D9FA6" }, { step: "200", hex: "#CECFD3" }] },
+          { name: { cs: "Tints neutrals", en: "Tints neutrals" }, steps: [{ step: "900", hex: "#131313" }, { step: "600", hex: "#656565" }, { step: "400", hex: "#898989" }, { step: "100", hex: "#E4E4E4" }, { step: "50", hex: "#F1F1F1" }, { step: "0", hex: "#FFFFFF" }] },
         ],
       },
       {
         type: "gradientPalette",
         title: { cs: "Barvy přechodů", en: "Gradient colours" },
         body: {
-          cs: "Výsledné barvy, které jsou na přechodech opravdu vidět (odečtené z hotového přechodu, pracovní odhad), a pod nimi to, jak je přechod sestavený ve Figmě. Modré tóny patří jen do přechodů, samostatně se nepoužívají.",
-          en: "The resulting colours actually visible in the gradients (sampled from the finished gradient, a working estimate), and below them how the gradient is built in Figma. Blue tones belong only to gradients and are never used on their own.",
+          cs: "Výsledné barvy, které jsou na přechodech opravdu vidět (odečtené z hotového přechodu, pracovní odhad), sestavení přechodu ve Figmě najdete pod odkazem „Jak je přechod sestavený“. Modré tóny patří jen do přechodů, samostatně se nepoužívají.",
+          en: "The resulting colours actually visible in the gradients (sampled from the finished gradient, a working estimate), and how the gradient is built in Figma under “How the gradient is built”. Blue tones belong only to gradients and are never used on their own.",
         },
         items: [
           {
@@ -192,10 +177,9 @@ export const chapters: Chapter[] = [
       {
         type: "colorRatio",
         title: { cs: "Poměr barev", en: "Colour ratio" },
-        body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, světlejší navy 800 a šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "An indicative ratio of surfaces. The navy and white pair carries the brand, the lighter navy 800 and greys only complement it. The dark version is primary, the light one supplementary." },
+        body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "An indicative ratio of surfaces. The navy and white pair carries the brand, greys only complement it. The dark version is primary, the light one supplementary." },
         parts: [
-          { name: "Navy 900", hex: "#090E21", percent: 40 },
-          { name: "Navy 800", hex: "#3A3E4D", percent: 5 },
+          { name: "Navy 900", hex: "#090E21", percent: 45 },
           { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 15 },
           { name: "Bílá", hex: "#FFFFFF", percent: 40 },
         ],
@@ -206,7 +190,7 @@ export const chapters: Chapter[] = [
         title: { cs: "Akcent", en: "Accent" },
         body: { cs: "Červená je jediný barevný akcent značky. Patří jen do grafických prvků: malá tečka ve skleněném prvku na obálkách blogu. Do poměru barev se nepočítá a jinde se zatím nepoužívá.", en: "Red is the only colour accent. Used only as a small dot in graphic elements." },
         colors: [
-          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Jen tečka ve skleněném prvku (viz Grafické prvky)", en: "Only the dot inside a glass element (see Graphic elements)" } },
+          { name: "Accent Red", hex: "#FF5A1F" },
         ],
       },
     ],

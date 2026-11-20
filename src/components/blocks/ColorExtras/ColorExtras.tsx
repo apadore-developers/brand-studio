@@ -1,4 +1,8 @@
-import { contrast, formatRatio, hexToRgb, isDark } from "@/lib/color";
+"use client";
+
+import { useState } from "react";
+import { FormatTabs, useCopy, type Format } from "@/components/blocks/ColorSwatches";
+import { contrast, formatColor, formatRatio, hexToRgb, isDark } from "@/lib/color";
 import s from "./ColorExtras.module.css";
 
 export function ColorRatio({ parts }: { parts: { name: string; hex: string; percent: number }[] }) {
@@ -45,8 +49,13 @@ export function ColorPairs({ pairs, en = false }: { pairs: { label: string; bg: 
 type Stop = { name: string; hex: string; alpha: number; position: number };
 
 export function GradientPalette({ items, en = false }: { en?: boolean; items: { name: string; role: string; variant: "dark" | "light"; visible?: { name: string; hex: string }[]; stops: Stop[] }[] }) {
+  const [format, setFormat] = useState<Format>("HEX");
+  const [open, setOpen] = useState<string[]>([]);
+  const { copied, copy } = useCopy();
+  const toggle = (name: string) => setOpen((o) => (o.includes(name) ? o.filter((n) => n !== name) : [...o, name]));
   return (
     <div className={s.palettes}>
+      <FormatTabs value={format} onChange={setFormat} />
       {items.map((g) => (
         <div key={g.name} className={s.palette}>
           <div className={s.paletteHead}>
@@ -55,32 +64,39 @@ export function GradientPalette({ items, en = false }: { en?: boolean; items: { 
           </div>
           <div className={s.preview} data-variant={g.variant} />
           {g.visible && (
-            <>
-              <p className={s.subhead}>{en ? "Resulting colours (estimate)" : "Výsledné barvy (odhad)"}</p>
-              <ul role="list" className={s.visible}>
-                {g.visible.map((v) => (
-                  <li key={v.hex} className={s.visibleItem} style={{ background: v.hex, color: isDark(v.hex) ? "#FFFFFF" : "#090E21" }}>
-                    <strong>{v.name}</strong>
-                    <span className={s.stopValue} style={{ color: "inherit" }}>
-                      {v.hex} · RGB {hexToRgb(v.hex).join(", ")}
-                    </span>
+            <ul role="list" className={s.visible}>
+              {g.visible.map((v) => {
+                const value = formatColor(v.hex, format);
+                return (
+                  <li key={v.hex}>
+                    <button type="button" className={s.visibleItem} style={{ background: v.hex }} data-tone={isDark(v.hex) ? "dark" : "light"} onClick={() => copy(value)}>
+                      <strong>{v.name}</strong>
+                      <span className={s.stopValue} data-inherit>
+                        {copied === value ? (en ? "Copied" : "Zkopírováno") : value}
+                      </span>
+                    </button>
                   </li>
-                ))}
-              </ul>
-              <p className={s.subhead}>{en ? "How the gradient is built" : "Jak je přechod sestavený"}</p>
-            </>
+                );
+              })}
+            </ul>
           )}
-          <ul role="list" className={s.stops}>
-            {g.stops.map((st) => (
-              <li key={st.name} className={s.stop} title={`RGB ${hexToRgb(st.hex).join(", ")}`}>
-                <span className={s.chip} style={{ background: st.hex }} />
-                <span className={s.stopName}>{st.name}</span>
-                <span className={s.stopValue}>
-                  {st.hex} · {st.alpha} %
-                </span>
-              </li>
-            ))}
-          </ul>
+          <button type="button" className={s.disclosure} aria-expanded={open.includes(g.name)} onClick={() => toggle(g.name)}>
+            <span className={s.chevron} aria-hidden="true" />
+            {en ? "How the gradient is built" : "Jak je přechod sestavený"}
+          </button>
+          {open.includes(g.name) && (
+            <ul role="list" className={s.stops}>
+              {g.stops.map((st) => (
+                <li key={st.name} className={s.stop} title={`RGB ${hexToRgb(st.hex).join(", ")}`}>
+                  <span className={s.chip} style={{ background: st.hex }} />
+                  <span className={s.stopName}>{st.name}</span>
+                  <span className={s.stopValue}>
+                    {st.hex} · {st.alpha} %
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </div>

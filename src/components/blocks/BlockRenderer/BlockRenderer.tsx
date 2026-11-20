@@ -1,6 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { ColorPairs, ColorRatio, GradientPalette } from "@/components/blocks/ColorExtras";
-import { ColorSwatches } from "@/components/blocks/ColorSwatches";
+import { ColorSwatches, Tints } from "@/components/blocks/ColorSwatches";
 import { DownloadList, FormatList, ImagePlaceholders, RuleList } from "@/components/blocks/ContentLists";
 import { FontSpecimen } from "@/components/blocks/FontSpecimen";
 import { GlassDemo, GradientBlock } from "@/components/blocks/GradientBlock";
@@ -32,6 +32,8 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
       return <Section {...common} layout="full" />;
     case "logoPanel":
       return <Section {...common}><LogoPanel lang={lang} /></Section>;
+    case "tints":
+      return <Section {...common}><Tints lang={lang} groups={block.groups.map((g) => ({ name: t(g.name, lang), steps: g.steps }))} /></Section>;
     case "logoGenerator":
       return <Section {...common} layout="full"><LogoExport lang={lang} /></Section>;
     case "clearSpace":
