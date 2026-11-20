@@ -95,9 +95,13 @@
     background: var(--color-surface-raised);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-xs);
+    overflow: hidden;
   }
 
-  .chip { height: 4.8rem; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-xs); }
+  .chip {
+    height: 6.4rem;
+    margin: calc(var(--space-3) * -1) calc(var(--space-3) * -1) var(--space-2);
+  }
 
   .stopName { font-size: var(--text-sm); font-weight: var(--weight-semibold); }
 
