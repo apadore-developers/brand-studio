@@ -72,13 +72,12 @@ export function GradientPalette({ items }: { items: { name: string; role: string
           )}
           <ul role="list" className={s.stops}>
             {g.stops.map((st) => (
-              <li key={st.name} className={s.stop}>
+              <li key={st.name} className={s.stop} title={`RGB ${hexToRgb(st.hex).join(", ")}`}>
                 <span className={s.chip} style={{ background: st.hex }} />
                 <span className={s.stopName}>{st.name}</span>
                 <span className={s.stopValue}>
                   {st.hex} · {st.alpha} %
                 </span>
-                <span className={s.stopValue}>RGB {hexToRgb(st.hex).join(", ")}</span>
               </li>
             ))}
           </ul>
