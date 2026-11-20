@@ -16,6 +16,7 @@ export type CalloutData = { variant: "note" | "warning"; title?: L; body: L };
 export type Block =
   | { type: "text"; title?: L; body: L; callout?: CalloutData }
   | { type: "logoPanel"; title: L; body: L; callout?: CalloutData }
+  | { type: "logoGenerator"; title: L; body?: L }
   | { type: "clearSpace"; title: L; body: L; ratio: L }
   | { type: "logoVersions"; title: L; body: L; items: { label: L; bg: "light" | "dark" | "gradientDark" | "gradientLight" | "white"; logo: "pozitivni" | "negativni" }[] }
   | { type: "doDont"; title: L; body?: L; items: { label: L; kind: "dont"; effect: "stretch" | "rotate" | "recolor" | "outline" | "shadow" | "lowContrast" }[] }

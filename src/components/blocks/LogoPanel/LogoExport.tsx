@@ -167,8 +167,6 @@ export function LogoExport({ lang }: { lang: Lang }) {
       </div>
 
       <div className={s.controls}>
-        <h3 className={s.heading}>{L("Export loga", "Logo export")}</h3>
-
         {!withBg && (
           <fieldset className={s.group}>
             <legend className={s.legend}>{L("Barva loga", "Logo colour")}</legend>

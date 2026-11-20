@@ -6,7 +6,6 @@ import { Chip } from "@/components/ui/Chip";
 import { Logo } from "@/components/ui/Logo";
 import { site, t } from "@/content/site";
 import type { Lang } from "@/content/types";
-import { LogoExport } from "./LogoExport";
 import s from "./LogoPanel.module.css";
 
 const files = {
@@ -43,7 +42,6 @@ export function LogoPanel({ lang }: { lang: Lang }) {
           <Button href={f.svg.replace(".svg", ".ai")} download icon="download">AI</Button>
         </div>
       </div>
-      <LogoExport lang={lang} />
     </div>
   );
 }

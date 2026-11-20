@@ -48,6 +48,11 @@ export const chapters: Chapter[] = [
         ],
       },
       {
+        type: "logoGenerator",
+        title: { cs: "Logo generátor", en: "Logo generator" },
+        body: { cs: "Export loga na míru. Samotné logo bez pozadí v libovolné velikosti, nebo logo v přesném rozměru (např. 1080 × 1080) s doporučenou velikostí, kterou lze přiblížit nebo oddálit. Pozadí si můžete přidat v sekci Logo s pozadím.", en: "Custom logo export. The clean logo without a background at any size, or the logo in an exact size (e.g. 1080 × 1080) at a recommended size you can zoom in or out. Add a background under Logo with background." },
+      },
+      {
         type: "clearSpace",
         title: { cs: "Ochranná zóna", en: "Clear space" },
         ratio: { cs: "1× výška loga", en: "1× logo height" },

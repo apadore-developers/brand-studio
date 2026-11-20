@@ -4,7 +4,9 @@
     display: grid;
     gap: var(--space-5);
     padding: var(--space-5);
-    border-block-start: var(--border-width) solid var(--color-border);
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xs);
 
     @media (width >= 64rem) { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; }
   }
@@ -45,8 +47,6 @@
   }
 
   .stage[data-bg="dark"] .size { color: var(--navy-200); }
-
-  .heading { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
 
   .legend { margin-block-end: var(--space-2); text-transform: uppercase; }
 
