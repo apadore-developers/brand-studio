@@ -531,6 +531,15 @@ export const chapters: Chapter[] = [
           { title: { cs: "Geist a IBM Plex Mono", en: "Geist and IBM Plex Mono" }, meta: { cs: "Zdarma: vercel.com/font, github.com/IBM/plex", en: "Free: vercel.com/font, github.com/IBM/plex" } },
         ],
       },
+      {
+        type: "downloads",
+        title: { cs: "Kontakt", en: "Contact" },
+        body: { cs: "Máte otázku ke značce? Napište našemu art directorovi, než něco upravíte.", en: "Have a question about the brand? Get in touch with our art director before you change anything." },
+        items: [
+          { title: { cs: "Tomáš Krčál, art director", en: "Tomáš Krčál, art director" }, meta: { cs: "Telefon: [DOPLNIT]", en: "Phone: [TBD]" } },
+          { title: { cs: "Web Apadore", en: "Apadore website" }, meta: { cs: "www.apadore.cz", en: "www.apadore.cz" }, href: "https://www.apadore.cz" },
+        ],
+      },
     ],
   },
 ];

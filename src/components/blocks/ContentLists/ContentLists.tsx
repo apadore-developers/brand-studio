@@ -66,7 +66,7 @@ export function DownloadList({ items, cta }: { items: { title: string; meta: str
           {d.href && (
             d.href.startsWith("http") ? (
               <Button href={d.href} target="_blank" rel="noreferrer" icon="external">
-                Figma
+                {d.href.includes("figma.com") ? "Figma" : "Web"}
               </Button>
             ) : (
               <span className={s.btns}>
