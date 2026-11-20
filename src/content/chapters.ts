@@ -139,9 +139,9 @@ export const chapters: Chapter[] = [
             variant: "dark",
             role: { cs: "Primární", en: "Primary" },
             visible: [
-              { name: "Gradient Blue (roh)", hex: "#1E427E" },
-              { name: "Gradient Mid", hex: "#121F3F" },
-              { name: "Gradient Navy (konec)", hex: "#080D1F" },
+              { name: "Deep Blue", hex: "#1E427E" },
+              { name: "Night Blue", hex: "#121F3F" },
+              { name: "Gradient Navy", hex: "#080D1F" },
             ],
             stops: [
               { name: "Podklad (navy 900)", hex: "#090E21", alpha: 100, position: 0 },
@@ -154,9 +154,9 @@ export const chapters: Chapter[] = [
             variant: "light",
             role: { cs: "Doplňkový", en: "Supplementary" },
             visible: [
-              { name: "Mist (začátek)", hex: "#EEF0F4" },
-              { name: "Sky Mist (střed)", hex: "#D9E2EE" },
-              { name: "Sky (roh)", hex: "#96B3DE" },
+              { name: "Morning Mist", hex: "#EEF0F4" },
+              { name: "Sky Mist", hex: "#D9E2EE" },
+              { name: "Soft Sky", hex: "#96B3DE" },
             ],
             stops: [
               { name: "Podklad, šedomodrá", hex: "#EEF0F4", alpha: 100, position: 0 },
@@ -173,8 +173,8 @@ export const chapters: Chapter[] = [
         body: { cs: "Orientační poměr ploch včetně barev, které jsou vidět na přechodech. Značku nese dvojice navy a bílá, modré z přechodů ji doplňují (tmavý přechod víc než světlý).", en: "An indicative ratio of surfaces, including the colours visible in the gradients. The navy and white pair carries the brand, the gradient blues complement it (the dark gradient more than the light one)." },
         parts: [
           { name: "Navy 900", hex: "#090E21", percent: 42 },
-          { name: "Gradient Blue", hex: "#1E427E", percent: 8 },
-          { name: "Sky", hex: "#96B3DE", percent: 4 },
+          { name: "Deep Blue", hex: "#1E427E", percent: 8 },
+          { name: "Soft Sky", hex: "#96B3DE", percent: 4 },
           { name: "Sky Mist", hex: "#D9E2EE", percent: 2 },
           { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 12 },
           { name: "Bílá", hex: "#FFFFFF", percent: 32 },

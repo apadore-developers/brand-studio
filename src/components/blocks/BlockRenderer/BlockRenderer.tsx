@@ -13,8 +13,6 @@ import type { Block, Lang } from "@/content/types";
 
 /** English names for plain-string colour labels in the gradient palette. */
 const enNames: Record<string, string> = {
-  "Gradient Blue (roh)": "Gradient Blue (corner)", "Gradient Navy (konec)": "Gradient Navy (end)",
-  "Mist (začátek)": "Mist (start)", "Sky Mist (střed)": "Sky Mist (middle)", "Sky (roh)": "Sky (corner)",
   "Podklad (navy 900)": "Base (navy 900)", "Roh, modrá": "Corner, blue", "Konec, tmavá navy": "End, dark navy",
   "Podklad, šedomodrá": "Base, blue grey", "Bílá": "White", "Grey 0 (bílá)": "Grey 0 (white)", "Grey 50 a 100": "Grey 50 and 100", "Střed, světle modrá": "Middle, light blue", "Konec, světlá": "End, light",
 };
