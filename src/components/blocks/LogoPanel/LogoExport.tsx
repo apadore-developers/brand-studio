@@ -203,6 +203,21 @@ export function LogoExport({ lang }: { lang: Lang }) {
                 <span>{L("Šířka (px)", "Width (px)")}</span>
                 <input type="number" min={16} max={8000} step={10} value={autoW} onChange={(e) => setAutoW(Number(e.target.value))} className={s.input} />
               </label>
+              <span className={s.times}>×</span>
+              <label className={s.field}>
+                <span>{L("Výška (px)", "Height (px)")}</span>
+                <input
+                  type="number"
+                  min={16}
+                  max={8000}
+                  value={h}
+                  onChange={(e) => {
+                    const p = pad / 100;
+                    setAutoW(Math.round((Number(e.target.value) * (1 + 2 * p * K)) / (K * (1 + 2 * p))));
+                  }}
+                  className={s.input}
+                />
+              </label>
               <label className={s.field} data-grow>
                 <span>
                   {L("Okraje", "Clear space")} <strong>{pad} %</strong> {L("výšky loga", "of the logo height")}

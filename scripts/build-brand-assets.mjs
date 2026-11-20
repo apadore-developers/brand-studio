@@ -113,3 +113,34 @@ for (const n of ["apadore-favicon-web", "apadore-favicon-brand-studio"]) {
   await sharp(svg).resize(512, 512).png().toFile(fav(`${n}-512.png`));
 }
 console.log("favicon and social variants written");
+
+// ---------- Logo kit (zip): vectors, PNG/JPG 2000 px, square profile logos ----------
+{
+  const { execFileSync } = await import("node:child_process");
+  const { mkdtempSync, copyFileSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const stage = mkdtempSync(join(tmpdir(), "logo-kit-"));
+  const root = join(stage, "apadore-logo-kit");
+  for (const d of ["vektor", "png", "jpg", "profil"]) mkdirSync(join(root, d), { recursive: true });
+  const brand = (n) => new URL(`../public/brand/${n}`, import.meta.url).pathname;
+  const W = 2000;
+  // JPG: logo with clear space of half the logo height on every side
+  const padded = (bg, fg) => {
+    const lw = W / (1 + 233 / 1359), s = lw / 1359, lh = 233 * s, pad = lh / 2;
+    const h = Math.round(lh + 2 * pad);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${h}" width="${W}" height="${h}"><rect width="${W}" height="${h}" fill="${bg}"/><g transform="translate(${((W - lw) / 2).toFixed(2)} ${pad.toFixed(2)}) scale(${s.toFixed(6)})">${pathEls(paths, fg)}</g></svg>`;
+  };
+  for (const [v, fg, bg] of [["pozitivni", NAVY, WHITE], ["negativni", WHITE, NAVY]]) {
+    for (const ext of ["svg", "pdf", "ai"]) copyFileSync(brand(`apadore-logo-${v}.${ext}`), join(root, "vektor", `apadore-logo-${v}.${ext}`));
+    await sharp(readFileSync(brand(`apadore-logo-${v}.svg`)), { density: 300 }).resize({ width: W }).png().toFile(join(root, "png", `apadore-logo-${v}-${W}.png`));
+    await sharp(Buffer.from(padded(bg, fg))).jpeg({ quality: 95 }).toFile(join(root, "jpg", `apadore-logo-${v}-${W}.jpg`));
+  }
+  for (const v of ["navy", "bila"]) for (const ext of ["png", "jpg"])
+    copyFileSync(soc(`apadore-logo-socialni-site-${v}-1080.${ext}`), join(root, "profil", `apadore-logo-profil-${v}-1080.${ext}`));
+  const zipPath = new URL("../public/downloads/apadore-logo-kit.zip", import.meta.url).pathname;
+  rmSync(zipPath, { force: true });
+  execFileSync("zip", ["-qr", zipPath, "apadore-logo-kit"], { cwd: stage });
+  rmSync(stage, { recursive: true, force: true });
+  console.log("logo kit written");
+}

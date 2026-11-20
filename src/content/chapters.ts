@@ -40,6 +40,14 @@ export const chapters: Chapter[] = [
         callout: { variant: "note", title: { cs: "Minimální šířka loga", en: "Minimum logo width" }, body: { cs: "140 px na obrazovkách. Tisk: [DOPLNIT].", en: "140 px on screens. Print: [TBD]." } },
       },
       {
+        type: "downloads",
+        title: { cs: "Základní logo kit", en: "Basic logo kit" },
+        body: { cs: "Všechny základní soubory loga v jednom balíčku. Pozitivní (navy) i negativní (bílé) logo jako SVG, PDF a AI, PNG 2000 px na šířku s průhledným pozadím, JPG 2000 px s ochrannou zónou (pozitivní na bílé, negativní na navy) a čtvercové logo pro profily 1080 × 1080 v navy i na bílé.", en: "All basic logo files in one package. Positive (navy) and negative (white) logo as SVG, PDF and AI, a 2000 px wide PNG with a transparent background, a 2000 px JPG with clear space (positive on white, negative on navy) and a square 1080 × 1080 profile logo on navy and on white." },
+        items: [
+          { title: { cs: "Apadore logo kit", en: "Apadore logo kit" }, meta: { cs: "ZIP · SVG, PDF, AI, PNG, JPG", en: "ZIP · SVG, PDF, AI, PNG, JPG" }, href: "/downloads/apadore-logo-kit.zip" },
+        ],
+      },
+      {
         type: "clearSpace",
         title: { cs: "Ochranná zóna", en: "Clear space" },
         ratio: { cs: "1× výška loga", en: "1× logo height" },
