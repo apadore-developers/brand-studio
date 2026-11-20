@@ -403,15 +403,6 @@ export const chapters: Chapter[] = [
         body: { cs: "Grafické prvky se používají primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Graphic elements are used primarily as blog article covers. The article cover on the website is 3 : 2, 1200 × 800 px, always in two versions, dark and light. On a clean background of gradient and fine grain stands one glass element that captures the article's idea in one or two words. The article headline is not on the cover." },
       },
       {
-        type: "colors",
-        size: "lg",
-        title: { cs: "Akcent: červená tečka", en: "Accent: red dot" },
-        body: { cs: "Jediný barevný akcent grafických prvků. Používá se jen jako malá tečka ve skleněném prvku (oddělení dvojice slov, aktivní stav). Mimo grafické prvky a obálky blogu se v brandu zatím nepoužívá.", en: "The only colour accent of the graphic elements. Used only as a small dot inside a glass element (separating a pair of words, active state). Outside graphic elements and blog covers it is not used in the brand for now." },
-        colors: [
-          { name: "Accent Red", hex: "#FF5A1F", use: { cs: "Tečka ve skleněném prvku, průměr cca 8 px na obálce 1200 × 800", en: "Dot inside a glass element, approx. 8 px in diameter on a 1200 × 800 cover" } },
-        ],
-      },
-      {
         type: "images",
         title: { cs: "Příklady obálek", en: "Cover examples" },
         body: { cs: "Skutečné obálky článků z blogu Apadore ve světlé i tmavé verzi.", en: "Real article covers from the Apadore blog in light and dark versions." },
