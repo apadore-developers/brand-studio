@@ -21,19 +21,19 @@ export function ColorRatio({ parts }: { parts: { name: string; hex: string; perc
   );
 }
 
-function contrastLabel(c: number) {
-  const level = c >= 7 ? "AAA" : c >= 4.5 ? "AA" : c >= 3 ? "AA (jen velký text)" : "nevyhovuje";
-  return `Kontrast ${formatRatio(c)} · ${level}`;
+function contrastLabel(c: number, en: boolean) {
+  const level = c >= 7 ? "AAA" : c >= 4.5 ? "AA" : c >= 3 ? (en ? "AA (large text only)" : "AA (jen velký text)") : en ? "fails" : "nevyhovuje";
+  return `${en ? "Contrast" : "Kontrast"} ${formatRatio(c)} · ${level}`;
 }
 
-export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: string }[] }) {
+export function ColorPairs({ pairs, en = false }: { pairs: { label: string; bg: string; fg: string }[]; en?: boolean }) {
   return (
     <ul role="list" className={s.pairs}>
       {pairs.map((p) => (
         <li key={p.label} className={s.pairItem}>
           <div className={s.pair} style={{ background: p.bg, color: p.fg }} data-tone={isDark(p.bg) ? "dark" : "light"}>
             <span className={s.aa}>Aa</span>
-            <span className={s.contrast}>{contrastLabel(contrast(p.bg, p.fg))}</span>
+            <span className={s.contrast}>{contrastLabel(contrast(p.bg, p.fg), en)}</span>
           </div>
           <p className={s.label}>{p.label}</p>
         </li>
@@ -44,7 +44,7 @@ export function ColorPairs({ pairs }: { pairs: { label: string; bg: string; fg: 
 
 type Stop = { name: string; hex: string; alpha: number; position: number };
 
-export function GradientPalette({ items }: { items: { name: string; role: string; variant: "dark" | "light"; visible?: { name: string; hex: string }[]; stops: Stop[] }[] }) {
+export function GradientPalette({ items, en = false }: { en?: boolean; items: { name: string; role: string; variant: "dark" | "light"; visible?: { name: string; hex: string }[]; stops: Stop[] }[] }) {
   return (
     <div className={s.palettes}>
       {items.map((g) => (
@@ -56,7 +56,7 @@ export function GradientPalette({ items }: { items: { name: string; role: string
           <div className={s.preview} data-variant={g.variant} />
           {g.visible && (
             <>
-              <p className={s.subhead}>Výsledné barvy (odhad)</p>
+              <p className={s.subhead}>{en ? "Resulting colours (estimate)" : "Výsledné barvy (odhad)"}</p>
               <ul role="list" className={s.visible}>
                 {g.visible.map((v) => (
                   <li key={v.hex} className={s.visibleItem} style={{ background: v.hex, color: isDark(v.hex) ? "#FFFFFF" : "#090E21" }}>
@@ -67,7 +67,7 @@ export function GradientPalette({ items }: { items: { name: string; role: string
                   </li>
                 ))}
               </ul>
-              <p className={s.subhead}>Jak je přechod sestavený</p>
+              <p className={s.subhead}>{en ? "How the gradient is built" : "Jak je přechod sestavený"}</p>
             </>
           )}
           <ul role="list" className={s.stops}>

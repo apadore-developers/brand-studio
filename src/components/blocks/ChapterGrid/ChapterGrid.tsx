@@ -8,7 +8,7 @@ import type { Chapter, Lang } from "@/content/types";
 import { urls } from "@/lib/urls";
 import s from "./ChapterGrid.module.css";
 
-function Cover({ kind }: { kind: Chapter["cover"] }) {
+function Cover({ kind, en }: { kind: Chapter["cover"]; en: boolean }) {
   switch (kind) {
     case "logo":
       return <Logo className={s.coverLogo} />;
@@ -29,14 +29,14 @@ function Cover({ kind }: { kind: Chapter["cover"] }) {
     case "type":
       return <span className={s.coverType}>Aa</span>;
     case "gradient":
-      return <span className={s.coverGlass}>přechod</span>;
+      return <span className={s.coverGlass}>{en ? "gradient" : "přechod"}</span>;
     case "images":
       // eslint-disable-next-line @next/next/no-img-element
       return <img src="/images/obrazovy-styl/sky-towers-monitor.webp" alt="" className={s.coverPhoto} />;
     case "social":
-      return <span className={s.coverQuote}>„Citát“</span>;
+      return <span className={s.coverQuote}>{en ? "“Quote”" : "„Citát“"}</span>;
     case "blog":
-      return <span className={s.coverGlass}>obálka</span>;
+      return <span className={s.coverGlass}>{en ? "cover" : "obálka"}</span>;
     default:
       return <span className={s.coverType}>↓</span>;
   }
@@ -82,7 +82,7 @@ export function ChapterGrid({ chapters, lang }: { chapters: Chapter[]; lang: Lan
         <li key={c.slug}>
           <Link href={urls.chapter(lang, c.slug)} className={s.card}>
             <div className={s.cover} data-cover={c.cover} data-theme={["logo", "intro", "gradient", "social", "blog"].includes(c.cover) ? "dark" : undefined}>
-              <Cover kind={c.cover} />
+              <Cover en={lang === "en"} kind={c.cover} />
             </div>
             <span className={s.num}>{String(i + 1).padStart(2, "0")}.</span>
             <div className={s.meta}>

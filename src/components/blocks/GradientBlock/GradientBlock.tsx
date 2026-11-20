@@ -24,14 +24,15 @@ export function GradientBlock({ variant, direction, stops }: { variant: "dark" |
   );
 }
 
-export function GlassDemo({ specs }: { specs: { label: string; value: string }[] }) {
+export function GlassDemo({ specs, en = false }: { specs: { label: string; value: string }[]; en?: boolean }) {
+  const word = en ? "brief · hypothesis" : "zadání · hypotéza";
   return (
     <div className={s.glassGrid}>
       <div className={s.glassStage} data-variant="dark">
-        <span className={s.glass} data-variant="dark">zadání · hypotéza</span>
+        <span className={s.glass} data-variant="dark">{word}</span>
       </div>
       <div className={s.glassStage} data-variant="light">
-        <span className={s.glass} data-variant="light">zadání · hypotéza</span>
+        <span className={s.glass} data-variant="light">{word}</span>
       </div>
       <dl className={s.specs}>
         {specs.map((sp) => (

@@ -5,7 +5,6 @@ import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { ChapterNav } from "@/components/layout/ChapterNav";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { Callout } from "@/components/ui/Callout";
 import { chapters, getChapter } from "@/content/chapters";
 import { site, t } from "@/content/site";
 import type { Lang } from "@/content/types";
@@ -33,7 +32,6 @@ export default async function ChapterPage({ params }: { params: Params }) {
       <SiteHeader lang={lang} eyebrow={t(site.ui.manual, lang)} eyebrowHref={urls.home(lang)} title={t(c.title, lang)} path={`/${c.slug}`} />
       <main className="container">
         <Breadcrumb items={[{ label: t(site.ui.home, lang), href: urls.home(lang) }, { label: t(c.title, lang) }]} />
-        {lang === "en" && <Callout>{t(site.ui.enPending, lang)}</Callout>}
         {c.blocks.map((b, i) => (
           <BlockRenderer key={i} block={b} lang={lang} id={`${c.slug}-${i + 1}`} />
         ))}

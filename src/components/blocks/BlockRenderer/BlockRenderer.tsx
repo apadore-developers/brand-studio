@@ -11,6 +11,15 @@ import { OutputPreviews } from "@/components/blocks/OutputPreviews";
 import { site, t } from "@/content/site";
 import type { Block, Lang } from "@/content/types";
 
+/** English names for plain-string colour labels in the gradient palette. */
+const enNames: Record<string, string> = {
+  "Gradient Blue (roh)": "Gradient Blue (corner)", "Gradient Navy (konec)": "Gradient Navy (end)",
+  "Mist (začátek)": "Mist (start)", "Sky Mist (střed)": "Sky Mist (middle)", "Sky (roh)": "Sky (corner)",
+  "Podklad (navy 900)": "Base (navy 900)", "Roh, modrá": "Corner, blue", "Konec, tmavá navy": "End, dark navy",
+  "Podklad, šedomodrá": "Base, blue grey", "Bílá": "White", "Grey 0 (bílá)": "Grey 0 (white)", "Grey 50 a 100": "Grey 50 and 100", "Střed, světle modrá": "Middle, light blue", "Konec, světlá": "End, light",
+};
+const tr = (name: string, lang: Lang) => (lang === "en" ? (enNames[name] ?? name) : name);
+
 export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; id: string }) {
   const title = "title" in block ? t(block.title, lang) : undefined;
   const body = "body" in block ? t(block.body, lang) : undefined;
@@ -48,19 +57,19 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
         </Section>
       );
     case "colors":
-      return <Section {...common}><ColorSwatches colors={block.colors} size={block.size} lang={lang} /></Section>;
+      return <Section {...common}><ColorSwatches colors={block.colors.map((c) => ({ ...c, name: tr(c.name, lang) }))} size={block.size} lang={lang} /></Section>;
     case "gradientPalette":
       return (
         <Section {...common}>
-          <GradientPalette items={block.items.map((i) => ({ ...i, name: t(i.name, lang), role: t(i.role, lang) }))} />
+          <GradientPalette en={lang === "en"} items={block.items.map((i) => ({ ...i, name: t(i.name, lang), role: t(i.role, lang), visible: i.visible?.map((v) => ({ ...v, name: tr(v.name, lang) })), stops: i.stops.map((st) => ({ ...st, name: tr(st.name, lang) })) }))} />
         </Section>
       );
     case "previews":
       return <Section {...common}><OutputPreviews items={block.items.map((i) => ({ ...i, label: t(i.label, lang) }))} /></Section>;
     case "colorRatio":
-      return <Section {...common}><ColorRatio parts={block.parts} /></Section>;
+      return <Section {...common}><ColorRatio parts={block.parts.map((x) => ({ ...x, name: tr(x.name, lang) }))} /></Section>;
     case "colorPairs":
-      return <Section {...common}><ColorPairs pairs={block.pairs.map((p) => ({ ...p, label: t(p.label, lang) }))} /></Section>;
+      return <Section {...common}><ColorPairs en={lang === "en"} pairs={block.pairs.map((p) => ({ ...p, label: t(p.label, lang) }))} /></Section>;
     case "font":
       return (
         <Section {...common}>
@@ -68,7 +77,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
         </Section>
       );
     case "typeScale":
-      return <Section {...common}><TypeScale rows={block.rows} /></Section>;
+      return <Section {...common}><TypeScale en={lang === "en"} rows={block.rows} /></Section>;
     case "gradient":
       return (
         <Section {...common}>
@@ -76,7 +85,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
         </Section>
       );
     case "glass":
-      return <Section {...common}><GlassDemo specs={block.specs.map((s) => ({ label: t(s.label, lang), value: t(s.value, lang) }))} /></Section>;
+      return <Section {...common}><GlassDemo en={lang === "en"} specs={block.specs.map((s) => ({ label: t(s.label, lang), value: t(s.value, lang) }))} /></Section>;
     case "rules":
       return <Section {...common}><RuleList items={block.items.map((r) => ({ title: t(r.title, lang), body: t(r.body, lang) }))} /></Section>;
     case "images":

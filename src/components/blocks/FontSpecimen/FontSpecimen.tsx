@@ -19,7 +19,7 @@ const alphabet = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ\naáb
 
 export function FontSpecimen({ lang, family, name, info, download, styles }: Props) {
   const [open, setOpen] = useState<string | null>(null);
-  const [sample, setSample] = useState("Strategií začínáme. Spuštěním nekončíme.");
+  const [sample, setSample] = useState(lang === "en" ? "We start with strategy. Launch is not the end." : "Strategií začínáme. Spuštěním nekončíme.");
   const [size, setSize] = useState(48);
   const rows = [
     { id: "styles", label: t(site.ui.fontStyles, lang) },

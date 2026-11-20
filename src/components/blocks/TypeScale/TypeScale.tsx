@@ -2,10 +2,10 @@ import s from "./TypeScale.module.css";
 
 type Row = { name: string; size: number; lineHeight: number; tracking: number; family: "heading" | "body" | "mono" };
 
-export function TypeScale({ rows }: { rows: Row[] }) {
+export function TypeScale({ rows, en = false }: { rows: Row[]; en?: boolean }) {
   return (
     <div className={s.scale}>
-      <p className={s.head}>písmo a řez · velikost / řádkování / prostrkání</p>
+      <p className={s.head}>{en ? "typeface and weight · size / line height / tracking" : "písmo a řez · velikost / řádkování / prostrkání"}</p>
       {rows.map((r) => (
         <div key={r.name} className={s.row}>
           <span className={s.label}>{r.name}</span>
