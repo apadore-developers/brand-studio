@@ -35,7 +35,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
     case "tints":
       return <Section {...common}><Tints lang={lang} groups={block.groups.map((g) => ({ name: t(g.name, lang), steps: g.steps }))} /></Section>;
     case "logoGenerator":
-      return <Section {...common} layout="full"><LogoExport lang={lang} /></Section>;
+      return <Section {...common} id="logo-generator" layout="full"><LogoExport lang={lang} /></Section>;
     case "clearSpace":
       return <Section {...common}><ClearSpace ratio={t(block.ratio, lang)} /></Section>;
     case "logoVersions":
@@ -52,8 +52,8 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
           <LogoTiles
             compact
             items={[
-              { label: lang === "en" ? "Navy" : "Navy", bg: "dark", logo: "negativni", mark: true },
-              { label: lang === "en" ? "White" : "Bílá", bg: "white", logo: "pozitivni", mark: true },
+              { label: "Navy", bg: "dark", logo: "negativni", mark: true, downloads: [{ label: "SVG", href: "/downloads/favicon/apadore-favicon-navy.svg" }, { label: "PNG", href: "/downloads/favicon/apadore-favicon-navy-512.png" }] },
+              { label: lang === "en" ? "White" : "Bílá", bg: "white", logo: "pozitivni", mark: true, downloads: [{ label: "SVG", href: "/downloads/favicon/apadore-favicon-bila.svg" }, { label: "PNG", href: "/downloads/favicon/apadore-favicon-bila-512.png" }] },
             ]}
           />
         </Section>
@@ -101,7 +101,7 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
     case "downloads":
       return (
         <Section {...common}>
-          <DownloadList cta={t(site.ui.download, lang)} items={block.items.map((d) => ({ title: t(d.title, lang), meta: t(d.meta, lang), href: d.href, alt: d.alt }))} />
+          <DownloadList cta={t(site.ui.download, lang)} items={block.items.map((d) => ({ title: t(d.title, lang), meta: t(d.meta, lang), href: d.link && d.href ? `/${lang}/${d.href}` : d.href, alt: d.alt, cta: d.cta && t(d.cta, lang), link: d.link }))} />
         </Section>
       );
   }

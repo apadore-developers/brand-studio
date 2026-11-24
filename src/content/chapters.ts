@@ -76,17 +76,9 @@ export const chapters: Chapter[] = [
         type: "favicons",
         title: { cs: "Favicon", en: "Favicon" },
         body: {
-          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech. Zatím ve dvou verzích: bílé A na navy a navy A na bílé. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore.",
-          en: "The favicon is the letter A from the logo and is used only at small sizes. For now in two versions: white A on navy and navy A on white. Larger formats (profile picture, app icon) use the full Apadore logo.",
+          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech. Zatím ve dvou verzích: bílé A na navy a navy A na bílé. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore. PNG 180 a 32 px jsou v logo kitu.",
+          en: "The favicon is the letter A from the logo and is used only at small sizes. For now in two versions: white A on navy and navy A on white. Larger formats (profile picture, app icon) use the full Apadore logo. 180 and 32 px PNGs are in the logo kit.",
         },
-      },
-      {
-        type: "downloads",
-        title: { cs: "Favicon ke stažení", en: "Favicon downloads" },
-        items: [
-          { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "Bílé A na navy 900 · SVG, PNG 512 (180 a 32 px v logo kitu)", en: "White A on navy 900 · SVG, PNG 512 (180 and 32 px in the logo kit)" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
-          { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "Navy A na bílé · SVG, PNG 512 (180 a 32 px v logo kitu)", en: "Navy A on white · SVG, PNG 512 (180 and 32 px in the logo kit)" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
-        ],
       },
       {
         type: "logoGenerator",
@@ -226,7 +218,7 @@ export const chapters: Chapter[] = [
           { label: { cs: "Výrobce", en: "Foundry" }, value: "Vercel a Basement Studio" },
           { label: { cs: "Licence", en: "Licence" }, value: "SIL Open Font License, zdarma" },
         ],
-        download: { label: { cs: "vercel.com/font", en: "vercel.com/font" }, href: "https://vercel.com/font" },
+        download: { label: { cs: "Google Fonts", en: "Google Fonts" }, href: "https://fonts.google.com/specimen/Geist" },
         styles: [
           { name: "Regular", weight: 400, use: { cs: "Odstavce, Lead", en: "Paragraphs, lead" } },
           { name: "Medium", weight: 500, use: { cs: "Body M a S, rozhraní", en: "Body M and S, interface" } },
@@ -243,7 +235,7 @@ export const chapters: Chapter[] = [
           { label: { cs: "Výrobce", en: "Foundry" }, value: "IBM (Mike Abbink a Bold Monday), 2017" },
           { label: { cs: "Licence", en: "Licence" }, value: "SIL Open Font License, zdarma" },
         ],
-        download: { label: { cs: "github.com/IBM/plex", en: "github.com/IBM/plex" }, href: "https://github.com/IBM/plex" },
+        download: { label: { cs: "Google Fonts", en: "Google Fonts" }, href: "https://fonts.google.com/specimen/IBM+Plex+Mono" },
         styles: [{ name: "Medium", weight: 500, use: { cs: "Štítky a tlačítka", en: "Labels and buttons" } }],
       },
       {
@@ -548,8 +540,11 @@ export const chapters: Chapter[] = [
           { title: { cs: "Základní logo kit", en: "Basic logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
           { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
           { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
-          { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo, [DOPLNIT odkaz na Drive]", en: "Licensed typeface, [ADD Drive link]" } },
-          { title: { cs: "Geist a IBM Plex Mono", en: "Geist and IBM Plex Mono" }, meta: { cs: "Zdarma: vercel.com/font, github.com/IBM/plex", en: "Free: vercel.com/font, github.com/IBM/plex" } },
+          { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo · Google Drive [DOPLNIT odkaz]", en: "Licensed typeface · Google Drive [ADD link]" } },
+          { title: { cs: "Písmo Geist", en: "Geist typeface" }, meta: { cs: "Zdarma · Google Fonts", en: "Free · Google Fonts" }, href: "https://fonts.google.com/specimen/Geist", cta: { cs: "Google Fonts", en: "Google Fonts" } },
+          { title: { cs: "Písmo IBM Plex Mono", en: "IBM Plex Mono typeface" }, meta: { cs: "Zdarma · Google Fonts", en: "Free · Google Fonts" }, href: "https://fonts.google.com/specimen/IBM+Plex+Mono", cta: { cs: "Google Fonts", en: "Google Fonts" } },
+          { title: { cs: "Logo generátor", en: "Logo generator" }, meta: { cs: "Logo v libovolném rozměru a pozadí · PNG, JPG, SVG, PDF, AI", en: "The logo in any size and background · PNG, JPG, SVG, PDF, AI" }, href: "logo#logo-generator", link: true, cta: { cs: "Otevřít", en: "Open" } },
+          { title: { cs: "Celá značka na Google Drive", en: "The whole brand on Google Drive" }, meta: { cs: "Všechny podklady a komponenty · [DOPLNIT odkaz]", en: "All assets and components · [ADD link]" } },
         ],
       },
       {
@@ -557,7 +552,7 @@ export const chapters: Chapter[] = [
         title: { cs: "Kontakt", en: "Contact" },
         body: { cs: "Máte otázku ke značce? Napište našemu art directorovi, než něco upravíte.", en: "Have a question about the brand? Get in touch with our art director before you change anything." },
         items: [
-          { title: { cs: "Tomáš Krčál, art director", en: "Tomáš Krčál, art director" }, meta: { cs: "Telefon: [DOPLNIT]", en: "Phone: [TBD]" } },
+          { title: { cs: "Tomáš Krčál, art director", en: "Tomáš Krčál, art director" }, meta: { cs: "E-mail: [DOPLNIT] · Telefon: [DOPLNIT]", en: "E-mail: [TBD] · Phone: [TBD]" } },
           { title: { cs: "Web Apadore", en: "Apadore website" }, meta: { cs: "www.apadore.cz", en: "www.apadore.cz" }, href: "https://www.apadore.cz" },
         ],
       },

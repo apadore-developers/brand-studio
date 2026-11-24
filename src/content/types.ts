@@ -34,7 +34,7 @@ export type Block =
   | { type: "rules"; title: L; body?: L; items: { title: L; body: L }[] }
   | { type: "images"; title: L; body: L; items: { label: L; source?: string; src?: string; ratio: string }[] }
   | { type: "formats"; title: L; body: L; items: { label: L; w: number; h: number }[] }
-  | { type: "downloads"; title: L; body?: L; items: { title: L; meta: L; href?: string; alt?: string }[] };
+  | { type: "downloads"; title: L; body?: L; items: { title: L; meta: L; href?: string; alt?: string; cta?: L; link?: boolean }[] };
 
 export type Chapter = {
   slug: string;

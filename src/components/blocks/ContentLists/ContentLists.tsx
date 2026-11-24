@@ -54,7 +54,7 @@ export function FormatList({ items }: { items: { label: string; w: number; h: nu
   );
 }
 
-export function DownloadList({ items, cta }: { items: { title: string; meta: string; href?: string; alt?: string }[]; cta: string }) {
+export function DownloadList({ items, cta }: { items: { title: string; meta: string; href?: string; alt?: string; cta?: string; link?: boolean }[]; cta: string }) {
   return (
     <ul role="list" className={s.downloads}>
       {items.map((d) => (
@@ -64,9 +64,13 @@ export function DownloadList({ items, cta }: { items: { title: string; meta: str
             <span className={s.downloadMeta}>{d.meta}</span>
           </span>
           {d.href && (
-            d.href.startsWith("http") ? (
+            d.link || d.href.startsWith("mailto:") ? (
+              <Button href={d.href} icon="next">
+                {d.cta}
+              </Button>
+            ) : d.href.startsWith("http") ? (
               <Button href={d.href} target="_blank" rel="noreferrer" icon="external">
-                {d.href.includes("figma.com") ? "Figma" : "Web"}
+                {d.cta ?? (d.href.includes("figma.com") ? "Figma" : "Web")}
               </Button>
             ) : (
               <span className={s.btns}>

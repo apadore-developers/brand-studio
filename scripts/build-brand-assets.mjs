@@ -4,16 +4,17 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 const src = readFileSync(new URL("../src/content/logo-paths.ts", import.meta.url), "utf8");
 const paths = [...src.matchAll(/rule: "(evenodd|nonzero)", d: "([^"]+)"/g)].map((m) => ({ rule: m[1], d: m[2] }));
 const NAVY = "#090E21";
+const LW = Math.max(...paths.flatMap((p) => p.d.match(/-?\d*\.?\d+(?:e-?\d+)?/g).map(Number).filter((_, i) => i % 2 === 0)));
 const WHITE = "#FFFFFF";
 
 const pathEls = (list, fill) =>
   list.map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
 
 const logo = (fill) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1359 233" width="1359" height="233">${pathEls(paths, fill)}</svg>\n`;
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} 233" width="${LW}" height="233">${pathEls(paths, fill)}</svg>\n`;
 
 // Letter A: bbox x 0..196.41, y 4.83..228.41
-const a = paths[1];
+const a = paths[0];
 const gradients = {
   dark: `<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3F8BFF" stop-opacity="0.55"/><stop offset="1" stop-color="#182037" stop-opacity="0"/></linearGradient>`,
   light: `<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FA3DA" stop-opacity="0.85"/><stop offset="0.55" stop-color="#B9CBE6" stop-opacity="0.4"/><stop offset="1" stop-color="#E6E8EE" stop-opacity="0"/></linearGradient>`,
@@ -60,7 +61,7 @@ const pdf = (rgb) => {
   const objs = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1359 233] /Contents 4 0 R /Resources << >> >>",
+    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${LW} 233] /Contents 4 0 R /Resources << >> >>",
     `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`,
   ];
   let s = "%PDF-1.4\n";
@@ -86,7 +87,7 @@ const solidFavicon = (bg, fg) => {
 };
 // Full logo centred on a square; 70 % of the width keeps it inside a circular crop.
 const socialLogo = (bg, fg, size = 1080, share = 0.7) => {
-  const w = size * share, s = w / 1359, h = 233 * s;
+  const w = size * share, s = w / LW, h = 233 * s;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}"><rect width="${size}" height="${size}" fill="${bg}"/><g transform="translate(${((size - w) / 2).toFixed(2)} ${((size - h) / 2).toFixed(2)}) scale(${s.toFixed(5)})">${pathEls(paths, fg)}</g></svg>\n`;
 };
 
@@ -127,7 +128,7 @@ console.log("favicon and social variants written");
   const W = 2000;
   // JPG: logo with clear space of half the logo height on every side
   const padded = (bg, fg) => {
-    const lw = W / (1 + 233 / 1359), s = lw / 1359, lh = 233 * s, pad = lh / 2;
+    const lw = W / (1 + 233 / LW), s = lw / LW, lh = 233 * s, pad = lh / 2;
     const h = Math.round(lh + 2 * pad);
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${h}" width="${W}" height="${h}"><rect width="${W}" height="${h}" fill="${bg}"/><g transform="translate(${((W - lw) / 2).toFixed(2)} ${pad.toFixed(2)}) scale(${s.toFixed(6)})">${pathEls(paths, fg)}</g></svg>`;
   };

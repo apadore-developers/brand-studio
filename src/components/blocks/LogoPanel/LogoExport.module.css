@@ -81,6 +81,10 @@
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-xs);
 
+    &[data-bg="none"] {
+      background: repeating-conic-gradient(var(--grey-100) 0% 25%, var(--grey-0) 0% 50%) 0 0 / 0.7rem 0.7rem;
+    }
+
     &[data-bg="white"] { background: var(--grey-0); }
     &[data-bg="grey"] { background: var(--grey-50); }
     &[data-bg="navy"] { background: var(--navy-900); }

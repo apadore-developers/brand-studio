@@ -2,19 +2,21 @@
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { logoPaths } from "@/content/logo-paths";
+import { logoPaths, logoWidth } from "@/content/logo-paths";
+import { buildPdf, buildZip, over, type PdfBackground } from "@/lib/export-files";
 import type { Lang } from "@/content/types";
 import s from "./LogoExport.module.css";
 
 const NAVY = "#090E21";
 const WHITE = "#FFFFFF";
-const LOGO_W = 1359;
+const LOGO_W = logoWidth;
 const LOGO_H = 233;
 const K = LOGO_H / LOGO_W;
 
 type Bg = "none" | "navy" | "gradientDark" | "gradientLight" | "grey" | "white";
 
-const backgrounds: { key: Exclude<Bg, "none">; cs: string; en: string }[] = [
+const backgrounds: { key: Bg; cs: string; en: string }[] = [
+  { key: "none", cs: "Bez pozadí", en: "No background" },
   { key: "navy", cs: "Navy, bez přechodu", en: "Navy, no gradient" },
   { key: "gradientDark", cs: "Tmavý přechod", en: "Dark gradient" },
   { key: "gradientLight", cs: "Světlý přechod", en: "Light gradient" },
@@ -81,6 +83,23 @@ function buildSvg(bg: Bg, color: "navy" | "white", w: number, h: number, logoW: 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">${background(bg, w, h)}<g transform="translate(${((w - logoW) / 2).toFixed(2)} ${((h - logoH) / 2).toFixed(2)}) scale(${scale.toFixed(6)})">${paths}</g></svg>`;
 }
 
+function pdfBackground(bg: Bg, w: number, h: number): PdfBackground {
+  const hexRgb = (hex: string) => over(hex, hex, 0);
+  if (bg === "white") return { kind: "solid", color: hexRgb(WHITE) };
+  if (bg === "grey") return { kind: "solid", color: hexRgb("#F1F1F1") };
+  if (bg === "navy") return { kind: "solid", color: hexRgb(NAVY) };
+  if (bg === "gradientDark") {
+    return { kind: "gradient", base: hexRgb(NAVY), line: gradientLine(135, w, h), stops: [
+      { offset: 0, color: over(NAVY, "#3F8BFF", 0.45) }, { offset: 0.7, color: hexRgb(NAVY) }, { offset: 1, color: hexRgb(NAVY) } ] };
+  }
+  if (bg === "gradientLight") {
+    const base = "#EEF0F4";
+    return { kind: "gradient", base: hexRgb(base), line: gradientLine(225, w, h), stops: [
+      { offset: 0, color: over(base, "#7FA3DA", 0.75) }, { offset: 0.55, color: over(base, "#B9CBE6", 0.35) }, { offset: 1, color: hexRgb(base) } ] };
+  }
+  return { kind: "none" };
+}
+
 const clampSize = (v: number) => Math.min(8000, Math.max(16, Math.round(v) || 16));
 
 /**
@@ -96,11 +115,12 @@ export function LogoExport({ lang }: { lang: Lang }) {
   const [fw, setFw] = useState(1080);
   const [fh, setFh] = useState(1080);
   const [zoom, setZoom] = useState(recommendedZoom(1080, 1080));
-  const [withBg, setWithBg] = useState(false);
-  const [bgPick, setBgPick] = useState<Exclude<Bg, "none">>("navy");
+  const [open, setOpen] = useState(false);
+  const [bgPick, setBgPick] = useState<Bg>("none");
   const [plainColor, setPlainColor] = useState<"navy" | "white">("navy");
 
-  const bg: Bg = withBg ? bgPick : "none";
+  const bg: Bg = bgPick;
+  const withBg = bg !== "none";
   const color = withBg ? (bgPick === "navy" || bgPick === "gradientDark" ? "white" : "navy") : plainColor;
 
   let w: number, h: number, logoW: number;
@@ -133,6 +153,43 @@ export function LogoExport({ lang }: { lang: Lang }) {
     a.href = href;
     a.download = `${name}.${ext}`;
     a.click();
+  }
+
+  async function rasterBlob(type: "png" | "jpg") {
+    const img = new Image();
+    img.src = preview;
+    await img.decode();
+    const canvas = document.createElement("canvas");
+    canvas.width = w;
+    canvas.height = h;
+    canvas.getContext("2d")?.drawImage(img, 0, 0, w, h);
+    return new Promise<Blob>((res) => canvas.toBlob((b) => res(b as Blob), type === "jpg" ? "image/jpeg" : "image/png", 0.95));
+  }
+
+  function pdfBlob() {
+    const scale = logoW / LOGO_W;
+    return buildPdf({
+      w, h, background: pdfBackground(bg, w, h), paths: logoPaths,
+      fill: over(color === "white" ? WHITE : NAVY, NAVY, 0),
+      transform: { tx: (w - logoW) / 2, ty: (h - LOGO_H * scale) / 2, scale },
+    });
+  }
+
+  function saveBlob(blob: Blob, ext: string) {
+    const url = URL.createObjectURL(blob);
+    save(url, ext);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function all() {
+    const files = [
+      { name: `${name}.png`, blob: await rasterBlob("png") },
+      ...(withBg ? [{ name: `${name}.jpg`, blob: await rasterBlob("jpg") }] : []),
+      { name: `${name}.svg`, blob: new Blob([svg], { type: "image/svg+xml" }) },
+      { name: `${name}.pdf`, blob: pdfBlob() },
+      { name: `${name}.ai`, blob: pdfBlob() },
+    ];
+    saveBlob(await buildZip(files), "zip");
   }
 
   async function raster(type: "png" | "jpg") {
@@ -254,11 +311,11 @@ export function LogoExport({ lang }: { lang: Lang }) {
         </fieldset>
 
         <div className={s.group}>
-          <button type="button" className={s.disclosure} aria-expanded={withBg} onClick={() => setWithBg((v) => !v)}>
+          <button type="button" className={s.disclosure} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
             <span className={s.chevron} aria-hidden="true" />
             {L("Logo s pozadím", "Logo with background")}
           </button>
-          {withBg && (
+          {open && (
             <div className={s.options}>
               {backgrounds.map((b) => (
                 <button key={b.key} type="button" className={s.option} aria-pressed={bgPick === b.key} onClick={() => setBgPick(b.key)}>
@@ -274,6 +331,9 @@ export function LogoExport({ lang }: { lang: Lang }) {
           <Button icon="download" onClick={() => raster("png")}>PNG</Button>
           {withBg && <Button icon="download" onClick={() => raster("jpg")}>JPG</Button>}
           <Button icon="download" onClick={vector}>SVG</Button>
+          <Button icon="download" onClick={() => saveBlob(pdfBlob(), "pdf")}>PDF</Button>
+          <Button icon="download" onClick={() => saveBlob(pdfBlob(), "ai")}>AI</Button>
+          <Button icon="download" variant="solid" onClick={all}>{L("Všechny formáty", "All formats")}</Button>
         </div>
       </div>
     </div>

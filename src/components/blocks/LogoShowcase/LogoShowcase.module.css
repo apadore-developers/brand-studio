@@ -93,4 +93,6 @@
   }
 
   .zoneLogo { width: 100%; }
+
+  .downloads { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 }
