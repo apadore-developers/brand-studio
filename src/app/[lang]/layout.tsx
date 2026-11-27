@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: { default: site.name, template: `%s | ${site.name}` },
     description: t(site.description, lang as Lang),
     robots: { index: false, follow: false },
-    icons: { icon: "/brand/apadore-favicon-brand-studio.svg" },
+    icons: { icon: "/downloads/favicon/apadore-favicon-bila.svg" },
   };
 }
 
