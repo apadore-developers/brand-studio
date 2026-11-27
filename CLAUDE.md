@@ -12,7 +12,8 @@ Online brand manuál Apadore (inspirace: Visualbook). Next.js App Router, CSS mo
 
 ## Zdroj pravdy
 
-- **Figma:** soubor Apadore 2026 (NEW Web), file key `g6aje2QLWx5USCXogBP68K`, stránka `↪ Brand manuál` (id `2024:5678`).
+- **Figma (aktuální):** soubor Apadore 2026 (NEW Web) – Copy, file key `39VjOmXGf9jAkh1yXBg8SJ`: stránka BRAND MANUAL (`2024:5678`), SM Styl postů (`4001:220915`), Social media Basic Kit (`4001:79156`).
+- Původní soubor `g6aje2QLWx5USCXogBP68K` (stránka `↪ Brand manuál`) už se neupravuje.
   Pracuje se **jen na této stránce**, ostatní stránky Figmy se nemění.
 - **Obsah webu:** `src/content/chapters.ts` (kapitoly a bloky), `src/content/site.ts` (texty rozhraní).
 - **Logo:** `src/content/logo-paths.ts` (vektor z komponenty Logo ve Figmě, id `2037:5679`).

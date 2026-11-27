@@ -439,7 +439,7 @@ export const chapters: Chapter[] = [
         title: { cs: "Šablony příspěvků", en: "Post templates" },
         body: { cs: "Příspěvky se nestahují, připravují se ve Figmě podle šablon.", en: "Posts are not downloaded; prepare them in Figma from the templates." },
         items: [
-          { title: { cs: "Styl příspěvků ve Figmě", en: "Post style in Figma" }, meta: { cs: "Figma: Apadore 2026 (NEW Web) › Brand manuál", en: "Figma: Apadore 2026 (NEW Web) › Brand manual" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2410-14489" },
+          { title: { cs: "Styl příspěvků ve Figmě", en: "Post style in Figma" }, meta: { cs: "Figma: Brand manuál › SM Styl postů", en: "Figma: Brand manual › SM post style" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-220915" },
         ],
       },
       {
@@ -483,7 +483,7 @@ export const chapters: Chapter[] = [
         body: { cs: "Loga, profilovky a covery v jednom balíčku. Rozměry jsou doporučené hodnoty platforem, při nahrání je ověřte v administraci.", en: "Logos, profile images and covers in one package. Sizes are the platforms' recommendations; check them in the admin when uploading." },
         items: [
           { title: { cs: "Celý sociální kit", en: "The whole social media kit" }, meta: { cs: "ZIP · logo (pozitivní a negativní), favicon, profilovky, covery", en: "ZIP · logo (positive and negative), favicon, profile images, covers" }, href: "/downloads/apadore-socialni-kit.zip" },
-          { title: { cs: "Sociální kit ve Figmě", en: "Social media kit in Figma" }, meta: { cs: "Figma: Apadore 2026 (NEW Web) › Brand manuál", en: "Figma: Apadore 2026 (NEW Web) › Brand manual" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2380-9093" },
+          { title: { cs: "Sociální kit ve Figmě", en: "Social media kit in Figma" }, meta: { cs: "Figma: Brand manuál › Social media Basic Kit", en: "Figma: Brand manual › Social media Basic Kit" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-79156" },
           { title: { cs: "Sociální kit na Google Drive", en: "Social media kit on Google Drive" }, meta: { cs: "Zdrojová složka SM Basic Kit", en: "Source folder SM Basic Kit" }, href: "https://drive.google.com/drive/folders/1vRBRoGercGtMn-I5tuz8y0kDxk1Td1a2", cta: { cs: "Google Drive", en: "Google Drive" } },
         ],
       },
@@ -491,7 +491,7 @@ export const chapters: Chapter[] = [
         type: "downloads",
         title: { cs: "Šablony a skill", en: "Templates and skill" },
         items: [
-          { title: { cs: "Šablony ve Figmě", en: "Templates in Figma" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Sociální kit", en: "Apadore 2026 (NEW Web) › Brand manual › Social kit" }, href: "https://www.figma.com/design/g6aje2QLWx5USCXogBP68K/Apadore-2026--NEW-Web-?node-id=2380-9093" },
+          { title: { cs: "Šablony ve Figmě", en: "Templates in Figma" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Sociální kit", en: "Apadore 2026 (NEW Web) › Brand manual › Social kit" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-79156" },
           { title: { cs: "Skill: příspěvky na LinkedIn", en: "Skill: LinkedIn posts" }, meta: { cs: "apadore-prispevky-linkedin.zip | skill pro Clauda", en: "apadore-prispevky-linkedin.zip | Claude skill" }, href: "/downloads/apadore-prispevky-linkedin.zip" },
         ],
       }
