@@ -533,18 +533,20 @@ export const chapters: Chapter[] = [
       {
         type: "downloads",
         title: { cs: "Ke stažení", en: "Downloads" },
-        body: { cs: "Originální soubory používejte vždy odsud nebo z firemního Google Drive, nikdy je nepřekreslujte.", en: "Always use the original files." },
+        body: { cs: "Originální soubory berte vždy odsud nebo z firemního Google Drive. Nikdy je nepřekreslujte ani nevyřezávejte ze screenshotů.", en: "Always take the original files from here or the company Google Drive. Never redraw them or cut them out of screenshots." },
         items: [
           { title: { cs: "Logo, pozitivní (navy)", en: "Logo, positive (navy)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-pozitivni.svg", alt: "/brand/apadore-logo-pozitivni.pdf" },
           { title: { cs: "Logo, negativní (bílé)", en: "Logo, negative (white)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-negativni.svg", alt: "/brand/apadore-logo-negativni.pdf" },
           { title: { cs: "Základní logo kit", en: "Basic logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
           { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
           { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
-          { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo · Google Drive [DOPLNIT odkaz]", en: "Licensed typeface · Google Drive [ADD link]" } },
+          { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo · složka Fonty na Google Drive", en: "Licensed typeface · Fonty folder on Google Drive" }, href: "https://drive.google.com/drive/folders/1enNekcqJsr1mHVIxRFwIusKyKBhrOy_p", cta: { cs: "Google Drive", en: "Google Drive" } },
           { title: { cs: "Písmo Geist", en: "Geist typeface" }, meta: { cs: "Zdarma · Google Fonts", en: "Free · Google Fonts" }, href: "https://fonts.google.com/specimen/Geist", cta: { cs: "Google Fonts", en: "Google Fonts" } },
           { title: { cs: "Písmo IBM Plex Mono", en: "IBM Plex Mono typeface" }, meta: { cs: "Zdarma · Google Fonts", en: "Free · Google Fonts" }, href: "https://fonts.google.com/specimen/IBM+Plex+Mono", cta: { cs: "Google Fonts", en: "Google Fonts" } },
           { title: { cs: "Logo generátor", en: "Logo generator" }, meta: { cs: "Logo v libovolném rozměru a pozadí · PNG, JPG, SVG, PDF, AI", en: "The logo in any size and background · PNG, JPG, SVG, PDF, AI" }, href: "logo#logo-generator", link: true, cta: { cs: "Otevřít", en: "Open" } },
-          { title: { cs: "Celá značka na Google Drive", en: "The whole brand on Google Drive" }, meta: { cs: "Všechny podklady a komponenty · [DOPLNIT odkaz]", en: "All assets and components · [ADD link]" } },
+          { title: { cs: "Logo Kit na Google Drive", en: "Logo Kit on Google Drive" }, meta: { cs: "Originální soubory loga", en: "Original logo files" }, href: "https://drive.google.com/drive/folders/1PA-sBLWH9VeNcs1OkQx9Jz2Sy-NnXgRH", cta: { cs: "Google Drive", en: "Google Drive" } },
+          { title: { cs: "Sociální kit na Google Drive", en: "Social media kit on Google Drive" }, meta: { cs: "Profilovky, bannery a covery pro sítě a platformy", en: "Profile pictures, banners and covers for social media and platforms" }, href: "https://drive.google.com/drive/folders/1vRBRoGercGtMn-I5tuz8y0kDxk1Td1a2", cta: { cs: "Google Drive", en: "Google Drive" } },
+          { title: { cs: "Celá značka na Google Drive", en: "The whole brand on Google Drive" }, meta: { cs: "Všechny podklady: Logo Kit, sociální kit, fonty", en: "All assets: Logo Kit, social media kit, fonts" }, href: "https://drive.google.com/drive/folders/1BF4arua_iy8_2EGy5KktuQ8s1SWOGBjJ", cta: { cs: "Google Drive", en: "Google Drive" } },
         ],
       },
       {
