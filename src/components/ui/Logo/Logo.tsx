@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import clsx from "clsx";
-import { logoPaths, logoViewBox, letterAIndex } from "@/content/logo-paths";
+import { logoPaths, logoPathsNegative, logoViewBox, letterAIndex } from "@/content/logo-paths";
 import s from "./Logo.module.css";
 
 type LogoProps = ComponentProps<"svg"> & {
@@ -11,7 +11,7 @@ type LogoProps = ComponentProps<"svg"> & {
 };
 
 export function Logo({ variant = "current", mark, className, ...rest }: LogoProps) {
-  const paths = mark ? [logoPaths[letterAIndex]] : logoPaths;
+  const paths = mark ? [logoPaths[letterAIndex]] : variant === "negativni" ? logoPathsNegative : logoPaths;
   return (
     <svg
       viewBox={mark ? "0 4.8 196.5 223.6" : logoViewBox}

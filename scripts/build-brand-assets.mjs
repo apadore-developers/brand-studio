@@ -2,16 +2,21 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const src = readFileSync(new URL("../src/content/logo-paths.ts", import.meta.url), "utf8");
-const paths = [...src.matchAll(/rule: "(evenodd|nonzero)", d: "([^"]+)"/g)].map((m) => ({ rule: m[1], d: m[2] }));
+const all = [...src.matchAll(/rule: "(evenodd|nonzero)", d: "([^"]+)"/g)].map((m) => ({ rule: m[1], d: m[2] }));
+const negStart = src.indexOf("logoPathsNegative");
+const negCount = [...src.slice(negStart).matchAll(/rule: "(evenodd|nonzero)", d: "/g)].length;
+const paths = all.slice(0, all.length - negCount);
+const pathsNeg = all.slice(all.length - negCount);
 const NAVY = "#090E21";
 const LW = Math.max(...paths.flatMap((p) => p.d.match(/-?\d*\.?\d+(?:e-?\d+)?/g).map(Number).filter((_, i) => i % 2 === 0)));
 const WHITE = "#FFFFFF";
 
+// White logo always uses the thinned negative shape.
 const pathEls = (list, fill) =>
-  list.map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
+  (list === paths && fill === WHITE ? pathsNeg : list).map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
 
-const logo = (fill) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} 233" width="${LW}" height="233">${pathEls(paths, fill)}</svg>\n`;
+const logo = (fill, list = paths) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} 233" width="${LW}" height="233">${pathEls(list, fill)}</svg>\n`;
 
 // Letter A: bbox x 0..196.41, y 4.83..228.41
 const a = paths[0];
@@ -33,7 +38,7 @@ const favicon = (mode, fg) => {
 mkdirSync(new URL("../public/brand/", import.meta.url), { recursive: true });
 const out = (name, svg) => writeFileSync(new URL(`../public/brand/${name}`, import.meta.url), svg);
 out("apadore-logo-pozitivni.svg", logo(NAVY));
-out("apadore-logo-negativni.svg", logo(WHITE));
+out("apadore-logo-negativni.svg", logo(WHITE, pathsNeg));
 out("apadore-favicon-web.svg", favicon("dark", WHITE));
 out("apadore-favicon-brand-studio.svg", favicon("light", NAVY));
 
@@ -55,13 +60,13 @@ const toPdfOps = (d) => {
   }
   return out.join("\n");
 };
-const pdf = (rgb) => {
-  const body = paths.map((p) => `${toPdfOps(p.d)}\n${p.rule === "evenodd" ? "f*" : "f"}`).join("\n");
+const pdf = (rgb, list = paths) => {
+  const body = list.map((p) => `${toPdfOps(p.d)}\n${p.rule === "evenodd" ? "f*" : "f"}`).join("\n");
   const content = `${rgb.map((v) => (v / 255).toFixed(4)).join(" ")} rg\n${body}`;
   const objs = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${LW} 233] /Contents 4 0 R /Resources << >> >>",
+    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${LW} 233] /Contents 4 0 R /Resources << >> >>`,
     `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`,
   ];
   let s = "%PDF-1.4\n";
@@ -73,7 +78,7 @@ const pdf = (rgb) => {
   return s;
 };
 for (const [name, rgb] of [["pozitivni", [9, 14, 33]], ["negativni", [255, 255, 255]]]) {
-  const p = pdf(rgb);
+  const p = pdf(rgb, name === "negativni" ? pathsNeg : paths);
   out(`apadore-logo-${name}.pdf`, p);
   out(`apadore-logo-${name}.ai`, p);
 }

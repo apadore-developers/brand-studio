@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { logoPaths, logoWidth } from "@/content/logo-paths";
+import { logoPaths, logoPathsNegative, logoWidth } from "@/content/logo-paths";
 import { buildPdf, buildZip, over, type PdfBackground } from "@/lib/export-files";
 import type { Lang } from "@/content/types";
 import s from "./LogoExport.module.css";
@@ -79,7 +79,7 @@ function buildSvg(bg: Bg, color: "navy" | "white", w: number, h: number, logoW: 
   const scale = logoW / LOGO_W;
   const logoH = LOGO_H * scale;
   const fill = color === "white" ? WHITE : NAVY;
-  const paths = logoPaths.map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
+  const paths = (color === "white" ? logoPathsNegative : logoPaths).map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">${background(bg, w, h)}<g transform="translate(${((w - logoW) / 2).toFixed(2)} ${((h - logoH) / 2).toFixed(2)}) scale(${scale.toFixed(6)})">${paths}</g></svg>`;
 }
 
@@ -169,7 +169,7 @@ export function LogoExport({ lang }: { lang: Lang }) {
   function pdfBlob() {
     const scale = logoW / LOGO_W;
     return buildPdf({
-      w, h, background: pdfBackground(bg, w, h), paths: logoPaths,
+      w, h, background: pdfBackground(bg, w, h), paths: color === "white" ? logoPathsNegative : logoPaths,
       fill: over(color === "white" ? WHITE : NAVY, NAVY, 0),
       transform: { tx: (w - logoW) / 2, ty: (h - LOGO_H * scale) / 2, scale },
     });
