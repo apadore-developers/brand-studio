@@ -428,23 +428,19 @@ export const chapters: Chapter[] = [
     cover: "social",
     title: { cs: "Sociální sítě", en: "Social media" },
     description: { cs: "Styl příspěvků na LinkedIn a sociální kit s profilovkami a covery.", en: "LinkedIn post style and a social media kit with profile images and covers." },
-    summary: { cs: "Šablony příspěvků na LinkedIn, bannery a covery pro LinkedIn, Facebook a Google a loga pro profily na platformách jako Clutch nebo DesignRush. Pravidla, české uvozovky a skill pro Clauda ke stažení.", en: "LinkedIn post templates: Thought with a quote and Photo with a quote, banner, profile picture and Clutch. Rules, Czech quotation marks and a Claude skill to download." },
+    summary: { cs: "Šablony příspěvků na LinkedIn, bannery a covery pro LinkedIn, Facebook a Google a loga pro profily na platformách jako Clutch nebo DesignRush. Pravidla, české uvozovky a skill pro Clauda ke stažení.", en: "LinkedIn post templates, banners and covers for LinkedIn, Facebook and Google, and logos for profiles on platforms such as Clutch or DesignRush. Rules, quotation marks and a Claude skill to download." },
     blocks: [
       {
         type: "images",
         title: { cs: "Styl příspěvků", en: "Post style" },
         body: { cs: "Všechny příspěvky mají formát pro LinkedIn 1080 × 1350 a stejné rozvržení: vlevo nahoře krátký eyebrow text, vpravo dole logo Apadore. Tmavý přechod je výchozí, světlý doplňkový. Šablony upravujte a exportujte ve Figmě.", en: "All posts use the LinkedIn format 1080 × 1350 and the same layout: a short eyebrow at the top left and the Apadore logo at the bottom right. The dark gradient is the default, the light one is secondary. Edit and export the templates in Figma." },
         items: [
-          { label: { cs: "Myšlenka · tmavá", en: "Thought · dark" }, src: "/images/socialni-site/post-myslenka-tmava.webp", ratio: "1080 / 1354" },
-          { label: { cs: "Myšlenka · světlá", en: "Thought · light" }, src: "/images/socialni-site/post-myslenka-svetla.webp", ratio: "1080 / 1354" },
+          { label: { cs: "Myšlenka · tmavá", en: "Thought · dark" }, src: "/images/socialni-site/post-myslenka-tmava.webp", ratio: "1080 / 1350" },
+          { label: { cs: "Myšlenka · světlá", en: "Thought · light" }, src: "/images/socialni-site/post-myslenka-svetla.webp", ratio: "1080 / 1350" },
           { label: { cs: "Nový článek · tmavá", en: "New article · dark" }, src: "/images/socialni-site/post-clanek-tmava.webp", ratio: "1080 / 1350" },
           { label: { cs: "Nový článek · světlá", en: "New article · light" }, src: "/images/socialni-site/post-clanek-svetla.webp", ratio: "1080 / 1350" },
           { label: { cs: "Nový článek · text", en: "New article · text" }, src: "/images/socialni-site/post-clanek-text.webp", ratio: "1080 / 1350" },
           { label: { cs: "Case study", en: "Case study" }, src: "/images/socialni-site/post-case-study.webp", ratio: "1080 / 1350" },
-          { label: { cs: "Fotka s citátem", en: "Photo with a quote" }, src: "/images/socialni-site/post-fotka-s-citatem.webp", ratio: "1080 / 1350" },
-          { label: { cs: "Otázka od klientů", en: "Question from clients" }, src: "/images/socialni-site/post-otazka.webp", ratio: "1080 / 1350" },
-          { label: { cs: "Rebrand · 1/2", en: "Rebrand · 1/2" }, src: "/images/socialni-site/post-rebrand-1.webp", ratio: "1080 / 1350" },
-          { label: { cs: "Rebrand · 2/2", en: "Rebrand · 2/2" }, src: "/images/socialni-site/post-rebrand-2.webp", ratio: "1080 / 1350" },
         ],
       },
       {
@@ -464,7 +460,6 @@ export const chapters: Chapter[] = [
           { title: { cs: "České uvozovky", en: "Quotation marks" }, body: { cs: "Citáty se zapisují českými uvozovkami: „takto“. Jednotná interpunkce je součástí typografické úpravy.", en: "Use English quotation marks consistently: “like this”. Correct punctuation is part of the typographic treatment." } },
           { title: { cs: "Bez kurzívy a barev", en: "No italics or colours" }, body: { cs: "Důraz vytváří velikost a řez písma. Barevné zvýraznění a kurzíva se nepoužívají.", en: "Create emphasis through type size and weight. Do not use colour highlighting or italics." } },
           { title: { cs: "Tmavá jako výchozí", en: "Dark by default" }, body: { cs: "Tmavá varianta tvoří základ komunikace. Světlá přináší doplňkovou polohu při zachování stejného rozvržení.", en: "The dark version forms the basis of communication. The light version offers an alternative while retaining the same layout." } },
-          { title: { cs: "Fotka s citátem", en: "Photo with a quote" }, body: { cs: "Vlastní fotografii doplňuje citát v bílém rámečku v horní části. Logo je umístěno vpravo dole.", en: "Pair an original photograph with a quote in a white frame at the top. Place the logo at the bottom right." } },
         ],
       },
       {
@@ -504,8 +499,8 @@ export const chapters: Chapter[] = [
         type: "downloads",
         title: { cs: "Šablony a skill", en: "Templates and skill" },
         items: [
-          { title: { cs: "Šablony ve Figmě", en: "Templates in Figma" }, meta: { cs: "Apadore 2026 (NEW Web) › Brand manuál › Sociální kit", en: "Apadore 2026 (NEW Web) › Brand manual › Social kit" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-79156" },
-          { title: { cs: "Skill: příspěvky na LinkedIn", en: "Skill: LinkedIn posts" }, meta: { cs: "apadore-prispevky-linkedin.zip | skill pro Clauda", en: "apadore-prispevky-linkedin.zip | Claude skill" }, href: "/downloads/apadore-prispevky-linkedin.zip" },
+          { title: { cs: "Šablony ve Figmě", en: "Templates in Figma" }, meta: { cs: "Apadore 2026 (NEW Web) › SM Styl postů", en: "Apadore 2026 (NEW Web) › SM post style" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-220915" },
+          { title: { cs: "Skill: příspěvky na LinkedIn", en: "Skill: LinkedIn posts" }, meta: { cs: "apadore-prispevky-linkedin.zip | skill pro Clauda (Myšlenka, Nový článek, Case study)", en: "apadore-prispevky-linkedin.zip | Claude skill (Thought, New article, Case study)" }, href: "/downloads/apadore-prispevky-linkedin.zip" },
         ],
       }
     ],
