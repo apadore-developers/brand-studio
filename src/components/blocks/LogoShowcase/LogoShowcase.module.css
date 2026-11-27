@@ -95,4 +95,35 @@
   .zoneLogo { width: 100%; }
 
   .downloads { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  .small {
+    display: grid;
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
+
+  .smallHero { display: grid; place-items: center; padding: var(--space-10) var(--space-6); }
+
+  .smallHeroLogo { width: 60%; }
+
+  .smallRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    align-items: end;
+    padding: var(--space-5);
+    border-block-start: var(--border-width) solid var(--color-border);
+  }
+
+  .smallItem { display: grid; gap: var(--space-2); }
+
+  .smallLabel {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+  }
 }

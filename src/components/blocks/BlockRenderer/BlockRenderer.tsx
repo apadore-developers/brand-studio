@@ -4,7 +4,7 @@ import { ColorSwatches, Tints } from "@/components/blocks/ColorSwatches";
 import { DownloadList, FormatList, ImagePlaceholders, RuleList } from "@/components/blocks/ContentLists";
 import { FontSpecimen } from "@/components/blocks/FontSpecimen";
 import { GlassDemo, GradientBlock } from "@/components/blocks/GradientBlock";
-import { ClearSpace, LogoTiles } from "@/components/blocks/LogoShowcase";
+import { ClearSpace, LogoTiles, LogoSmallSizes } from "@/components/blocks/LogoShowcase";
 import { LogoExport, LogoPanel } from "@/components/blocks/LogoPanel";
 import { TypeScale } from "@/components/blocks/TypeScale";
 import { OutputPreviews } from "@/components/blocks/OutputPreviews";
@@ -34,6 +34,15 @@ export function BlockRenderer({ block, lang, id }: { block: Block; lang: Lang; i
       return <Section {...common}><LogoPanel lang={lang} /></Section>;
     case "tints":
       return <Section {...common}><Tints lang={lang} groups={block.groups.map((g) => ({ name: t(g.name, lang), steps: g.steps }))} /></Section>;
+    case "logoSmall":
+      return (
+        <Section {...common}>
+          <LogoSmallSizes
+            compareLabel={lang === "en" ? "Standard logo · 80 px" : "Základní logo · 80 px"}
+            sizes={[{ px: 160, label: "160 px" }, { px: 120, label: "120 px" }, { px: 80, label: lang === "en" ? "80 px · minimum" : "80 px · minimum" }]}
+          />
+        </Section>
+      );
     case "logoGenerator":
       return <Section {...common} id="logo-generator" layout="full"><LogoExport lang={lang} /></Section>;
     case "clearSpace":

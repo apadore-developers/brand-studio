@@ -40,6 +40,19 @@ export const chapters: Chapter[] = [
         body: { cs: "Ochranná zóna odpovídá nejméně jedné výšce loga (x). Nezasahuje do ní text, grafika ani okraj formátu. Pro základní logo doporučujeme šířku od 140 px. Celkové minimum je 80 px na obrazovce a 20 mm v tisku; pro malé velikosti slouží optická varianta.", en: "Clear space equals at least one logo height (x). Keep text, graphics and format edges outside this area. A width of 140 px or more is recommended for the standard logo. The overall minimum is 80 px on screen and 20 mm in print; use the optical version for small sizes." },
       },
       {
+        type: "logoSmall",
+        title: { cs: "Logo pro malé velikosti", en: "Small-size logo" },
+        body: { cs: "Optická varianta má rozestupy zvětšené o +4 jednotky. Používá se při šířce 80–120 px na obrazovce a 20–30 mm v tisku. Minimum je 80 px nebo 20 mm.\n\nPixely označují šířku loga při zobrazení v měřítku 100 %, nikoli rozlišení exportu. Profilový obrázek používá jednu pevnou podobu loga, která se při zmenšování nepřepíná.", en: "The optical version increases letter spacing by +4 units. Use it at widths of 80–120 px on screen and 20–30 mm in print. The minimum is 80 px or 20 mm.\n\nPixels refer to the displayed logo width at 100 % scale, not export resolution. Profile images use one fixed logo version; it does not switch as the image is scaled down." },
+      },
+      {
+        type: "downloads",
+        title: { cs: "Logo pro malé velikosti ke stažení", en: "Small-size logo downloads" },
+        items: [
+          { title: { cs: "Malé logo · pozitivní (navy)", en: "Small logo · positive (navy)" }, meta: { cs: "SVG", en: "SVG" }, href: "/brand/apadore-logo-male-pozitivni.svg" },
+          { title: { cs: "Malé logo · negativní (bílé)", en: "Small logo · negative (white)" }, meta: { cs: "SVG", en: "SVG" }, href: "/brand/apadore-logo-male-negativni.svg" },
+        ],
+      },
+      {
         type: "logoVersions",
         title: { cs: "Barevné verze", en: "Colour versions" },
         body: { cs: "Pozitivní verze v navy je určena pro bílé, světle šedé a světlé přechodové podklady. Negativní bílá verze se používá na navy a tmavých přechodech. Volba vždy vychází z dostatečného kontrastu. Barevnost loga se nemění a nedoplňuje efekty.", en: "Use the navy positive version on white, light grey and light gradient backgrounds. Use the white reversed version on navy and dark gradients. Choose the version that provides sufficient contrast. Do not alter the logo colours or add effects." },

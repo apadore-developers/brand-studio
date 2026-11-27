@@ -40,3 +40,28 @@ export function ClearSpace({ ratio }: { ratio: string }) {
     </div>
   );
 }
+
+/** Optical logo for small sizes: a large preview, real-size samples and the standard logo for comparison. */
+export function LogoSmallSizes({ sizes, compareLabel }: { sizes: { px: number; label: string }[]; compareLabel: string }) {
+  return (
+    <div className={s.small}>
+      <div className={s.smallHero}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/apadore-logo-male-pozitivni.svg" alt="Apadore" className={s.smallHeroLogo} />
+      </div>
+      <ul role="list" className={s.smallRow}>
+        {sizes.map((z) => (
+          <li key={z.px} className={s.smallItem}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/brand/apadore-logo-male-pozitivni.svg" alt="" style={{ width: z.px }} />
+            <span className={s.smallLabel}>{z.label}</span>
+          </li>
+        ))}
+        <li className={s.smallItem}>
+          <Logo variant="pozitivni" style={{ width: 80 }} />
+          <span className={s.smallLabel}>{compareLabel}</span>
+        </li>
+      </ul>
+    </div>
+  );
+}

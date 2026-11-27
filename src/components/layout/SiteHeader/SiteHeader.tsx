@@ -13,7 +13,7 @@ export function SiteHeader({ lang, title, eyebrow, eyebrowHref, path = "" }: Pro
       <div className="container">
         <div className={s.bar}>
           <Link href={urls.home(lang)} className={s.brand} aria-label={site.name}>
-            <Logo className={s.logo} />
+            <Logo variant="negativni" className={s.logo} />
             <span className={s.divider} aria-hidden="true" />
             <span className={s.product}>Brand Studio</span>
           </Link>

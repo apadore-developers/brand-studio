@@ -17,6 +17,7 @@ export type Block =
   | { type: "text"; title?: L; body: L; callout?: CalloutData }
   | { type: "logoPanel"; title: L; body: L; callout?: CalloutData }
   | { type: "logoGenerator"; title: L; body?: L }
+  | { type: "logoSmall"; title: L; body: L }
   | { type: "tints"; title: L; body?: L; groups: { name: L; steps: { step: string; hex: string }[] }[] }
   | { type: "clearSpace"; title: L; body: L; ratio: L }
   | { type: "logoVersions"; title: L; body: L; items: { label: L; bg: "light" | "dark" | "gradientDark" | "gradientLight" | "white"; logo: "pozitivni" | "negativni" }[] }

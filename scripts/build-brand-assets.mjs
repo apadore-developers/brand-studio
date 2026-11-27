@@ -39,6 +39,13 @@ mkdirSync(new URL("../public/brand/", import.meta.url), { recursive: true });
 const out = (name, svg) => writeFileSync(new URL(`../public/brand/${name}`, import.meta.url), svg);
 out("apadore-logo-pozitivni.svg", logo(NAVY));
 out("apadore-logo-negativni.svg", logo(WHITE, pathsNeg));
+// Optical version for small sizes: +4 units between letters (paths are ordered A P A D O R E).
+const shiftX = (d, dx) => { let k = 0; return d.replace(/-?\d*\.?\d+(?:e-?\d+)?/g, (m) => (k++ % 2 === 0 ? String(Math.round((Number(m) + dx) * 1000) / 1000) : m)); };
+const small = (list) => list.map((p, i) => ({ rule: p.rule, d: shiftX(p.d, i * 4) }));
+const LWS = LW + 24;
+const logoSmall = (fill, list) => `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LWS} 233" width="${Math.round(LWS)}px" height="233px">${list.map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("")}</svg>\n`;
+out("apadore-logo-male-pozitivni.svg", logoSmall(NAVY, small(paths)));
+out("apadore-logo-male-negativni.svg", logoSmall(WHITE, small(pathsNeg)));
 out("apadore-favicon-web.svg", favicon("dark", WHITE));
 out("apadore-favicon-brand-studio.svg", favicon("light", NAVY));
 
