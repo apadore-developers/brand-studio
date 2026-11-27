@@ -10,15 +10,12 @@ export const chapters: Chapter[] = [
     cover: "intro",
     title: { cs: "Úvod", en: "Introduction" },
     description: { cs: "Co je značka Apadore a jak s manuálem pracovat.", en: "What the Apadore brand is and how to use these guidelines." },
-    summary: { cs: "Kdo je Apadore, na čem značka stojí a jak s manuálem pracovat. Tmavá navy a bílá, tři písma, jemné přechody a tón komunikace, který dává přednost klientovi.", en: "Who Apadore is, what the brand stands on and how to use these guidelines. Dark navy and white, three typefaces, soft gradients and a tone of voice that puts the client first." },
+    summary: { cs: "Pravidla vizuální identity a jejího použití napříč komunikací Apadore.", en: "Guidelines for the Apadore visual identity and its use across communications." },
     blocks: [
       {
         type: "text",
         title: { cs: "Vítejte v brandu Apadore", en: "Welcome to the Apadore brand" },
-        body: {
-          cs: "Apadore je studio, kde hlavní slovo mají naše práce: obrázky a case studies. Značka proto stojí na střídmém základu, který projektům nepřekáží: tmavá navy a bílá, světlé šedé plochy, tři písma a jemné přechody.\n\nManuál popisuje, jak s těmito prvky zacházet, aby všechno, co vytvoříme, od webu přes case studies po příspěvky na sociálních sítích, působilo jako jedno studio. Mluvíme klidně, věcně a s přínosem pro klienta na prvním místě.",
-          en: "Apadore is a studio where our work speaks first: images and case studies. The brand therefore stands on a restrained base that never gets in the way: dark navy and white, light grey surfaces, three typefaces and subtle gradients.",
-        },
+        body: { cs: "Apadore je digitální studio. Jeho vizuální identita stojí na výrazné typografii, tmavých modrých tónech a čisté kompozici. Střídmé prostředky dávají značce osobitý výraz a prostor prezentovat práci v celé její šíři.\n\nManuál vymezuje základní prvky identity a vztahy mezi nimi. Pomáhá vytvářet soudržnou komunikaci, která se přizpůsobí obsahu i formátu a zachová rozpoznatelný charakter Apadore.", en: "Apadore is a digital studio. Its visual identity combines distinctive typography, deep blue tones and clean composition. A restrained set of elements gives the brand a clear presence and room to showcase the full range of its work.\n\nThis manual defines the core elements of the identity and how they work together. It supports consistent communication that adapts to different content and formats while retaining the distinctive character of Apadore." },
         callout: { variant: "note", body: { cs: "Odpovídá: art director. Máte otázku ke značce? Napište, než něco upravíte.", en: "Owner: art director. Have a question about the brand? Get in touch before you change anything." } },
       },
     ],
@@ -33,25 +30,19 @@ export const chapters: Chapter[] = [
       {
         type: "logoPanel",
         title: { cs: "Hlavní logo", en: "Primary logo" },
-        body: {
-          cs: "Logo tvoří slovo APADORE ve verzálkách, bez symbolu. V běžném textu se firma píše „Apadore“, verzálky patří jen logu. Logo nikdy nepřepisujte písmem, vždy použijte originální soubor.",
-          en: "The logo is the word APADORE in capitals, without a symbol. In running text the company is written “Apadore”. Never retype the logo, always use the original file.",
-        },
-        callout: { variant: "note", title: { cs: "Minimální šířka loga", en: "Minimum logo width" }, body: { cs: "140 px na obrazovkách. Tisk: [DOPLNIT].", en: "140 px on screens. Print: [TBD]." } },
+        body: { cs: "Logo tvoří název APADORE ve verzálkách. Jeho charakter určuje kresba písmen a jejich vzájemné proporce. Používá se výhradně v dodaných souborech, nikdy jako nově vysázený text. V souvislém textu se název píše Apadore.", en: "The logo consists of the name APADORE in uppercase. Its character comes from the letterforms and their proportions. Always use the supplied artwork; never recreate the logo by typing the name. In running text, write the name as Apadore." },
+        callout: { variant: "note", title: { cs: "Minimální šířka loga", en: "Minimum logo width" }, body: { cs: "Doporučeno 140 px a víc. Minimum je 80 px na obrazovce a 20 mm v tisku; pro malé velikosti slouží optická varianta.", en: "140 px or more recommended. The minimum is 80 px on screen and 20 mm in print; use the optical version for small sizes." } },
       },
       {
         type: "clearSpace",
         title: { cs: "Ochranná zóna", en: "Clear space" },
         ratio: { cs: "1× výška loga", en: "1× logo height" },
-        body: { cs: "Kolem loga nechte volný prostor alespoň jedné výšky loga (x). Do zóny nezasahuje text, okraj formátu ani jiný prvek.", en: "Keep free space of at least one logo height (x) around the logo." },
+        body: { cs: "Ochranná zóna odpovídá nejméně jedné výšce loga (x). Nezasahuje do ní text, grafika ani okraj formátu. Pro základní logo doporučujeme šířku od 140 px. Celkové minimum je 80 px na obrazovce a 20 mm v tisku; pro malé velikosti slouží optická varianta.", en: "Clear space equals at least one logo height (x). Keep text, graphics and format edges outside this area. A width of 140 px or more is recommended for the standard logo. The overall minimum is 80 px on screen and 20 mm in print; use the optical version for small sizes." },
       },
       {
         type: "logoVersions",
         title: { cs: "Barevné verze", en: "Colour versions" },
-        body: {
-          cs: "Logo existuje jen ve dvou barvách: bílá (negativní) na navy a tmavém přechodu, což je primární kombinace, a navy 900 (pozitivní) na bílém a doplňkovém světlém přechodu. Jiné barvy v logu nepoužívejte.",
-          en: "The logo exists in two colours only: white (negative) on navy and the dark gradient, the primary combination, and navy 900 (positive) on white and the supplementary light gradient.",
-        },
+        body: { cs: "Pozitivní verze v navy je určena pro bílé, světle šedé a světlé přechodové podklady. Negativní bílá verze se používá na navy a tmavých přechodech. Volba vždy vychází z dostatečného kontrastu. Barevnost loga se nemění a nedoplňuje efekty.", en: "Use the navy positive version on white, light grey and light gradient backgrounds. Use the white reversed version on navy and dark gradients. Choose the version that provides sufficient contrast. Do not alter the logo colours or add effects." },
         items: [
           { label: { cs: "Bílá na navy", en: "White on navy" }, bg: "dark", logo: "negativni" },
           { label: { cs: "Bílá na tmavém přechodu", en: "White on dark gradient" }, bg: "gradientDark", logo: "negativni" },
@@ -62,7 +53,7 @@ export const chapters: Chapter[] = [
       {
         type: "doDont",
         title: { cs: "Nepovolené použití", en: "Incorrect use" },
-        body: { cs: "Logo neupravujte. Nedeformujte ho, neotáčejte, nepřebarvujte, nepřidávejte obrys, stín ani efekty a nedávejte ho na podklad, kde se ztrácí.", en: "Do not alter the logo. Do not distort, rotate or recolour it, do not add an outline, shadow or effects, and do not place it on a background where it gets lost." },
+        body: { cs: "Jednotná podoba loga je podmínkou jeho rozpoznatelnosti. Zachovává se kresba, proporce, orientace i barevnost. Logo se nedeformuje ani nedoplňuje obrysem, stínem či jinými efekty. Na každém podkladu musí zůstat zřetelně čitelné.", en: "A consistent appearance keeps the logo recognisable. Preserve its letterforms, proportions, orientation and colours. Do not stretch, rotate, outline or add shadows or other effects. The logo must remain clearly legible on every background." },
         items: [
           { kind: "dont", effect: "stretch", label: { cs: "Nedeformujte", en: "Don't distort" } },
           { kind: "dont", effect: "rotate", label: { cs: "Neotáčejte", en: "Don't rotate" } },
@@ -75,10 +66,7 @@ export const chapters: Chapter[] = [
       {
         type: "favicons",
         title: { cs: "Favicon", en: "Favicon" },
-        body: {
-          cs: "Favicon je písmeno A z loga a používá se jen v malých velikostech. Zatím ve dvou verzích: bílé A na navy a navy A na bílé. Ve větších formátech (profilová fotka, ikona aplikace) používáme celé logo Apadore. PNG 180 a 32 px jsou v logo kitu.",
-          en: "The favicon is the letter A from the logo and is used only at small sizes. For now in two versions: white A on navy and navy A on white. Larger formats (profile picture, app icon) use the full Apadore logo. 180 and 32 px PNGs are in the logo kit.",
-        },
+        body: { cs: "Favicon je písmeno A z loga. Používá se jen v malých velikostech: v záložce prohlížeče, v záložkách a jako ikona. Vždy bez přechodu, ve dvou verzích: bílé A na navy a navy A na bílé. Ve větších formátech (profilová fotka, sdílení) používáme celé logo.", en: "The favicon uses the letter A from the logo. It is intended for small sizes: browser tabs, bookmarks and icons. Use flat colours in two versions: white A on navy and navy A on white. For larger formats, including profile images and sharing, use the full logo." },
       },
       {
         type: "logoGenerator",
@@ -119,7 +107,7 @@ export const chapters: Chapter[] = [
       {
         type: "tints",
         title: { cs: "Odstíny", en: "Tints" },
-        body: { cs: "Odstíny navy a neutrální šedé. Škála odpovídá proměnným ve Figmě (UI Kit).", en: "Navy and neutral grey tints. The scale matches the Figma variables (UI Kit)." },
+        body: { cs: "Škály navy a neutrální šedé rozšiřují základní paletu pro práci s informační hierarchií. V rozhraní slouží zejména sekundárním textům, dělicím linkám a plochám.", en: "The navy and neutral grey scales extend the core palette to support information hierarchy. In interfaces, they are used mainly for secondary text, dividing lines and surfaces." },
         groups: [
           { name: { cs: "Tints navy", en: "Tints navy" }, steps: [{ step: "900", hex: "#090E21" }, { step: "800", hex: "#3A3E4D" }, { step: "600", hex: "#737681" }, { step: "400", hex: "#9D9FA6" }, { step: "200", hex: "#CECFD3" }] },
           { name: { cs: "Tints neutrals", en: "Tints neutrals" }, steps: [{ step: "900", hex: "#131313" }, { step: "600", hex: "#656565" }, { step: "400", hex: "#898989" }, { step: "100", hex: "#E4E4E4" }, { step: "50", hex: "#F1F1F1" }, { step: "0", hex: "#FFFFFF" }] },
@@ -128,10 +116,7 @@ export const chapters: Chapter[] = [
       {
         type: "gradientPalette",
         title: { cs: "Barvy přechodů", en: "Gradient colours" },
-        body: {
-          cs: "Výsledné barvy, které jsou na přechodech opravdu vidět (odečtené z hotového přechodu, pracovní odhad), sestavení přechodu ve Figmě najdete pod odkazem „Jak je přechod sestavený“. Modré tóny patří jen do přechodů, samostatně se nepoužívají.",
-          en: "The resulting colours actually visible in the gradients (sampled from the finished gradient, a working estimate), and how the gradient is built in Figma under “How the gradient is built”. Blue tones belong only to gradients and are never used on their own.",
-        },
+        body: { cs: "Tato paleta vymezuje barevnost přechodů. Odstíny se používají společně v definované skladbě, nikoli jako samostatné barvy identity. Konstrukci ve Figmě ukazuje odkaz „Jak je přechod sestavený“.", en: "This palette defines the gradient colours. Use the shades together in the specified construction, rather than as standalone identity colours. “How the gradient is built” shows the Figma construction." },
         items: [
           {
             name: { cs: "Tmavý přechod", en: "Dark gradient" },
@@ -169,7 +154,7 @@ export const chapters: Chapter[] = [
       {
         type: "colorRatio",
         title: { cs: "Poměr barev", en: "Colour ratio" },
-        body: { cs: "Orientační poměr ploch. Značku nese dvojice navy a bílá, šedé jen doplňují. Tmavá verze je primární, světlá doplňková.", en: "An indicative ratio of surfaces. The navy and white pair carries the brand, greys only complement it. The dark version is primary, the light one supplementary." },
+        body: { cs: "Poměr ukazuje doporučené zastoupení barevných ploch. Identitu tvoří především navy a bílá, doplněné světle šedou. Tmavá varianta je výchozí, světlá rozšiřuje možnosti kompozice.", en: "The ratio shows the recommended balance of colour areas. Navy and white form the foundation, supported by light grey. The dark version is the default; the light version provides an additional compositional option." },
         parts: [
           { name: "Navy 900", hex: "#090E21", percent: 45 },
           { name: "Grey 50 a 100", hex: "#F1F1F1", percent: 15 },
@@ -180,7 +165,7 @@ export const chapters: Chapter[] = [
         type: "colors",
         size: "lg",
         title: { cs: "Akcent", en: "Accent" },
-        body: { cs: "Červená je jediný barevný akcent značky. Patří jen do grafických prvků: malá tečka ve skleněném prvku na obálkách blogu. Do poměru barev se nepočítá a jinde se zatím nepoužívá.", en: "Red is the only colour accent. Used only as a small dot in graphic elements." },
+        body: { cs: "Červená doplňuje identitu jako drobný akcent v grafice náhledových obrázků článků. Používá se ve formě tečky uvnitř skleněného motivu. Do základního poměru barev nevstupuje.", en: "Red is a small accent within blog thumbnail graphics. Use it as a dot inside the glass motif. It is not included in the core colour ratio." },
         colors: [
           { name: "Accent Red", hex: "#FF5A1F" },
         ],
@@ -199,7 +184,7 @@ export const chapters: Chapter[] = [
         family: "heading",
         specimenName: "Booton",
         title: { cs: "Booton: primární písmo", en: "Booton: primary typeface" },
-        body: { cs: "Výrazné geometrické písmo pro všechny nadpisy (Display, H1 až H4). Vždy řez SemiBold, užší prostrkání −4 %, u Display −7 %. Nadpisy píšeme normálně, ne verzálkami.", en: "Geometric typeface for all headings. Always SemiBold, tracking −4 %, Display −7 %." },
+        body: { cs: "Booton je hlavním výrazovým písmem identity. Geometrická kresba a těsná sazba dávají nadpisům kompaktní podobu. Používá se od Display po H4 v řezu SemiBold, s prostrkáním −4 % a u Display −7 %. Nadpisy se sázejí běžným způsobem, bez verzálek.", en: "Booton is the identity’s primary display typeface. Its geometric letterforms and tight spacing give headings a compact presence. Use SemiBold from Display to H4, with −4 % tracking and −7 % for Display. Set headings in sentence case." },
         info: [
           { label: { cs: "Výrobce", en: "Foundry" }, value: "Displaay Type Foundry" },
           { label: { cs: "Autor", en: "Designer" }, value: "Daniel Quisek, 2024" },
@@ -213,7 +198,7 @@ export const chapters: Chapter[] = [
         family: "body",
         specimenName: "Geist",
         title: { cs: "Geist: písmo pro text", en: "Geist: text typeface" },
-        body: { cs: "Čitelné písmo pro odstavce, úvodní věty, popisy a rozhraní. Regular pro delší text, Medium pro menší velikosti a rozhraní, SemiBold pro zvýraznění.", en: "A legible typeface for paragraphs, lead sentences, captions and interfaces. Regular for longer text, Medium for smaller sizes and UI, SemiBold for emphasis." },
+        body: { cs: "Geist je určen pro souvislé texty, úvodní odstavce, popisy a rozhraní. Řez Regular slouží delším textům, Medium menším velikostem a ovládacím prvkům, SemiBold zvýraznění v rámci textu.", en: "Geist is used for body copy, introductory paragraphs, descriptions and interfaces. Use Regular for longer text, Medium for smaller sizes and controls, and SemiBold for emphasis within text." },
         info: [
           { label: { cs: "Výrobce", en: "Foundry" }, value: "Vercel a Basement Studio" },
           { label: { cs: "Licence", en: "Licence" }, value: "SIL Open Font License, zdarma" },
@@ -230,7 +215,7 @@ export const chapters: Chapter[] = [
         family: "mono",
         specimenName: "IBM Plex Mono",
         title: { cs: "IBM Plex Mono: štítky", en: "IBM Plex Mono: labels" },
-        body: { cs: "Neproporcionální písmo pro štítky, popisky a tlačítka. Vždy verzálky, řez Medium, malé velikosti 12 až 14 px. Nikdy pro delší text.", en: "Monospaced typeface for labels and buttons. Always uppercase, Medium, 12 to 14 px." },
+        body: { cs: "IBM Plex Mono odlišuje krátké informační prvky: štítky, popisky a tlačítka. Používá se ve verzálkách, v řezu Medium a velikostech 12 až 14 px. Delší sdělení se sázejí písmem Geist.", en: "IBM Plex Mono distinguishes short functional elements: labels, captions and buttons. Use uppercase, Medium weight and sizes from 12 to 14 px. Set longer messages in Geist." },
         info: [
           { label: { cs: "Výrobce", en: "Foundry" }, value: "IBM (Mike Abbink a Bold Monday), 2017" },
           { label: { cs: "Licence", en: "Licence" }, value: "SIL Open Font License, zdarma" },
@@ -241,7 +226,7 @@ export const chapters: Chapter[] = [
       {
         type: "typeScale",
         title: { cs: "Hierarchie", en: "Type scale" },
-        body: { cs: "Velikosti jen ze škály textových stylů. Nadpisy mají záporné prostrkání (tracking): Display −7 %, H1 až H4 −4 %. Mobilní nadpisy: H1 62, H2 32, H3 26, H4 20.", en: "Use only sizes from the text style scale. Headings have negative tracking: Display −7 %, H1 to H4 −4 %. Mobile headings: H1 62, H2 32, H3 26, H4 20." },
+        body: { cs: "Hierarchie vychází z definované škály textových stylů. Prostrkání nadpisů je −7 % u Display a −4 % u H1 až H4. Geist má prostrkání 0; verzálkové štítky v IBM Plex Mono mírně rozšířené. Mobilní styly zachovávají názvy a používají menší nadpisy: H1 62, H2 32, H3 26 a H4 20.", en: "The hierarchy follows the defined text style scale. Heading tracking is −7 % for Display and −4 % for H1 to H4. Geist uses 0 tracking; uppercase IBM Plex Mono labels use slightly expanded spacing. Mobile styles retain the same names with smaller headings: H1 62, H2 32, H3 26 and H4 20." },
         rows: [
           { name: "Display", size: 160, lineHeight: 115, tracking: -7, family: "heading" },
           { name: "H1", size: 120, lineHeight: 120, tracking: -4, family: "heading" },
@@ -257,7 +242,7 @@ export const chapters: Chapter[] = [
       {
         type: "colorPairs",
         title: { cs: "Text na podkladu", en: "Text on background" },
-        body: { cs: "Na jakém podkladu má text ležet a jakou barvou. Doporučené dvojice textu a pozadí. Číslo u každé dvojice je kontrast, tedy o kolik je text světlejší nebo tmavší než pozadí (1 : 1 = stejná barva, 21 : 1 = černá na bílé). Podle pravidel přístupnosti WCAG potřebuje běžný text aspoň 4,5 : 1 (úroveň AA), ideálně 7 : 1 (AAA). Velké nadpisy stačí 3 : 1.", en: "Which background text should sit on and in which colour. Recommended text and background pairs. The number next to each pair is the contrast, i.e. how much lighter or darker the text is than the background (1 : 1 = the same colour, 21 : 1 = black on white). Under the WCAG accessibility guidelines, body text needs at least 4.5 : 1 (level AA), ideally 7 : 1 (AAA). Large headings need 3 : 1." },
+        body: { cs: "Doporučené kombinace zajišťují čitelnost textu. Hodnoty vyjadřují kontrastní poměr: podle WCAG nejméně 4,5 : 1 pro běžný text a 3 : 1 pro velké nadpisy.", en: "These recommended combinations support legibility. Values indicate contrast ratios: WCAG requires at least 4.5 : 1 for body text and 3 : 1 for large headings." },
         pairs: [
           { label: { cs: "Navy 900 na bílé", en: "Navy 900 on white" }, bg: "#FFFFFF", fg: "#090E21" },
           { label: { cs: "Bílá na navy 900", en: "White on navy 900" }, bg: "#090E21", fg: "#FFFFFF" },
@@ -279,8 +264,8 @@ export const chapters: Chapter[] = [
         type: "gradient",
         variant: "dark",
         title: { cs: "Primární pozadí", en: "Primary background" },
-        body: { cs: "Tmavý přechod je primární pozadí značky a patří na většinu formátů. Základ je navy 900, z rohu do ztracena jde jasně modrý přechod do průhledné tmavé navy. Navrch jemné zrno (šum) v režimu Overlay.", en: "The dark gradient is the primary brand background and belongs on most formats. The base is navy 900, with a bright blue gradient fading from the corner into transparent dark navy. A subtle grain (noise) sits on top in Overlay mode." },
-        direction: { cs: "Z levého horního rohu k pravému dolnímu (CSS 135°). Roh se může měnit, úhel vždy po úhlopříčce.", en: "From top left to bottom right (CSS 135°)." },
+        body: { cs: "Tmavá varianta je hlavním přechodovým pozadím identity. Základ navy 900 doplňuje jasně modrá, která od rohu přechází do průhledné tmavé navy. Povrch sjednocuje jemné zrno v režimu Overlay.", en: "The dark version is the identity’s primary gradient background. A navy 900 base is overlaid with bright blue fading from one corner into transparent dark navy. Fine grain in Overlay mode unifies the surface." },
+        direction: { cs: "Výchozí směr vede z levého horního do pravého dolního rohu (CSS linear-gradient 135°). Výchozí roh lze měnit při zachování úhlopříčného směru.", en: "The default direction runs from the top left to the bottom right (CSS linear-gradient 135°). The starting corner may change; retain the diagonal direction." },
         stops: [
           { label: { cs: "Podklad", en: "Base" }, hex: "#090E21", alpha: 100 },
           { label: { cs: "Roh, 0 %", en: "Corner, 0 %" }, hex: "#3F8BFF", alpha: 45 },
@@ -291,8 +276,8 @@ export const chapters: Chapter[] = [
         type: "gradient",
         variant: "light",
         title: { cs: "Doplňkové světlé pozadí", en: "Supplementary light background" },
-        body: { cs: "Světlý přechod je doplňková varianta k tmavému. Používejte ho v menšině formátů: na obálkách blogu a na části příspěvků na LinkedIn, aby se profil střídal. Tmavá verze má vždy převahu.", en: "The light gradient is the supplementary variant of the dark one. Use it on a minority of formats: blog covers and some LinkedIn posts, so the profile alternates. The dark version always prevails." },
-        direction: { cs: "Z pravého horního rohu k levému dolnímu (CSS 225°).", en: "From top right to bottom left (CSS 225°)." },
+        body: { cs: "Světlá varianta zachovává barevný charakter identity v jemnějším provedení. Doplňuje převládající tmavé plochy například v náhledových obrázcích článků a sociálních sítích. Tvoří ji světle šedomodrý základ, přechod z rohu do průhledna a jemné zrno v režimu Overlay.", en: "The light version offers a softer expression of the same colour palette. It complements the predominant dark backgrounds on blog thumbnails and social media. It combines a pale blue-grey base, a gradient fading from one corner to transparency, and fine grain in Overlay mode." },
+        direction: { cs: "Výchozí směr vede z pravého horního do levého dolního rohu (CSS linear-gradient 225°). Výchozí roh lze měnit při zachování úhlopříčného směru.", en: "The default direction runs from the top right to the bottom left (CSS linear-gradient 225°). The starting corner may change; retain the diagonal direction." },
         stops: [
           { label: { cs: "Podklad", en: "Base" }, hex: "#EEF0F4", alpha: 100 },
           { label: { cs: "Roh, 0 %", en: "Corner, 0 %" }, hex: "#7FA3DA", alpha: 75 },
@@ -303,17 +288,19 @@ export const chapters: Chapter[] = [
       {
         type: "rules",
         title: { cs: "Pravidla tvorby", en: "Rules" },
+        body: { cs: "Přechody vycházejí z jednotné barevnosti, průhlednosti a struktury zrna. Kompozici lze přizpůsobit změnou výchozího rohu.", en: "Gradients share fixed colours, opacity and grain. Adjust the composition by changing the starting corner." },
         items: [
-          { title: { cs: "Mění se jen roh", en: "Only the corner changes" }, body: { cs: "Barvy, průhlednost a zrno zůstávají stejné.", en: "Colours, transparency and grain stay the same." } },
-          { title: { cs: "Jeden přechod na formát", en: "One gradient per format" }, body: { cs: "Nikdy dva přechody proti sobě.", en: "Never two gradients against each other." } },
-          { title: { cs: "Jen modré tóny", en: "Blue tones only" }, body: { cs: "Žádné jiné barvy než body přechodu.", en: "No colours other than the gradient stops." } },
-          { title: { cs: "Konec v průhlednu", en: "Fade to transparent" }, body: { cs: "Přechod vždy končí bez ostré hrany. Pod text dávejte klidnější část plochy.", en: "A gradient always ends without a hard edge. Place text over the calmer part of the surface." } },
+          { title: { cs: "Tmavá jako výchozí", en: "Dark by default" }, body: { cs: "Tmavá varianta je výchozí, světlá doplňková.", en: "The dark version is primary; the light version is secondary." } },
+          { title: { cs: "Jeden přechod na formát", en: "One gradient per format" }, body: { cs: "V jednom formátu se používá jediný přechod.", en: "Use one gradient per format." } },
+          { title: { cs: "Jen definované barvy", en: "Defined colours only" }, body: { cs: "Barevnost vychází z definovaných bodů přechodu.", en: "Use only the defined gradient stop colours." } },
+          { title: { cs: "Bez ostré hrany", en: "No hard edge" }, body: { cs: "Přechod plynule mizí bez viditelné hrany.", en: "The gradient fades smoothly, without a visible edge." } },
+          { title: { cs: "Klidná část plochy", en: "Quieter area" }, body: { cs: "Text a grafika se umisťují do klidnější části plochy.", en: "Place text and graphics in the quieter part of the background." } },
         ],
       },
       {
         type: "glass",
         title: { cs: "Skleněné prvky", en: "Glass elements" },
-        body: { cs: "Na přechodové pozadí patří jeden matný skleněný prvek s rozmazáním pozadí, jemným bílým okrajem a měkkým stínem. Může mít podobu štítku, přepínače, karty, okna rozhraní nebo jednoduchého schématu.", en: "A gradient background carries one frosted glass element with background blur, a fine white border and a soft shadow. It can take the form of a tag, a switch, a card, an interface window or a simple diagram." },
+        body: { cs: "Matné sklo doplňuje přechody o prostorový detail. Jeden hlavní prvek může mít podobu štítku, karty, přepínače, části rozhraní nebo schématu. Spojuje je rozmazané pozadí, jemný bílý okraj a měkký stín. Varianty rozvádí kapitola Grafické prvky.", en: "Frosted glass adds a spatial detail to gradient backgrounds. A single main element may take the form of a label, card, toggle, interface fragment or diagram. All share background blur, a fine white edge and a soft shadow. See Graphic elements for further variations." },
         specs: [
           { label: { cs: "Tmavá (primární)", en: "Dark (primary)" }, value: { cs: "Výplň bílá 14 až 6 %, rozmazání 24, stín navy 50 %", en: "White fill 14 to 6 %, blur 24, navy shadow 50 %" } },
           { label: { cs: "Světlá (doplňková)", en: "Light (supplementary)" }, value: { cs: "Výplň bílá 50 až 25 %, rozmazání 20, okraj 0,5 px", en: "White fill 50 to 25 %, blur 20, 0.5 px border" } },
@@ -331,7 +318,7 @@ export const chapters: Chapter[] = [
       {
         type: "images",
         title: { cs: "Styl case studies", en: "Case study style" },
-        body: { cs: "Case study musí zaujmout hned první fotkou: neobvyklá perspektiva, skutečné prostředí, přirozené světlo (interně „wow efekt“). K ní patří výřez webu na pozadí, které nese mood celého projektu.", en: "A case study has to grab attention with the very first photo: an unusual perspective, a real environment, natural light (internally the “wow effect”). It is paired with a website crop in the background that carries the mood of the whole project." },
+        body: { cs: "Úvodní obraz představuje charakter projektu a určuje tón celé case study. Další obrazy střídají celek, detail a ukázky rozhraní tak, aby srozumitelně ukázaly rozsah i kvalitu řešení.\n\nMockupy, fotografie a výřezy propojuje barevnost a kompozice. Každý obraz přináší novou informaci; série má vlastní rytmus a dostatek prostoru.", en: "The opening image introduces the project’s character and sets the tone for the case study. Follow it with a mix of overviews, details and interface examples to convey the scope and quality of the solution.\n\nConnect mockups, photography and cropped views through colour and composition. Each image adds information; the series has a considered pace and room to breathe." },
         items: [
           { label: { cs: "Sky Towers: první fotka, monitor zespodu", en: "Sky Towers: first photo, monitor from below" }, src: "/images/obrazovy-styl/cs-sky-monitor.webp", ratio: "800 / 531" },
           { label: { cs: "ESENS Letná: výřez webu", en: "ESENS Letná: website crop" }, src: "/images/obrazovy-styl/cs-esens.webp", ratio: "306 / 414" },
@@ -341,7 +328,7 @@ export const chapters: Chapter[] = [
       {
         type: "images",
         title: { cs: "Imageové fotky", en: "Brand imagery" },
-        body: { cs: "Fotky značky klienta: prostředí firmy, lidé při práci, provoz, render developmentu. Ukazují, čím klient žije, ne jeho web. V každé case study aspoň dvě až tři.", en: "Photos of the client's brand: the company's environment, people at work, operations, a development render. They show what the client lives for, not their website. At least two or three in every case study." },
+        body: { cs: "Fotografie přibližují svět klienta: jeho prostředí, lidi, produkty a způsob práce. Vybíráme konkrétní, přirozeně působící záběry s jasným vztahem k projektu.\n\nV rámci série držíme jednotnou práci se světlem, barevností a kontrastem. Architektonické vizualizace navazují stejnou kvalitou a atmosférou.", en: "Photography introduces the client’s world: its places, people, products and working processes. Choose specific, natural-looking images with a clear connection to the project.\n\nKeep light, colour and contrast consistent across the series. Architectural visualisations should match its quality and atmosphere." },
         items: [
           { label: { cs: "Robotwin: stříkání v lakovně", en: "Robotwin: spraying in the paint shop" }, src: "/images/obrazovy-styl/robotwin-strikani.webp", ratio: "4 / 3" },
           { label: { cs: "Robotwin: obsluha robota", en: "Robotwin: robot operator" }, src: "/images/obrazovy-styl/robotwin-robot.webp", ratio: "4 / 3" },
@@ -352,7 +339,7 @@ export const chapters: Chapter[] = [
       {
         type: "images",
         title: { cs: "Styl mockupů", en: "Mockup style" },
-        body: { cs: "Web v zařízení na skutečném materiálu: dřevo, kámen, papír, textil. Denní světlo, ostré stíny z okna, jeden motiv a hodně prostoru. Zařízení fotíme z neobvyklého úhlu, ne zepředu na bílém pozadí.", en: "The website on a device placed on a real material: wood, stone, paper, textile. Daylight, sharp window shadows, one subject and plenty of space. Devices are shot from an unusual angle, not head-on against white." },
+        body: { cs: "Mockupy ukazují digitální výstup v přesvědčivém kontextu. Prostředí, materiály a světlo podporují charakter projektu. Úhel záběru se volí podle obsahu a čitelnosti obrazovky. Kompozice zůstává střídmá; zařízení i okolí slouží prezentované práci.", en: "Mockups present digital work in a convincing context. Setting, materials and light support the character of the project. Choose the camera angle to suit the content and keep the screen legible. Keep the composition restrained; both device and surroundings serve the work." },
         items: [
           { label: { cs: "Sky Towers: monitor zespodu", en: "Sky Towers: monitor from below" }, src: "/images/obrazovy-styl/sky-towers-monitor.webp", ratio: "4 / 3" },
           { label: { cs: "Sky Towers: notebook na židli", en: "Sky Towers: laptop on a chair" }, src: "/images/obrazovy-styl/sky-towers-notebook-zidle.webp", ratio: "4 / 3" },
@@ -363,7 +350,7 @@ export const chapters: Chapter[] = [
       {
         type: "formats",
         title: { cs: "Formáty médií", en: "Media formats" },
-        body: { cs: "Case study skládáme jen z těchto formátů. Každý existuje jako obrázek, smyčka videa nebo video spouštěné kliknutím.", en: "Case studies are built from these formats only. Each exists as an image, a video loop or a click-to-play video." },
+        body: { cs: "Formáty tvoří společný rámec pro obrazovou skladbu case studies. Lze je naplnit statickým obrazem, videosmyčkou s automatickým přehráváním bez zvuku nebo videem spouštěným kliknutím. Pro mobilní obrazovky jsou určeny Phone, Phones a Phone Half.", en: "These formats provide a shared framework for case study imagery. Each can hold a still image, a silent autoplay video loop or a click-to-play video. Use Phone, Phones and Phone Half for mobile screens." },
         items: [
           { label: { cs: "Full", en: "Full" }, w: 1440, h: 810 },
           { label: { cs: "Wide", en: "Wide" }, w: 1360, h: 765 },
@@ -376,12 +363,12 @@ export const chapters: Chapter[] = [
       {
         type: "rules",
         title: { cs: "Zásady a reference", en: "Rules and references" },
-        body: { cs: "Krátký kontrolní seznam před exportem obrázků. Podrobný moodboard je ve Figmě v souboru Apadore 2026 (Case Studies).", en: "A short checklist before exporting images. The detailed moodboard is in Figma in the Apadore 2026 (Case Studies) file." },
+        body: { cs: "Při výběru obrazů posuzujeme jejich vztah k projektu, kvalitu zpracování a návaznost v celé sérii. Další reference obsahuje soubor Apadore 2026 (Case Studies), stránka MOODBOARD / TEMPLATES.", en: "Select images for their relevance to the project, quality of execution and consistency across the series. Further references are in Apadore 2026 (Case Studies), on the MOODBOARD / TEMPLATES page." },
         items: [
-          { title: { cs: "Skutečný výsledek", en: "The real result" }, body: { cs: "Hotový web, stavba nebo produkt klienta. Aktuální, ostrý obsah obrazovek.", en: "The client's finished website, building or product. Current, sharp screen content." } },
-          { title: { cs: "Jeden motiv", en: "One subject" }, body: { cs: "Jeden hlavní bod zájmu, hodně volného místa, přirozené světlo a materiál.", en: "One main point of interest, plenty of free space, natural light and material." } },
-          { title: { cs: "Barvy klienta", en: "Client colours" }, body: { cs: "Pozadí mockupů a ploch ladí s klientem, ne s Apadore.", en: "Mockup backgrounds and surfaces match the client, not Apadore." } },
-          { title: { cs: "Čemu se vyhnout", en: "What to avoid" }, body: { cs: "Přehnané AI fotky, nudné mockupy zepředu na bílém pozadí, fotobanky s úsměvy do kamery, přeplácané koláže a rozmazané screenshoty.", en: "Overdone AI photos, dull head-on mockups on white, stock photos smiling into the camera, cluttered collages and blurry screenshots." } },
+          { title: { cs: "Skutečný výsledek", en: "The real result" }, body: { cs: "Obraz představuje konkrétní výstup nebo prostředí klienta. Obsah obrazovek je aktuální a čitelný.", en: "Show a specific outcome or the client’s environment. Screen content must be current and legible." } },
+          { title: { cs: "Jeden motiv", en: "One subject" }, body: { cs: "Záběr má jasné těžiště. Prostor, světlo a detail vedou pozornost k prezentované práci.", en: "Give each image a clear focal point. Space, light and detail direct attention to the work." } },
+          { title: { cs: "Barvy klienta", en: "Client colours" }, body: { cs: "Barevnost a materiály vycházejí z charakteru projektu. Celou sérii spojuje způsob zpracování.", en: "Colours and materials reflect the project. A consistent treatment brings the series together." } },
+          { title: { cs: "Čemu se vyhnout", en: "What to avoid" }, body: { cs: "Samoúčelné efekty, generické fotobankové scény, nepřirozené retuše, nesourodé koláže a nekvalitní obrazové podklady.", en: "Avoid effects without purpose, generic stock scenes, unnatural retouching, inconsistent collages and low-quality source images." } },
         ],
       },
     ],
@@ -396,7 +383,7 @@ export const chapters: Chapter[] = [
       {
         type: "text",
         title: { cs: "Princip", en: "Principle" },
-        body: { cs: "Grafické prvky se používají primárně jako obálky článků na blogu. Obálka článku na webu ve formátu 3 : 2, 1200 × 800 px, vždy ve dvou verzích, tmavé a světlé. Na čistém pozadí z přechodu a jemného zrna stojí jeden skleněný prvek, který vystihuje myšlenku článku jedním nebo dvěma slovy. Nadpis článku na obálce není.", en: "Graphic elements are used primarily as blog article covers. The article cover on the website is 3 : 2, 1200 × 800 px, always in two versions, dark and light. On a clean background of gradient and fine grain stands one glass element that captures the article's idea in one or two words. The article headline is not on the cover." },
+        body: { cs: "Náhledové obrázky článků pracují s jedním hlavním motivem, který vystihuje téma zkratkou: krátkým výrazem, stavem rozhraní nebo jednoduchým schématem. Přechod se zrnem tvoří pozadí, matné sklo nese samotný motiv.\n\nFormát je 3 : 2, tedy 1200 × 800 px, v tmavé i světlé verzi. Kompozici lze měnit výchozím rohem přechodu. Nadpis zůstává mimo obraz.", en: "Blog thumbnails use one main motif to express the topic in shorthand: a short phrase, an interface state or a simple diagram. A grain-textured gradient forms the background; frosted glass carries the motif.\n\nThe format is 3 : 2, or 1200 × 800 px, in dark and light versions. Vary the composition through the gradient’s starting corner. Keep the article title outside the image." },
       },
       {
         type: "images",
@@ -413,11 +400,12 @@ export const chapters: Chapter[] = [
         type: "rules",
         title: { cs: "Pravidla", en: "Rules" },
         items: [
-          { title: { cs: "Vždy obě verze", en: "Always both versions" }, body: { cs: "Ke každému článku tmavá i světlá obálka. Na webu se střídají.", en: "Every article gets a dark and a light cover. They alternate on the website." } },
-          { title: { cs: "Jeden motiv", en: "One subject" }, body: { cs: "Jeden skleněný prvek uprostřed. Žádné fotky ani nadpis článku.", en: "One glass element in the centre. No photos and no article headline." } },
-          { title: { cs: "Slovo, ne věta", en: "A word, not a sentence" }, body: { cs: "Text ve skle má jedno až tři slova.", en: "The text in the glass has one to three words." } },
-          { title: { cs: "Červená tečka", en: "Red dot" }, body: { cs: "Jediný barevný akcent grafických prvků (obálek blogu). Jinde se v brandu nepoužívá.", en: "The only colour accent of the graphic elements (blog covers). Not used elsewhere in the brand." } },
-          { title: { cs: "Export", en: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové obálky jsou ve Figmě na stránce Blog [Covers].", en: "PNG 1200 × 800 at 2×. Finished covers are in Figma on the Blog [Covers] page." } },
+          { title: { cs: "Vždy obě verze", en: "Always both versions" }, body: { cs: "Každý náhledový obrázek vzniká v tmavé i světlé variantě pro střídání v přehledu článků.", en: "Create both dark and light versions of each thumbnail for alternating use in the article overview." } },
+          { title: { cs: "Jeden motiv", en: "One motif" }, body: { cs: "Střed kompozice patří jednomu skleněnému motivu. Fotografie, fotobankové ikony a nadpis se nepřidávají.", en: "Place one glass motif at the centre. Do not add photography, stock icons or the article title." } },
+          { title: { cs: "Slovo, ne věta", en: "A word, not a sentence" }, body: { cs: "Text v motivu má jedno až tři slova. Význam doplňuje nadpis článku umístěný mimo náhledový obrázek.", en: "Use one to three words within the motif. The article title outside the thumbnail provides context." } },
+          { title: { cs: "České uvozovky", en: "Quotation marks" }, body: { cs: "Výrazy v uvozovkách se zapisují jednotně českými uvozovkami: „takto“.", en: "Use English quotation marks consistently for quoted phrases: “like this”." } },
+          { title: { cs: "Červená tečka", en: "Red dot" }, body: { cs: "Drobný červený akcent zvýrazňuje vztah mezi prvky nebo aktivní stav. Je vyhrazen náhledovým obrázkům článků.", en: "A small red accent highlights a relationship between elements or an active state. It is reserved for blog thumbnails." } },
+          { title: { cs: "Export", en: "Export" }, body: { cs: "PNG 1200 × 800 ve 2×. Hotové náhledové obrázky najdete ve Figmě na stránce Blog [Covers].", en: "PNG 1200 × 800 at 2×. Finished thumbnails are in Figma on the Blog [Covers] page." } },
         ],
       },
     ],
@@ -485,7 +473,7 @@ export const chapters: Chapter[] = [
       {
         type: "formats",
         title: { cs: "Formáty", en: "Formats" },
-        body: { cs: "Pro každý formát existuje tmavá šablona (primární) a světlá (doplňková). Autor příspěvků je Mikoláš Voborský.", en: "Each format has a dark (primary) and light (supplementary) template." },
+        body: { cs: "Pro každý formát je připravena tmavá a doplňková světlá šablona. Definované rozměry a rozvržení zajišťují jednotné zpracování napříč příspěvky.", en: "Each format has a dark template and a secondary light version. Defined dimensions and layouts keep posts consistent." },
         items: [
           { label: { cs: "Na výšku", en: "Portrait" }, w: 1080, h: 1350 },
           { label: { cs: "Čtverec", en: "Square" }, w: 1200, h: 1200 },
@@ -501,11 +489,12 @@ export const chapters: Chapter[] = [
         type: "rules",
         title: { cs: "Pravidla příspěvků", en: "Post rules" },
         items: [
-          { title: { cs: "Krátký citát", en: "Short quote" }, body: { cs: "Citát nebo teze na dva až tři řádky, Booton, na střed. Celá myšlenka patří do textu příspěvku.", en: "A quote or thesis on two to three lines, Booton, centred. The full thought belongs in the post text." } },
-          { title: { cs: "Autor nahoře, logo dole", en: "Author at the top, logo at the bottom" }, body: { cs: "Nahoře vlevo fotka a jméno autora, vpravo „Přečtěte si v příspěvku“. Logo malé dole uprostřed.", en: "Author photo and name top left, “Read in the post” on the right. Small logo at the bottom centre." } },
-          { title: { cs: "České uvozovky", en: "Czech quotation marks" }, body: { cs: "Citáty vždy v českých uvozovkách „takto“. Nikdy \"rovné\" ani “anglické”.", en: "Quotes always use Czech quotation marks „like this“. Never \"straight\" or “English” ones." } },
-          { title: { cs: "Bez kurzívy a barev", en: "No italics or colours" }, body: { cs: "Zvýrazňujeme velikostí a řezem písma, ne barvou ani kurzívou.", en: "We emphasise with size and weight, not with colour or italics." } },
-          { title: { cs: "Tmavá jako výchozí", en: "Dark by default" }, body: { cs: "Tmavá verze tvoří většinu příspěvků, světlý přechod je doplňkový.", en: "The dark version makes up most posts, the light gradient is supplementary." } },
+          { title: { cs: "Krátké sdělení", en: "Short message" }, body: { cs: "Hlavní myšlenka se vejde na dva až tři řádky a sází se písmem Booton; podrobnosti rozvádí text příspěvku.", en: "Keep the main idea to two or three lines, set in Booton; use the post copy to develop the message." } },
+          { title: { cs: "Eyebrow nahoře, logo dole", en: "Eyebrow at the top, logo at the bottom" }, body: { cs: "Vlevo nahoře krátký eyebrow text, vpravo dole logo Apadore. Rozvržení je u všech šablon stejné.", en: "A short eyebrow at the top left and the Apadore logo at the bottom right. All templates share this layout." } },
+          { title: { cs: "České uvozovky", en: "Quotation marks" }, body: { cs: "Citáty se zapisují českými uvozovkami: „takto“. Jednotná interpunkce je součástí typografické úpravy.", en: "Use English quotation marks consistently: “like this”. Correct punctuation is part of the typographic treatment." } },
+          { title: { cs: "Bez kurzívy a barev", en: "No italics or colours" }, body: { cs: "Důraz vytváří velikost a řez písma. Barevné zvýraznění a kurzíva se nepoužívají.", en: "Create emphasis through type size and weight. Do not use colour highlighting or italics." } },
+          { title: { cs: "Tmavá jako výchozí", en: "Dark by default" }, body: { cs: "Tmavá varianta tvoří základ komunikace. Světlá přináší doplňkovou polohu při zachování stejného rozvržení.", en: "The dark version forms the basis of communication. The light version offers an alternative while retaining the same layout." } },
+          { title: { cs: "Fotka s citátem", en: "Photo with a quote" }, body: { cs: "Vlastní fotografii doplňuje citát v bílém rámečku v horní části. Logo je umístěno vpravo dole.", en: "Pair an original photograph with a quote in a white frame at the top. Place the logo at the bottom right." } },
         ],
       },
       {
@@ -542,7 +531,7 @@ export const chapters: Chapter[] = [
       {
         type: "downloads",
         title: { cs: "Ke stažení", en: "Downloads" },
-        body: { cs: "Originální soubory berte vždy odsud nebo z firemního Google Drive. Nikdy je nepřekreslujte ani nevyřezávejte ze screenshotů.", en: "Always take the original files from here or the company Google Drive. Never redraw them or cut them out of screenshots." },
+        body: { cs: "Zdrojem pro práci se značkou jsou originální soubory na firemním Google Drive. Používají se v dodané podobě; nepřekreslují se ani nenahrazují výřezy ze screenshotů.", en: "Use the original brand assets on the company Google Drive. Keep the supplied artwork intact; do not redraw it or substitute cropped screenshots." },
         items: [
           { title: { cs: "Logo, pozitivní (navy)", en: "Logo, positive (navy)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-pozitivni.svg", alt: "/brand/apadore-logo-pozitivni.pdf" },
           { title: { cs: "Logo, negativní (bílé)", en: "Logo, negative (white)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-negativni.svg", alt: "/brand/apadore-logo-negativni.pdf" },
@@ -561,7 +550,7 @@ export const chapters: Chapter[] = [
       {
         type: "downloads",
         title: { cs: "Kontakt", en: "Contact" },
-        body: { cs: "Máte otázku ke značce? Napište našemu art directorovi, než něco upravíte.", en: "Have a question about the brand? Get in touch with our art director before you change anything." },
+        body: { cs: "Nejasnosti při použití identity a nestandardní aplikace konzultujte s art directorem.", en: "Consult the art director about unclear uses of the identity and non-standard applications." },
         items: [
           { title: { cs: "Tomáš Krčál, art director", en: "Tomáš Krčál, art director" }, meta: { cs: "E-mail: [DOPLNIT] · Telefon: [DOPLNIT]", en: "E-mail: [TBD] · Phone: [TBD]" } },
           { title: { cs: "Web Apadore", en: "Apadore website" }, meta: { cs: "www.apadore.cz", en: "www.apadore.cz" }, href: "https://www.apadore.cz" },
