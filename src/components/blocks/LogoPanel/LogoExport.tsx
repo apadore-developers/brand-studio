@@ -80,7 +80,7 @@ function buildSvg(bg: Bg, color: "navy" | "white", w: number, h: number, logoW: 
   const logoH = LOGO_H * scale;
   const fill = color === "white" ? WHITE : NAVY;
   const paths = (color === "white" ? logoPathsNegative : logoPaths).map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">${background(bg, w, h)}<g transform="translate(${((w - logoW) / 2).toFixed(2)} ${((h - logoH) / 2).toFixed(2)}) scale(${scale.toFixed(6)})">${paths}</g></svg>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}px" height="${h}px">${background(bg, w, h)}<g transform="translate(${((w - logoW) / 2).toFixed(2)} ${((h - logoH) / 2).toFixed(2)}) scale(${scale.toFixed(6)})">${paths}</g></svg>`;
 }
 
 function pdfBackground(bg: Bg, w: number, h: number): PdfBackground {

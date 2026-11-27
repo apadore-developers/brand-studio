@@ -16,7 +16,7 @@ const pathEls = (list, fill) =>
   (list === paths && fill === WHITE ? pathsNeg : list).map((p) => `<path fill="${fill}" fill-rule="${p.rule}" d="${p.d}"/>`).join("");
 
 const logo = (fill, list = paths) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} 233" width="${LW}" height="233">${pathEls(list, fill)}</svg>\n`;
+  `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} 233" width="${Math.round(LW)}px" height="233px" preserveAspectRatio="xMidYMid meet">${pathEls(list, fill)}</svg>\n`;
 
 // Letter A: bbox x 0..196.41, y 4.83..228.41
 const a = paths[0];
@@ -66,10 +66,10 @@ const pdf = (rgb, list = paths) => {
   const objs = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${LW} 233] /Contents 4 0 R /Resources << >> >>`,
+    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${Math.ceil(LW)} 233] /CropBox [0 0 ${Math.ceil(LW)} 233] /Contents 4 0 R /Resources << >> >>`,
     `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`,
   ];
-  let s = "%PDF-1.4\n";
+  let s = "%PDF-1.4\n%\xE2\xE3\xCF\xD3\n";
   const offs = [];
   objs.forEach((o, k) => { offs.push(Buffer.byteLength(s)); s += `${k + 1} 0 obj\n${o}\nendobj\n`; });
   const x = Buffer.byteLength(s);
