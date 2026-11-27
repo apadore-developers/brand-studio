@@ -67,13 +67,13 @@ const toPdfOps = (d) => {
   }
   return out.join("\n");
 };
-const pdf = (rgb, list = paths) => {
+const pdf = (rgb, list = paths, width = LW) => {
   const body = list.map((p) => `${toPdfOps(p.d)}\n${p.rule === "evenodd" ? "f*" : "f"}`).join("\n");
   const content = `${rgb.map((v) => (v / 255).toFixed(4)).join(" ")} rg\n${body}`;
   const objs = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${Math.ceil(LW)} 233] /CropBox [0 0 ${Math.ceil(LW)} 233] /Contents 4 0 R /Resources << >> >>`,
+    `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${Math.ceil(width)} 233] /CropBox [0 0 ${Math.ceil(width)} 233] /Contents 4 0 R /Resources << >> >>`,
     `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`,
   ];
   let s = "%PDF-1.4\n%\xE2\xE3\xCF\xD3\n";
@@ -88,6 +88,9 @@ for (const [name, rgb] of [["pozitivni", [9, 14, 33]], ["negativni", [255, 255, 
   const p = pdf(rgb, name === "negativni" ? pathsNeg : paths);
   out(`apadore-logo-${name}.pdf`, p);
   out(`apadore-logo-${name}.ai`, p);
+  const ps = pdf(rgb, small(name === "negativni" ? pathsNeg : paths), LWS);
+  out(`apadore-logo-male-${name}.pdf`, ps);
+  out(`apadore-logo-male-${name}.ai`, ps);
 }
 console.log("pdf/ai written");
 
@@ -135,7 +138,7 @@ console.log("favicon and social variants written");
   const { join } = await import("node:path");
   const stage = mkdtempSync(join(tmpdir(), "logo-kit-"));
   const root = join(stage, "apadore-logo-kit");
-  for (const d of ["vektor", "png", "jpg", "profil", "favicon"]) mkdirSync(join(root, d), { recursive: true });
+  for (const d of ["vektor", "png", "jpg", "profil", "favicon", "male-velikosti"]) mkdirSync(join(root, d), { recursive: true });
   const brand = (n) => new URL(`../public/brand/${n}`, import.meta.url).pathname;
   const W = 2000;
   // JPG: logo with clear space of half the logo height on every side
@@ -148,6 +151,9 @@ console.log("favicon and social variants written");
     for (const ext of ["svg", "pdf", "ai"]) copyFileSync(brand(`apadore-logo-${v}.${ext}`), join(root, "vektor", `apadore-logo-${v}.${ext}`));
     await sharp(readFileSync(brand(`apadore-logo-${v}.svg`)), { density: 300 }).resize({ width: W }).png().toFile(join(root, "png", `apadore-logo-${v}-${W}.png`));
     await sharp(Buffer.from(padded(bg, fg))).jpeg({ quality: 95 }).toFile(join(root, "jpg", `apadore-logo-${v}-${W}.jpg`));
+    // Logo for small sizes (wider letter spacing)
+    for (const ext of ["svg", "pdf", "ai"]) copyFileSync(brand(`apadore-logo-male-${v}.${ext}`), join(root, "male-velikosti", `apadore-logo-male-${v}.${ext}`));
+    await sharp(readFileSync(brand(`apadore-logo-male-${v}.svg`)), { density: 300 }).resize({ width: 1000 }).png().toFile(join(root, "male-velikosti", `apadore-logo-male-${v}-1000.png`));
   }
   for (const v of ["navy", "bila"]) for (const ext of ["png", "jpg"])
     copyFileSync(soc(`apadore-logo-socialni-site-${v}-1080.${ext}`), join(root, "profil", `apadore-logo-profil-${v}-1080.${ext}`));

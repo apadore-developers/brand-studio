@@ -91,7 +91,7 @@ export const chapters: Chapter[] = [
         title: { cs: "Základní logo kit", en: "Basic logo kit" },
         body: { cs: "Všechny základní soubory loga v jednom balíčku. Pozitivní (navy) i negativní (bílé) logo jako SVG, PDF a AI, PNG 2000 px na šířku s průhledným pozadím, JPG 2000 px s ochrannou zónou (pozitivní na bílé, negativní na navy) čtvercové logo pro profily 1080 × 1080 v navy i na bílé a favicon v navy i na bílé (SVG, PNG 512, 180 a 32 px).", en: "All basic logo files in one package. Positive (navy) and negative (white) logo as SVG, PDF and AI, a 2000 px wide PNG with a transparent background, a 2000 px JPG with clear space (positive on white, negative on navy) a square 1080 × 1080 profile logo on navy and on white, and the favicon on navy and on white (SVG, PNG 512, 180 and 32 px)." },
         items: [
-          { title: { cs: "Apadore logo kit", en: "Apadore logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
+          { title: { cs: "Apadore logo kit", en: "Apadore logo kit" }, meta: { cs: "ZIP · logo, logo pro malé velikosti, profilové logo, favicon", en: "ZIP · logo, logo for small sizes, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
         ],
       },
     ],
@@ -471,18 +471,20 @@ export const chapters: Chapter[] = [
           { label: { cs: "LinkedIn osobní banner", en: "LinkedIn personal banner" }, w: 1584, h: 396 },
           { label: { cs: "LinkedIn firemní cover", en: "LinkedIn company cover" }, w: 1128, h: 191 },
           { label: { cs: "Google Business cover", en: "Google Business cover" }, w: 1024, h: 576 },
+          { label: { cs: "Facebook cover", en: "Facebook cover" }, w: 1640, h: 624 },
           { label: { cs: "Logo pro profily", en: "Profile logo" }, w: 800, h: 800 },
         ],
       },
       {
         type: "images",
         title: { cs: "Sociální kit · základní", en: "Social media kit · basic" },
-        body: { cs: "Profilovky a covery pro sítě a platformy. Covery používají základní přechod z homepage a headline „Design a technologie, které unesou vaše ambice“. Loga jsou bílá na čistém navy.", en: "Profile images and covers for social media and platforms. Covers use the base gradient from the homepage and the headline “Design and technology that carry your ambitions”. Logos are white on plain navy." },
+        body: { cs: "Profilovky a covery pro sítě a platformy. Covery používají základní přechod z homepage. LinkedIn má headline „Design a technologie, které unesou vaše ambice“, Google a Facebook jen headline „Designové a technologické studio z Prahy“ bez loga, protože logo je v profilovce. Loga jsou bílá na čistém navy.", en: "Profile images and covers for social media and platforms. Covers use the base gradient from the homepage. LinkedIn uses the headline “Design and technology that carry your ambitions”; Google and Facebook only the headline “Design and technology studio from Prague” with no logo, as the logo is in the profile image. Logos are white on plain navy." },
         items: [
           { label: { cs: "Logo pro profily · 800 × 800", en: "Profile logo · 800 × 800" }, src: "/downloads/socialni-kit/apadore-logo-profil-800.jpg", ratio: "1 / 1" },
           { label: { cs: "LinkedIn osobní banner · 1584 × 396", en: "LinkedIn personal banner · 1584 × 396" }, src: "/downloads/socialni-kit/apadore-linkedin-osobni-banner-1584x396.jpg", ratio: "1584 / 396" },
           { label: { cs: "LinkedIn firemní cover · 1128 × 191", en: "LinkedIn company cover · 1128 × 191" }, src: "/downloads/socialni-kit/apadore-linkedin-firemni-cover-1128x191.jpg", ratio: "1128 / 191" },
           { label: { cs: "Google Business cover · 1024 × 576", en: "Google Business cover · 1024 × 576" }, src: "/downloads/socialni-kit/apadore-google-cover-1024x576.jpg", ratio: "1024 / 576" },
+          { label: { cs: "Facebook cover · 1640 × 624", en: "Facebook cover · 1640 × 624" }, src: "/downloads/socialni-kit/apadore-facebook-cover-1640x624.jpg", ratio: "1640 / 624" },
         ],
       },
       {
@@ -490,7 +492,7 @@ export const chapters: Chapter[] = [
         title: { cs: "Sociální kit ke stažení", en: "Social media kit download" },
         body: { cs: "Loga, profilovky a covery v jednom balíčku. Rozměry jsou doporučené hodnoty platforem, při nahrání je ověřte v administraci.", en: "Logos, profile images and covers in one package. Sizes are the platforms' recommendations; check them in the admin when uploading." },
         items: [
-          { title: { cs: "Celý sociální kit", en: "The whole social media kit" }, meta: { cs: "ZIP · logo (pozitivní a negativní), favicon, profilovky, covery", en: "ZIP · logo (positive and negative), favicon, profile images, covers" }, href: "/downloads/apadore-socialni-kit.zip" },
+          { title: { cs: "Celý sociální kit", en: "The whole social media kit" }, meta: { cs: "ZIP · logo (pozitivní a negativní), profilovky, covery", en: "ZIP · logo (positive and negative), profile images, covers" }, href: "/downloads/apadore-socialni-kit.zip" },
           { title: { cs: "Sociální kit ve Figmě", en: "Social media kit in Figma" }, meta: { cs: "Figma: Brand manuál › Social media Basic Kit", en: "Figma: Brand manual › Social media Basic Kit" }, href: "https://www.figma.com/design/39VjOmXGf9jAkh1yXBg8SJ/Apadore-2026--NEW-Web---Copy-?node-id=4001-79156" },
           { title: { cs: "Sociální kit na Google Drive", en: "Social media kit on Google Drive" }, meta: { cs: "Zdrojová složka SM Basic Kit", en: "Source folder SM Basic Kit" }, href: "https://drive.google.com/drive/folders/1vRBRoGercGtMn-I5tuz8y0kDxk1Td1a2", cta: { cs: "Google Drive", en: "Google Drive" } },
         ],
@@ -533,7 +535,7 @@ export const chapters: Chapter[] = [
         items: [
           { title: { cs: "Logo, pozitivní (navy)", en: "Logo, positive (navy)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-pozitivni.svg", alt: "/brand/apadore-logo-pozitivni.pdf" },
           { title: { cs: "Logo, negativní (bílé)", en: "Logo, negative (white)" }, meta: { cs: "SVG, PDF, AI · PNG a JPG v libovolné velikosti v kapitole Logo", en: "SVG, PDF, AI · PNG and JPG at any size in the Logo chapter" }, href: "/brand/apadore-logo-negativni.svg", alt: "/brand/apadore-logo-negativni.pdf" },
-          { title: { cs: "Základní logo kit", en: "Basic logo kit" }, meta: { cs: "ZIP · logo, profilové logo, favicon", en: "ZIP · logo, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
+          { title: { cs: "Základní logo kit", en: "Basic logo kit" }, meta: { cs: "ZIP · logo, logo pro malé velikosti, profilové logo, favicon", en: "ZIP · logo, logo for small sizes, profile logo, favicon" }, href: "/downloads/apadore-logo-kit.zip" },
           { title: { cs: "Favicon · navy", en: "Favicon · navy" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-navy.svg", alt: "/downloads/favicon/apadore-favicon-navy-512.png" },
           { title: { cs: "Favicon · bílá", en: "Favicon · white" }, meta: { cs: "SVG, PNG", en: "SVG, PNG" }, href: "/downloads/favicon/apadore-favicon-bila.svg", alt: "/downloads/favicon/apadore-favicon-bila-512.png" },
           { title: { cs: "Písmo Booton", en: "Booton typeface" }, meta: { cs: "Licencované písmo · složka Fonty na Google Drive", en: "Licensed typeface · Fonty folder on Google Drive" }, href: "https://drive.google.com/drive/folders/1enNekcqJsr1mHVIxRFwIusKyKBhrOy_p", cta: { cs: "Google Drive", en: "Google Drive" } },
